@@ -13,3 +13,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+:root{
+  --text-color:rgb(104, 104,190);
+  --border-color:rgb(149, 149, 222);
+}
+
+a{
+  text-decoration:none;
+  color: var(--text-color);
+ 
+}
