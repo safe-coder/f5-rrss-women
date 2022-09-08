@@ -16,6 +16,9 @@ body {
 :root{
   --text-color:rgb(104, 104,190);
   --border-color:rgb(149, 149, 222);
+  --bg-color:rgba(122,122,221,0.664);
+  
+
 }
 
 a{
