@@ -1,33 +1,33 @@
-.login{
+.register{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 20vh auto;
+  /* margin: 20vh auto;
   height: 60vh;
   width: 60wv;
-  max-width: 100%;
-
+  max-width: 100%; */
 }
 
-.login-small{
+.register-small{
   padding: .5rem;
 }
 
-.login-container{
+.register-container{
+  margin-top: 3rem;
   background-color: var(--bg-color);
-  padding: 3rem;
+  padding: .1rem 3rem;
   border-radius: 10px;
 
 }
 
-.login-header{
+.register-header{
   font-size: 2rem;
   text-align: center;
   color:var(--text-color);
 }
 
-.login-subheader{
+.register-subheader{
   font-size: 1.4rem;
   text-align: center;
   color:var(--text-color);
@@ -37,7 +37,7 @@
 
 
 
-.login-dataform{
+.register-dataform{
 
   display: flex;
   flex-direction: column;
@@ -46,7 +46,7 @@
 
 .data-formemail{
 padding: .3rem;
-margin: 1rem 0;
+margin: .5rem 0;
 border-radius: 3px;
 outline: none;
 height: 1.5rem;
@@ -55,35 +55,59 @@ border:2px solid var(--border-color);
 color:var(--text-color);
 }
 
-.login-dataformpass{
+
+.register-dataformpass{
   padding: .3rem;
-  margin: 1rem 0;
+  margin: .5rem 0;
   height: 1.5rem;
   width: 100%;
   border-radius: 3px;
   outline: none;
   border:2px solid var(--border-color);
-  color: var(--text-color);
-  position:relative;
+  color: var(--text-color)
 }
 
-.login-showpass{
-  position: fixed;
-  top:51.5%;
-  left:56%;
-  background-color: var(--bg-color);
-  padding:2px;
-  border-radius:2px;
-  vertical-align: middle;
-  cursor:pointer;
-}
-
-.login-dataformbtn{
+.register-dataformbtn{
   padding: .3rem;
   width: 50%;
   border:2px solid var(--border-color);
   background-color: transparent;
   border-radius: 3px;
   outline: none;
- margin:1rem auto;
+ margin:.5rem auto;
+ height: 2.5;
+}
+
+.register-dataformselect{
+  padding: .3rem;
+  margin: .5rem 0;
+  width: 100%;
+  border-radius: 3px;
+  outline: none;
+  border:2px solid var(--border-color);
+  height: 2.5rem;
+}
+.register-showpass{
+  position: fixed;
+  top:54.5%;
+  left:57.5%;
+  background-color: var(--bg-color);
+  padding:2px;
+  border-radius:2px;
+  vertical-align: middle;
+  cursor:pointer;
+
+}
+
+
+.register-showcfpass{
+  position: fixed;
+  top:46.5%;
+  left:57.5%;
+  background-color: var(--bg-color);
+  padding:2px;
+  border-radius:2px;
+  vertical-align: middle;
+  cursor:pointer;
+
 }
