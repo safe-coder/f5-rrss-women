@@ -3,7 +3,7 @@ import "../styles/Header.css";
 import { IconButton } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
 import ExploreIcon from '@mui/icons-material/Explore';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+//import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MessageIcon from '@mui/icons-material/Message';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import SearchIcon from '@mui/icons-material/Search';

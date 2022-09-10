@@ -23,18 +23,18 @@ const Register = () => {
 
   }
   
-  // useEffect(() => {
-  //   if (auth.token) {
-  //     navigate('/');
-  //   }
-  // }, [auth.token, navigate])
+  useEffect(() => {
+    if (auth.token) {
+      navigate('/');
+    }
+  }, [auth.token, navigate])
 
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (auth.token) {
-      navigate('/');
-    }
+    // if (auth.token) {
+    //   navigate('/');
+    // }
     dispatch(register(userData))
   }
   return (

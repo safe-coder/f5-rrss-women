@@ -10,7 +10,6 @@ import Alert from './components/Alert';
 import Header from './components/Header';
 import {useSelector, useDispatch} from 'react-redux';
 import Home from './pages/Home';
-import Header from './components/Header';
 import { useEffect } from "react";
 import { refreshToken } from './redux/actions/authActions';
 
@@ -33,12 +32,11 @@ function App() {
     <>
       <BrowserRouter>
         <div className="App">
-          <Alert />
-          <Header/>
+            <Alert/>
+            {auth.token && <Header/>}
           <Routes>
             <Route exact path="/register" element={<Register />} />
-            {auth.token ? ( <Route exact path="/" element={<Home/>}/>) :(<Route exact path="/" element={<Login/>} />) }
-           
+            <Route exact path="/" element={auth.token? <Home/> : <Login />} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/post/:id" element={<Post />} />
             <Route path='*' element={<NotFound/>}/>
