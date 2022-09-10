@@ -1,55 +1,87 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/Register.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from 'react-redux';
+import {register} from '../redux/actions/authActions'
+
 
 const Register = () => {
-  const [username, setUsername] = useState("");
-  const [fullname, setFullname] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const initialState = { username:'', fullname:'', email:'', password:'', confirmPassword:'', gender:'male'}
+ 
   const [showcfpass, setShowcfpass] = useState(false);
   const [showpass, setShowpass] = useState(false);
-  const[gender, setGender]= useState('male')
+  const [userData, setuserData] = useState(initialState);
+  const { username, fullname, email, password, confirmPassword, gender } = userData;
 
+  const { auth,alert } = useSelector(state => state);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setuserData({ ...userData, [name]: value })
+
+  }
+  
+  useEffect(() => {
+    if (auth.token) {
+      navigate('/')
+    }
+  }, [auth.token, navigate])
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  
+    dispatch(register(userData))
+  }
   return (
     <div className="register">
       <div className="register-container">
         <h3 className="register-header">Social network</h3>
         <h6 className="register-subheader">REGISTER</h6>
 
-        <form className="register-dataform">
+        <form className="register-dataform" onSubmit={handleSubmit}>
           <input
             className="data-formemail"
             type="text"
             value={fullname}
-            onChange={(e) => setFullname(e.target.value)}
-            placeholder="type your fullname"
+            name="fullname"
+            onChange={handleChange}
+            placeholder={alert.fullname ? `${alert.fullname}` : 'enter your fullname'}
+            style={{background:`${alert.fullname ? '#fa8e96' : ''}`}}
           />
-
+         
           <input
             className="data-formemail"
             type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            placeholder="type your username"
+            name="username"
+            value={username.toLowerCase().replace(/ /g,'')}
+            onChange={handleChange}
+            placeholder={alert.username ? `${alert.username}` : 'enter your username'}
+            style={{background:`${alert.username ? '#fa8e96' : ''}`}}
           />
-
+       
           <input
             className="register-dataformpass"
             type="email"
-            placeholder="type your email"
+            placeholder={alert.email ? `${alert.email}` : 'enter your email'}
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            name="email"
+            onChange={handleChange}
+            style={{background:`${alert.email ? '#fa8e96' : ''}`}}
           />
-
+          
           <input
             className="register-dataformpass"
             type={showcfpass ? "hide" : "password"}
-            placeholder="type your password"
+            placeholder={alert.password ? `${alert.password}` : 'enter your password'}
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            name="password"
+            onChange={handleChange}
+            style={{background:`${alert.password ? '#fa8e96' : ''}`}}
           />
+        
           <small
             className="register-showcfpass"
             onClick={() => setShowcfpass(!showcfpass)}
@@ -59,11 +91,16 @@ const Register = () => {
           <input
             className="register-dataformpass"
             type={showpass ? "type" : "password"}
-            placeholder="type your password again"
+            placeholder={alert.confirmPassword ? `${alert.confirmPassword}` : 'enter you password again'}
             value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
+            name="confirmPassword"
+            onChange={handleChange}
+            style={{background:`${alert.confirmPassword ? '#fa8e96' : ''}`}}
           />
-          <select className="register-dataformselect" value={gender} onChange={(e) => setGender(e.target.value)}>
+           
+          <select className="register-dataformselect"
+            name="gender"
+            value={gender} onChange={handleChange}>
             <option value="male">Male</option>
             <option value="female">Female</option>
             <option value="other">Other</option>
