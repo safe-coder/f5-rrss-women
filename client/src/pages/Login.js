@@ -56,10 +56,11 @@ const {email, password} = userData;
             Log In
           </button>
           <p className="login-small">
-            Do not have account <Link to="/register">Create HERE</Link>{" "}
+            Do not have account <Link to="/register">Create HERE</Link>
           </p>
         </form>
       </div>
+     
     </div>
   );
 };

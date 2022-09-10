@@ -27,7 +27,8 @@ const Toast = ({ msg, handleShow, bgColor }) => {
         className="toast-header"
       >
         <h5 style={{ fontWeight: "600" }}>{msg.title}</h5>
-        <p
+        <p 
+           onClick={handleShow}
           style={{
             fontSize: "1.5rem",
             alignSelf: "flex-start",
@@ -38,7 +39,7 @@ const Toast = ({ msg, handleShow, bgColor }) => {
         </p>
       </div>
       <div style={{ padding: "0rem .5rem" }} className="toast-body">
-        <p style={{ cursor: "pointer" }} onClick={handleShow}>
+        <p style={{ cursor: "pointer" }}>
           {msg.body}
         </p>
       </div>
