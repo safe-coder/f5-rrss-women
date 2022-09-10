@@ -7,6 +7,7 @@ import Login from './pages/Login';
 import Post from './pages/Post';
 import NotFound from './pages/NotFound';
 import Alert from './components/Alert';
+import Header from './components/Header';
 import {useSelector, useDispatch} from 'react-redux';
 import Home from './pages/Home';
 import { useEffect } from "react";
@@ -32,6 +33,7 @@ function App() {
       <BrowserRouter>
         <div className="App">
             <Alert/>
+            {auth.token && <Header/>}
           <Routes>
             <Route exact path="/register" element={<Register />} />
             <Route exact path="/" element={auth.token? <Home/> : <Login />} />
