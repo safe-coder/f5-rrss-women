@@ -122,3 +122,21 @@ export const register = (data) =>async (dispatch) =>{
         })
     }
 }
+
+export const logout = () => async (dispatch) =>{
+    try {
+        localStorage.removeItem('login');
+        await postDataApi('logout');
+        window.location.href="/"
+        
+    } catch (error) {
+        console.log(error)
+        dispatch({
+            type:"ALERT",
+            payload: {
+                error: error.res.data.msg
+            }
+        })
+    }
+   
+}
