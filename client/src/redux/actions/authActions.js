@@ -53,7 +53,7 @@ export const refreshToken = () => async( dispatch) => {
     
     if(login)
     
-    // {
+  
     dispatch({
         type:'ALERT',
         payload:{
@@ -63,7 +63,7 @@ export const refreshToken = () => async( dispatch) => {
 
     try {
         const res = await postDataApi('refresh_token');
-        console.log(res)
+        
         dispatch({
             type: 'AUTH',
             payload:{
@@ -89,5 +89,5 @@ export const refreshToken = () => async( dispatch) => {
         )
         
     }
-// }
+
 }

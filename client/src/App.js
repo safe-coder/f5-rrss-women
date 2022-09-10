@@ -12,26 +12,20 @@ import Home from './pages/Home';
 import { useEffect } from "react";
 import { refreshToken } from './redux/actions/authActions';
 
+
 function App() {
   const {auth} = useSelector(state =>state);
   const dispatch = useDispatch();
 
+
   useEffect(()=>{
     dispatch(refreshToken())
    
-    // const socket = io();
-    // dispatch({type:ALERT_TYPES.SOCKET, payload:socket})
-    // return ()=>socket.close();
+   
   }
 ,[dispatch]
 )
 
-// useEffect(()=>{
-//   if(auth.token){
-//   dispatch(getPost(auth.token))
-//   dispatch(getNotify(auth))
-//   }
-// },[auth.token, auth,  dispatch])
 
   return (
     <>
