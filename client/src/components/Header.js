@@ -56,7 +56,7 @@ export const Header = () =>{
                     <ExploreIcon className={`${isActive('/explore')}`}/>
                 </IconButton>
                 </Link>
-                <IconButton onClick={()=>dispatch(logout)}>
+                <IconButton onClick={()=>dispatch(logout())}>
                     <ExitToAppIcon/>
                 </IconButton>
             </div>
