@@ -47,3 +47,47 @@ export const login = (data) => async (dispatch) =>{
     }
 
 }
+
+export const refreshToken = () => async( dispatch) => {
+    const login = localStorage.getItem('login')
+    
+    if(login)
+    
+    // {
+    dispatch({
+        type:'ALERT',
+        payload:{
+            loading:true
+        }
+    })
+
+    try {
+        const res = await postDataApi('refresh_token');
+        console.log(res)
+        dispatch({
+            type: 'AUTH',
+            payload:{
+                token:res.data.access_token,
+                user: res.data.user
+            } 
+        })
+        dispatch({
+            type:ALERT_TYPES.ALERT,
+            payload:{
+                success:res.data.msg
+            }
+        })
+
+    } catch (error) {
+        console.log(error)
+        dispatch({
+            type:'ALERT',
+            payload:{
+                error:error.response.data.msg
+            }
+        }
+        )
+        
+    }
+// }
+}
