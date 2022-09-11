@@ -23,5 +23,4 @@ import { Users } from "../model/userModel.js";
       }
   },
 };
-
 export default userCtrl;
