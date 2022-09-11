@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../styles/Header.css";
 import { IconButton } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
@@ -12,11 +12,32 @@ import Avatar from '@mui/material/Avatar';
 import { useDispatch, useSelector } from "react-redux";
 import {logout} from "../redux/actions/authActions";
 import {Link, useLocation} from "react-router-dom";
+import { useState } from "react";
+import {getDataApi} from "../utils/fetchDataApi"
 
 export const Header = () =>{
+    const [search, setSearch] = useState('');
+    const [users, setUsers] = useState([]);
+
     const dispatch = useDispatch();
     const {auth} = useSelector(state=>state);
     const {pathname} = useLocation();
+
+    useEffect(()=>{
+        if(search && auth.token){
+            getDataApi(`search?username=${search}`,auth.token)
+            .then(res=>setUsers(res.data.users))
+            .catch(err=>{
+                dispatch({
+                    type:"ALERT",
+                    payload:{
+                        error: err.response.data.msg
+                    }
+                })
+            })
+        }
+    },[search,auth.token,dispatch])
+
 
     const isActive = (pn) =>{
         if(pn === pathname) return 'active'
@@ -27,15 +48,18 @@ export const Header = () =>{
             <div className="header-right">
                 <h3>Safe Coders</h3>
             </div>
-            <div className="header-center">
-                <input type="text" placeholder="Search Profiles"/>
+            <form className="header-center">
+                <input type="text" placeholder="Search Profiles" value={search} onChange={(e)=>setSearch(e.target.value)}/>
                 <SearchIcon/>
-            </div>
+
+            </form>
             <div className="header-left">
+                <Link to ={`profile/${auth.user._id}`}>
                 <div className="header-leftAvatar">
                     <Avatar src={auth.user.avatar}/>
                     <h4>{auth.user.fullname}</h4>
                 </div>
+                </Link>
                 <Link to="/">
                 <IconButton>
                     <HomeIcon className={`${isActive('/')}`}/>

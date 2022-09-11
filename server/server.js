@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import cors from "cors";
 import cookieparser from "cookie-parser";
 import authRouter from "./router/authRouter.js";
+import userRouter from "./router/userRouter.js";
 
 dotenv.config();
 
@@ -16,6 +17,7 @@ app.use(cookieparser());
 //routes
 
 app.use('/api', authRouter)
+app.use('/api', userRouter)
 
 const port = process.env.PORT || 5000;
 const URL = process.env.MONGO_URI;
