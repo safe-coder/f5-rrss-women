@@ -1,6 +1,6 @@
 import { Users } from "../model/userModel.js";
 
- export const userCtrl = {
+  const userCtrl = {
   searchUser: async (req, res) => {
     try {
       const users = await Users.find({ username: { $regex: req.query.username } }).limit(10).select("fullname username avatar")
@@ -14,3 +14,4 @@ import { Users } from "../model/userModel.js";
   }
 };
 
+export default userCtrl;
