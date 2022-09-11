@@ -12,6 +12,11 @@ import {useSelector, useDispatch} from 'react-redux';
 import Home from './pages/Home';
 import { useEffect } from "react";
 import { refreshToken } from './redux/actions/authActions';
+import Messages from './pages/Messages';
+import Explore from './pages/Explore';
+import Notification from './pages/Notification';
+import PrivateRoute from './utils/PrivateRoute';
+import Profile from './pages/Profile';
 
 
 function App() {
@@ -35,10 +40,20 @@ function App() {
             <Alert/>
             {auth.token && <Header/>}
           <Routes>
-            <Route exact path="/register" element={<Register />} />
+            <Route  path="/register" element={<Register />} />
             <Route exact path="/" element={auth.token? <Home/> : <Login />} />
-            <Route exact path="/login" element={<Login />} />
-            <Route exact path="/post/:id" element={<Post />} />
+            <Route  path="/login" element={<Login />} />
+
+          
+            <Route path="/message/*" element={<PrivateRoute><Messages/></PrivateRoute>}/>
+            <Route  path="/explore/*" element={<PrivateRoute><Explore/></PrivateRoute>} />
+            <Route path="/notification/*" element={<PrivateRoute><Notification /></PrivateRoute>} />
+         
+           <Route path="/post/:id" element={<PrivateRoute><Post /></PrivateRoute>} />
+          
+            <Route  path="/profile/:id/" element={<PrivateRoute><Profile/></PrivateRoute>} />
+         
+            
             <Route path='*' element={<NotFound/>}/>
               
             
