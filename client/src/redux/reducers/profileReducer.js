@@ -21,7 +21,7 @@ export const profileReducer = (state = initialState , action) => {
         case PROFILE_TYPES.GET_USER:
             return{
                 ...state,
-                users:[...state.users, action.payload]
+                users:[...state.users, action.payload.user]
             }
       
         default:
