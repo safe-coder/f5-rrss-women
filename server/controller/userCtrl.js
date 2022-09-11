@@ -11,6 +11,16 @@ import { Users } from "../model/userModel.js";
     } catch (err) {
       return res.status(500).json({ msg: err.message })
     }
-  }
+  },
+  getUser: async (req,res)=>{
+      try {
+          const user =  await Users.findOne({_id : req.params.id})
+          .select("-password").populate("friends following" , "-password") 
+          if(!user) return res.status(400).json({msg: "No user Exists"})
+          res.json({user})
+      } catch (err) {
+          return res.status(500).json({msg: err.message})
+      }
+  },
 };
 
