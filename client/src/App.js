@@ -8,16 +8,15 @@ import Post from './pages/Post';
 import NotFound from './pages/NotFound';
 import Alert from './components/Alert';
 import Header from './components/Header';
-import Messages from './pages/Messages';
-import Explore from './pages/Explore';
-import Notifications from './pages/Notifications';
 import {useSelector, useDispatch} from 'react-redux';
 import Home from './pages/Home';
 import { useEffect } from "react";
 import { refreshToken } from './redux/actions/authActions';
-import PrivateRouter from './utils/PrivateRouter';
+import Messages from './pages/Messages';
+import Explore from './pages/Explore';
+import Notification from './pages/Notification';
+import PrivateRoute from './utils/PrivateRoute';
 import Profile from './pages/Profile';
-
 
 
 function App() {
@@ -41,25 +40,19 @@ function App() {
             <Alert/>
             {auth.token && <Header/>}
           <Routes>
-            <Route exact path="/register" element={<Register />} />
+            <Route  path="/register" element={<Register />} />
             <Route exact path="/" element={auth.token? <Home/> : <Login />} />
-            <Route exact path="/login" element={<Login />} />
+            <Route  path="/login" element={<Login />} />
 
-{/* 
-            <Route exact path='/message' element={<PrivateRouter> <Messages /> </PrivateRouter>}/>
-
-          <Route exact path='/' element={<PrivateRouter/>}>
-            <Route exact path='/messages' element={<Messages/>}/>
-          </Route> */}
-
-          {/* <PrivateRouter exact path='/messages' >
-                        <Route element={<Messages/>}/>
-          </PrivateRouter> */}
-            <Route exact path="/message" element={<Messages />} />
-            <Route exact path="/explore" element={<Explore />} />
-            <Route exact path="/notification" element={<Notifications />}/>
-            <Route exact path="/post/:id" element={<Post />} />
-            <Route exact path="/profile/:id" element={<Profile />} />
+          
+            <Route path="/message/*" element={<PrivateRoute><Messages/></PrivateRoute>}/>
+            <Route  path="/explore/*" element={<PrivateRoute><Explore/></PrivateRoute>} />
+            <Route path="/notification/*" element={<PrivateRoute><Notification /></PrivateRoute>} />
+         
+           <Route path="/post/:id" element={<PrivateRoute><Post /></PrivateRoute>} />
+          
+            <Route  path="/profile/:id/" element={<PrivateRoute><Profile/></PrivateRoute>} />
+         
             
             <Route path='*' element={<NotFound/>}/>
               

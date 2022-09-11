@@ -1,11 +1,16 @@
-import React from "react";
+import React from 'react'
+import Info from '../components/Info'
+import Posts from '../components/Posts'
 
-const Profile = () =>{
-    return(
-        <div>
-            <h4>Profile</h4>
-        </div>
-    )
+const Profile = () => {
+  return (
+    <div className="profile">
+            <Info/>
+            <Posts />
+         
+              
+        </div>  
+  )
 }
 
-export default Profile;
+export default Profile

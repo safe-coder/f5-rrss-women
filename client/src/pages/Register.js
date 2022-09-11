@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../styles/Register.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import {register} from '../redux/actions/authActions'
 
@@ -15,7 +15,7 @@ const Register = () => {
 
   const { auth,alert } = useSelector(state => state);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const navigate = useLocation();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -25,14 +25,16 @@ const Register = () => {
   
   useEffect(() => {
     if (auth.token) {
-      navigate('/')
+      navigate('/');
     }
   }, [auth.token, navigate])
 
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  
+    // if (auth.token) {
+    //   navigate('/');
+    // }
     dispatch(register(userData))
   }
   return (
