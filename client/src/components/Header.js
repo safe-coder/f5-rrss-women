@@ -23,9 +23,10 @@ export const Header = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    if (search && auth.token) {
-      getDataApi(`search?username=${search}`, auth.token)
+    if (search ) {
+      getDataApi(`search?username=${search}`)
         .then((res) => setUsers(res.data.users))
+        //  .then((res) => console.log(res.data.users))
         .catch((err) => {
           dispatch({
             type: "ALERT",
@@ -35,7 +36,7 @@ export const Header = () => {
           });
         });
     }
-  }, [search, auth.token,dispatch]);
+  }, [search,dispatch]);
 
   const isActive = (pn) => {
     if (pn === pathname) return "active";

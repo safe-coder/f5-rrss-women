@@ -4,7 +4,7 @@ import { userCtrl } from '../controller/userCtrl.js';
 
 const router = Router();
 
-router.get('/search', auth, userCtrl.searchUser)
+router.get('/search', userCtrl.searchUser)
 
 
 
