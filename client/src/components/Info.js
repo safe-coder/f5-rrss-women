@@ -8,12 +8,12 @@ const Info = () => {
   const { auth } = useSelector((state) => state);
   const dispatch = useDispatch();
 
-//   useEffect(() => {
-//     if (id === auth.user._id){
-//         setUserData([auth.user])
-//     }
-//   }, [id, auth]);
-//   console.log(userData)
+  useEffect(() => {
+    if (id === auth.user._id){
+        setUserData([auth.user])
+    }
+  }, [id, auth]);
+  console.log(userData)
   return (
     <div className="profileinfo">
       <h2>Info-{id}</h2>
