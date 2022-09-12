@@ -1,26 +1,24 @@
 import React, { useEffect, useState } from "react";
 import "../styles/Register.css";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import {register} from '../redux/actions/authActions'
 
-
 const Register = () => {
-  const initialState = { username:'', fullname:'', email:'', password:'', confirmPassword:'', gender:'male'}
+  const initialState = { username:'', fullname:'', email:'', password:'', confirmPassword:''}
  
   const [showcfpass, setShowcfpass] = useState(false);
   const [showpass, setShowpass] = useState(false);
   const [userData, setuserData] = useState(initialState);
-  const { username, fullname, email, password, confirmPassword, gender } = userData;
+  const { username, fullname, email, password, confirmPassword } = userData;
 
   const { auth,alert } = useSelector(state => state);
   const dispatch = useDispatch();
-  const navigate = useLocation();
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setuserData({ ...userData, [name]: value })
-
   }
   
   useEffect(() => {
@@ -99,25 +97,18 @@ const Register = () => {
             onChange={handleChange}
             style={{background:`${alert.confirmPassword ? '#fa8e96' : ''}`}}
           />
-           
-          {/* <select className="register-dataformselect"
-            name="gender"
-            value={gender} onChange={handleChange}>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="other">Other</option>
-          </select> */}
+
           <small
             className="register-showpass"
             onClick={() => setShowpass(!showpass)}
           >
-            {showpass ? "Ocultar" : "Mostrar"}{" "}
+            {showpass ? "Ocultar" : "Mostrar"}
           </small>
           <button className="register-dataformbtn" type="submit">
-            Log In
+            Register
           </button>
           <p className="register-small">
-            ¿Ya tienes una cuenta? <Link to="/">Inicia sesión aquí</Link>{" "}
+            ¿Ya tienes una cuenta? <Link to="/">Inicia sesión aquí</Link>
           </p>
         </form>
       </div>

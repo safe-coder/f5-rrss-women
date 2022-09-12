@@ -57,7 +57,7 @@ const Login = () => {
             className="login-showpass"
             onClick={() => setShowpass(!showpass)}
           >
-            {showpass ? "Ocultar" : "Mostrar"}{" "}
+            {showpass ? "Ocultar" : "Mostrar"}
           </small>
 
           <button className="login-dataformbtn" type="submit">

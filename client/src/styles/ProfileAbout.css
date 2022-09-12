@@ -1,8 +1,8 @@
 .profileabout{
-    background-color: white;
+    background-color: #EFECF9;
     padding:10px;
     border-radius: 10px;
-    box-shadow: 5px 5px 300px 20px rgba(248, 248, 248, 0.808);
+    /* box-shadow: 5px 5px 300px 20px rgba(248, 248, 248, 0.808); */
     max-width: 250px;
     min-width:250px;
     min-height: 300px;
@@ -17,14 +17,14 @@
     padding:1rem .3rem;
     font-size:1.5rem;
     font-weight: 700;
-   border-bottom: 2px solid gray;
+   border-bottom: 2px solid #240046;
     
 }
 .profileabout-contentcenter-story{
     padding:.5rem;
     font-size:14px;
     font-weight: 500;
-    border-bottom: 2px solid gray;
+    border-bottom: 2px solid #240046;
 
 }
 .profileabout-contentbottom{
@@ -44,7 +44,7 @@
 .profileabout-contentbottominfo-head{
 font-size:medium;
 font-weight: 600;
-color:gray;
+color:#240046;
 }
 
 .profileabout-contentbottominfo-body{

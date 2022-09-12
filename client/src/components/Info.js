@@ -40,10 +40,10 @@ const Info = () => {
                         <h6 className="profileinfo-statnumber">{user.friends.length}</h6>
                         <h6 className="profileinfo-statdesc">AMIGAS</h6>
                     </div>
-                    {/* <div className="profileinfo-stat">
+                    <div className="profileinfo-stat">
                         <h6 className="profileinfo-statnumber">{user.following.length}</h6>
                         <h6 className="profileinfo-statdesc">SEGUIDORAS</h6>
-                    </div> */}
+                    </div>
                     </div>
                     <div className="profileinfo-bottomcenter">
                         <h3 className="profileinfo-fullname">{user.fullname}</h3>

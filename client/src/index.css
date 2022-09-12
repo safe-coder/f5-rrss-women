@@ -11,13 +11,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgba(232, 232, 245, 0.959);
+  background-color: #873CC7;
 }
 
 :root{
-  --text-color:rgb(71, 60, 107);
-  --border-color:rgb(149, 149, 222);
-  --bg-color:rgba(122,122,221,0.664);
+  --text-color:#240046;
+  --border-color:#240046;
+  --bg-color:#EFECF9;
   --success-color:rgb(222, 149, 162);
   
 
@@ -26,5 +26,4 @@ body {
 a{
   text-decoration:none;
   color: var(--text-color);
- 
 }
