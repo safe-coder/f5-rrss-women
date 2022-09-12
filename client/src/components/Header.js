@@ -92,8 +92,8 @@ export const Header = () => {
         {load && <img src={LoadIcon} alt="" style={{width:'48px', height:"48px"}}/>}
       {
         search && users.length > 0 && users.map((user) =>(
-            <Link to={`profile/${user._id}`} key={user._id}>
-            <UserCard user={user}  key={user._id}  handleClose={handleClose}/>
+            <Link to={`profile/${user._id}`} key={user}>
+            <UserCard user={user}  key={user}  handleClose={handleClose}/>
             </Link>
         ))
       }

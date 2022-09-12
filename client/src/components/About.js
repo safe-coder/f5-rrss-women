@@ -10,7 +10,7 @@ const About = () =>{
 
     const [userData, setUserData] = useState([]);
     const { id } = useParams();
-    const { auth, profile } = useSelector((state) => state);
+    const { auth, profile } = useSelector(state => state);
     const dispatch = useDispatch();
   
     useEffect(() => {
@@ -21,7 +21,7 @@ const About = () =>{
         const newData = profile.users.filter(user=>user._id === id)
         setUserData(newData)
       }
-    }, [id, auth.user, auth, profile.users, dispatch]);
+    }, [id, auth.users, auth, profile.users, dispatch]);
 
     return(
         <div className="profileabout">
