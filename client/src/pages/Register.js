@@ -4,14 +4,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import {register} from '../redux/actions/authActions'
 
-
 const Register = () => {
-  const initialState = { username:'', fullname:'', email:'', password:'', confirmPassword:'', gender:'male'}
+  const initialState = { username:'', fullname:'', email:'', password:'', confirmPassword:''}
  
   const [showcfpass, setShowcfpass] = useState(false);
   const [showpass, setShowpass] = useState(false);
   const [userData, setuserData] = useState(initialState);
-  const { username, fullname, email, password, confirmPassword, gender } = userData;
+  const { username, fullname, email, password, confirmPassword } = userData;
 
   const { auth,alert } = useSelector(state => state);
   const dispatch = useDispatch();
@@ -20,7 +19,6 @@ const Register = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setuserData({ ...userData, [name]: value })
-
   }
   
   useEffect(() => {
@@ -40,8 +38,8 @@ const Register = () => {
   return (
     <div className="register">
       <div className="register-container">
-        <h3 className="register-header">Social network</h3>
-        <h6 className="register-subheader">REGISTER</h6>
+        <h3 className="register-header">Safe Coders</h3>
+        <h6 className="register-subheader">REGISTRO</h6>
 
         <form className="register-dataform" onSubmit={handleSubmit}>
           <input
@@ -50,7 +48,7 @@ const Register = () => {
             value={fullname}
             name="fullname"
             onChange={handleChange}
-            placeholder={alert.fullname ? `${alert.fullname}` : 'enter your fullname'}
+            placeholder={alert.fullname ? `${alert.fullname}` : 'Nombre completo'}
             style={{background:`${alert.fullname ? '#fa8e96' : ''}`}}
           />
          
@@ -60,14 +58,14 @@ const Register = () => {
             name="username"
             value={username.toLowerCase().replace(/ /g,'')}
             onChange={handleChange}
-            placeholder={alert.username ? `${alert.username}` : 'enter your username'}
+            placeholder={alert.username ? `${alert.username}` : 'Nombre de usuaria'}
             style={{background:`${alert.username ? '#fa8e96' : ''}`}}
           />
        
           <input
             className="register-dataformpass"
             type="email"
-            placeholder={alert.email ? `${alert.email}` : 'enter your email'}
+            placeholder={alert.email ? `${alert.email}` : 'Email'}
             value={email}
             name="email"
             onChange={handleChange}
@@ -77,7 +75,7 @@ const Register = () => {
           <input
             className="register-dataformpass"
             type={showcfpass ? "hide" : "password"}
-            placeholder={alert.password ? `${alert.password}` : 'enter your password'}
+            placeholder={alert.password ? `${alert.password}` : 'Contraseña'}
             value={password}
             name="password"
             onChange={handleChange}
@@ -88,36 +86,29 @@ const Register = () => {
             className="register-showcfpass"
             onClick={() => setShowcfpass(!showcfpass)}
           >
-            {showcfpass ? "Hide" : "show"}{" "}
+            {showcfpass ? "Ocultar" : "Mostrar"}
           </small>
           <input
             className="register-dataformpass"
             type={showpass ? "type" : "password"}
-            placeholder={alert.confirmPassword ? `${alert.confirmPassword}` : 'enter you password again'}
+            placeholder={alert.confirmPassword ? `${alert.confirmPassword}` : 'Repite tu contraseña'}
             value={confirmPassword}
             name="confirmPassword"
             onChange={handleChange}
             style={{background:`${alert.confirmPassword ? '#fa8e96' : ''}`}}
           />
-           
-          <select className="register-dataformselect"
-            name="gender"
-            value={gender} onChange={handleChange}>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="other">Other</option>
-          </select>
+
           <small
             className="register-showpass"
             onClick={() => setShowpass(!showpass)}
           >
-            {showpass ? "Hide" : "show"}{" "}
+            {showpass ? "Ocultar" : "Mostrar"}
           </small>
           <button className="register-dataformbtn" type="submit">
-            Log In
+            Register
           </button>
           <p className="register-small">
-            Already have an account <Link to="/">LogIn HERE</Link>{" "}
+            ¿Ya tienes una cuenta? <Link to="/">Inicia sesión aquí</Link>
           </p>
         </form>
       </div>

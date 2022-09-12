@@ -32,7 +32,7 @@ const Login = () => {
   return (
     <div className="login">
       <div className="login-container">
-        <h3 className="login-header">Social network</h3>
+        <h3 className="login-header">Safe Coders</h3>
         <h6 className="login-subheader">Login</h6>
 
         <form className="login-dataform" onSubmit={handleSubmit}>
@@ -42,12 +42,12 @@ const Login = () => {
             value={email}
             name="email"
             onChange={handleChange}
-            placeholder="type your email"
+            placeholder="Email"
           />
           <input
             className="login-dataformpass"
             type={showpass ? "type" : "password"}
-            placeholder="type your password"
+            placeholder="Contraseña"
             value={password}
             name="password"
             onChange={handleChange}
@@ -57,14 +57,14 @@ const Login = () => {
             className="login-showpass"
             onClick={() => setShowpass(!showpass)}
           >
-            {showpass ? "Hide" : "show"}{" "}
+            {showpass ? "Ocultar" : "Mostrar"}
           </small>
 
           <button className="login-dataformbtn" type="submit">
             Log In
           </button>
           <p className="login-small">
-            Do not have account <Link to="/register">Create HERE</Link>
+            ¿No tienes cuenta? <Link to="/register">Regístrate aquí</Link>
           </p>
         </form>
       </div>

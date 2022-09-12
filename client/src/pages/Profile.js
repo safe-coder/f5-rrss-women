@@ -16,7 +16,7 @@ const Profile = () => {
                 <Posts />
             </div>
             <div className='profilebody-right'>
-                <Posts />
+                {/* <Posts /> */}
             </div>
          
               </div>

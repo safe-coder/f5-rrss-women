@@ -29,10 +29,6 @@ const userSchema = mongoose.Schema({
         default:'',
 
     },
-    gender:{
-        type:String,
-        default:'male'
-    },
     website:{
         type:String,
         default:'',
@@ -43,7 +39,7 @@ const userSchema = mongoose.Schema({
     },
     avatar:{
         type:String,
-        default:'https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80'
+        default:'https://i.postimg.cc/h48xQ8B0/ava.png'
     },
     story:{
         type:String,

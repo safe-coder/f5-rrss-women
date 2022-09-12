@@ -11,7 +11,7 @@ import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import Avatar from "@mui/material/Avatar";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../redux/actions/authActions";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { getDataApi } from "../utils/fetchDataApi";
 import UserCard from "../components/UserCard";
 import LoadIcon from "../images/loading.gif"
@@ -23,7 +23,7 @@ export const Header = () => {
 
   const dispatch = useDispatch();
   const { auth } = useSelector((state) => state);
-  const { pathname } = useLocation();
+  const { pathname } = useNavigate();
   const [load,setLoad] = useState(false)
 
   // useEffect(() => {
@@ -81,7 +81,7 @@ export const Header = () => {
       <form className="header-center" onSubmit={handleSearch}>
         <input
           type="text"
-          placeholder="Search Profiles"
+          placeholder="Buscar perfiles"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
@@ -104,31 +104,33 @@ export const Header = () => {
         <Link to={`profile/${auth.user._id}`}>
           <div className="header-leftAvatar">
             <Avatar src={auth.user.avatar} />
-            <h4 style={{color:'white'}}>{auth.user.fullname}</h4>
+            <h4 style={{color:'#FF9E00'}}>{auth.user.fullname}</h4>
           </div>
         </Link>
 
         <Link to="/">
           <IconButton>
-            <HomeIcon className={`${isActive("/")}`} />
+            <HomeIcon className={`${isActive("/")}`} style={{color:"#FF9E00"}}/>
           </IconButton>
         </Link>
+
         <Link to="/message">
           <IconButton>
-            <MessageIcon className={`${isActive("/message")}`} />
+            <MessageIcon className={`${isActive("/message")}`}  style={{color:"#FF9E00"}}/>
           </IconButton>
         </Link>
         <Link to="/notification">
           <IconButton>
-            <NotificationsIcon className={`${isActive("/notification")}`} />
+            <NotificationsIcon className={`${isActive("/notification")}`}  style={{color:"#FF9E00"}}/>
           </IconButton>
         </Link>
         <Link to="/explore">
           <IconButton>
-            <ExploreIcon className={`${isActive("/explore")}`} />
+            <ExploreIcon className={`${isActive("/explore")}`} style={{color:"#FF9E00"}} />
           </IconButton>
         </Link>
-        <IconButton onClick={() => dispatch(logout())}>
+
+        <IconButton onClick={() => dispatch(logout())}  style={{color:"#FF9E00"}} >
           <ExitToAppIcon />
         </IconButton>
       </div>
