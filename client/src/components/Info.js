@@ -40,7 +40,7 @@ const Info = ({ userData, auth, profile, id }) => {
               />
               {user._id && auth && user._id === auth.user._id ?
                 <button className="profileinfo-centerbutton" onClick={() => setOnEdit(true)}>EDITAR PERFIL</button>
-                :<GlobalFriendBtn classbtn="profileinfo-centerbutton"/>
+                :<GlobalFriendBtn classbtn="profileinfo-centerbutton" user={user}/>
                 }
       
             </div>
@@ -50,13 +50,13 @@ const Info = ({ userData, auth, profile, id }) => {
                   <h6 className="profileinfo-statnumber">
                     {user.friends.length}
                   </h6>
-                  <h6 className="profileinfo-statdesc">AMIGAS</h6>
+                  <h6 className="profileinfo-statdesc">SEGUIDORES</h6>
                 </div>
                 <div className="profileinfo-stat">
                   <h6 className="profileinfo-statnumber">
                     {user.following.length}
                   </h6>
-                  <h6 className="profileinfo-statdesc">SEGUIDORAS</h6>
+                  <h6 className="profileinfo-statdesc">SIGUIENDO</h6>
                 </div>
               </div>
               <div className="profileinfo-bottomcenter">
