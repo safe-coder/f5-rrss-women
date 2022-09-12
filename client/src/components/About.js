@@ -25,7 +25,7 @@ const About = () =>{
 
     return(
         <div className="profileabout">
-            {userData.length > 0 && userData.map(user => (
+            {userData.length > 0 && userData.map((user) => (
                 <div className="profileabout-container" key={user._id}>
                     <div className="profileabout-contenttop">
                         <h4 className="profileabout-contenttop-head">About Me:</h4>
