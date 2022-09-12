@@ -21,7 +21,7 @@ const About = () =>{
         const newData = profile.users.filter(user=>user._id === id)
         setUserData(newData)
       }
-    }, [id, auth.user, auth]);
+    }, [id, auth.user, auth, profile.users, dispatch]);
 
     return(
         <div className="profileabout">
