@@ -81,7 +81,7 @@ export const Header = () => {
       <form className="header-center" onSubmit={handleSearch}>
         <input
           type="text"
-          placeholder="Search Profiles"
+          placeholder="Buscar perfiles"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
@@ -113,7 +113,8 @@ export const Header = () => {
             <HomeIcon className={`${isActive("/")}`} />
           </IconButton>
         </Link>
-        <Link to="/message">
+
+        {/* <Link to="/message">
           <IconButton>
             <MessageIcon className={`${isActive("/message")}`} />
           </IconButton>
@@ -127,7 +128,8 @@ export const Header = () => {
           <IconButton>
             <ExploreIcon className={`${isActive("/explore")}`} />
           </IconButton>
-        </Link>
+        </Link> */}
+
         <IconButton onClick={() => dispatch(logout())}>
           <ExitToAppIcon />
         </IconButton>

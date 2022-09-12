@@ -32,18 +32,18 @@ const Info = () => {
         </div>
         <div className="profileinfo-center">
           <img className="profileinfo-centeravatar" src={user.avatar} alt=""/>
-          <button className="profileinfo-centerbutton">ADD FRIEND</button>
+          <button className="profileinfo-centerbutton">AÑADIR AMIGA</button>
         </div>
         <div className="profileinfo-bottom">
                     <div className="profileinfo-bottomleft">
                     <div className="profileinfo-stat">
                         <h6 className="profileinfo-statnumber">{user.friends.length}</h6>
-                        <h6 className="profileinfo-statdesc">FRIENDS</h6>
+                        <h6 className="profileinfo-statdesc">AMIGAS</h6>
                     </div>
-                    <div className="profileinfo-stat">
+                    {/* <div className="profileinfo-stat">
                         <h6 className="profileinfo-statnumber">{user.following.length}</h6>
-                        <h6 className="profileinfo-statdesc">FOLLOWING</h6>
-                    </div>
+                        <h6 className="profileinfo-statdesc">SEGUIDORAS</h6>
+                    </div> */}
                     </div>
                     <div className="profileinfo-bottomcenter">
                         <h3 className="profileinfo-fullname">{user.fullname}</h3>
