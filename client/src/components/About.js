@@ -1,27 +1,9 @@
-import { listItemSecondaryActionClasses } from "@mui/material";
+
 import React from "react";
-import {useSelector, useDispatch} from 'react-redux';
-import {useParams} from 'react-router-dom';
-import { getProfileUsers } from "../redux/actions/profileActions";
-import { useEffect, useState } from "react";
-import "../styles/ProfileAbout.css"
 
-const About = () =>{
+const About = ({userData, auth,profile, id}) =>{
 
-    const [userData, setUserData] = useState([]);
-    const { id } = useParams();
-    const { auth, profile } = useSelector(state => state);
-    const dispatch = useDispatch();
-  
-    useEffect(() => {
-      if (auth && auth.user && id === auth.user._id){
-          setUserData([auth.user])
-      }else{
-        dispatch(getProfileUsers({users: profile.users, id, auth}))
-        const newData = profile.users.filter(user=>user._id === id)
-        setUserData(newData)
-      }
-    }, [id, auth.users, auth, profile.users, dispatch]);
+   
 
     return(
         <div className="profileabout">
