@@ -28,3 +28,20 @@ export const getProfileUsers = ({users, id, auth}) => async (dispatch) =>{
         }
     }
 }
+
+export const updateProfile = ({editData, avatar }) => async (dispatch) => {
+    if (!editData.fullname) return dispatch({ type: "ALERT", payload: { error: "Add you fullname" } })
+    if (editData.fullname.length > 25) return dispatch({ type: "ALERT", payload: { error: "fullname  too long" } })
+    if (editData.story.length > 200) return dispatch({ type: "ALERT", payload: { error: "story too long" } })
+    
+    try {
+        
+    } catch (err) {
+        dispatch({
+            type: "ALERT",
+            payload:{
+                error: err.response.data.msg
+            }
+        })
+    }
+}

@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-// import { updateProfile } from '../redux/actions/profileActions';
+import { updateProfile } from '../redux/actions/profileActions.js';
  import "../styles/EditProfile.css";
-// import {checkimage} from "../utils/imageupload"
+ import {checkimage} from "../utils/imageupload.js"
 
 const EditProfile = ({ user, setOnEdit }) => {
   const { auth } = useSelector((state) => state);
+  const dispatch = useDispatch()
+
+
   const initState = {
     website: "",
     fullname: "",
@@ -17,14 +20,32 @@ const EditProfile = ({ user, setOnEdit }) => {
   const { website, fullname, story, phone, address } = editData;
   const [avatar, setAvatar] = useState("");
 
-  const changeavatar = () => {
+  
 
+  const changeavatar = (e) => {
+    const file = e.target.files[0];
+    const err = checkimage(file)
+    if(err) return dispatch({type:"ALERT", payload:{error: err}})
+    setAvatar(file)
   };
+
+  useEffect(() => {
+  setEditData(user)
+},[user])
 
   const handleChangeInput = (e) => {
     const { name, value } = e.target;
     setEditData({...editData, [name]:value})
   }
+
+  const selectUpload = () => {
+    const fileuploadinput = document.getElementById("file-upload")
+    fileuploadinput.click()
+  }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(updateProfile({editData, avatar}))
+}
 
   return (
     <div className="editprofile" >
@@ -43,7 +64,7 @@ const EditProfile = ({ user, setOnEdit }) => {
           src={avatar ? URL.createObjectURL(avatar) : auth.user.avatar}
           alt=""
         />
-        <i className="fas fa-camera">
+        <i className="fas fa-camera" onClick={selectUpload}>
           <p className="editprofile-userdatapara">Change Pic</p></i>
         <span>
           <input
@@ -114,6 +135,7 @@ const EditProfile = ({ user, setOnEdit }) => {
           />
           <p>{ story.length}/200</p>
           </div>
+          <button onClick={handleSubmit} className="editprofile-userdatabutton">Submit</button>
 
           </div>
       </div>

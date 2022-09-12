@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import "../styles/ProfileInfo.css";
 
 import EditProfile from "./EditProfile";
+import GlobalFriendBtn from "./GlobalFriendBtn";
 
 const Info = ({ userData, auth, profile, id }) => {
   // const [userData, setUserData] = useState([]);
@@ -37,7 +38,11 @@ const Info = ({ userData, auth, profile, id }) => {
                 src={user.avatar}
                 alt=""
               />
-              <button className="profileinfo-centerbutton" onClick={()=>setOnEdit(true)}>EDITAR PERFIL</button>
+              {user._id && auth && user._id === auth.user._id ?
+                <button className="profileinfo-centerbutton" onClick={() => setOnEdit(true)}>EDITAR PERFIL</button>
+                :<GlobalFriendBtn classbtn="profileinfo-centerbutton"/>
+                }
+      
             </div>
             <div className="profileinfo-bottom">
               <div className="profileinfo-bottomleft">
