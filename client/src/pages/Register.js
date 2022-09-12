@@ -30,9 +30,9 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // if (auth.token) {
-    //   navigate('/');
-    // }
+    if (auth.token) {
+      navigate('/');
+    }
     dispatch(register(userData))
   }
   return (

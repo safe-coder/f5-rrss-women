@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { Avatar } from "@mui/material";
+
 import "../styles/ProfileInfo.css"
 import Profile from "../pages/Profile";
 import {getProfileUsers} from "../redux/actions/profileActions"
@@ -16,7 +16,7 @@ const Info = () => {
     if (auth && auth.user && id === auth.user._id){
         setUserData([auth.user])
     }else{
-      dispatch(getProfileUsers({users: profile.users, id, auth}))
+      dispatch(getProfileUsers({users:profile.users, id, auth}))
       const newData = profile.users.filter(user=>user._id === id)
       setUserData(newData)
     }

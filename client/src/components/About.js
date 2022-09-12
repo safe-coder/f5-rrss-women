@@ -21,11 +21,11 @@ const About = () =>{
         const newData = profile.users.filter(user=>user._id === id)
         setUserData(newData)
       }
-    }, [id, auth.user, auth]);
+    }, [id, auth.user, auth, profile.users, dispatch]);
 
     return(
         <div className="profileabout">
-            {userData.length > 0 && userData.map(user => (
+            {userData.length > 0 && userData.map((user) => (
                 <div className="profileabout-container" key={user._id}>
                     <div className="profileabout-contenttop">
                         <h4 className="profileabout-contenttop-head">Sobre Mi:</h4>

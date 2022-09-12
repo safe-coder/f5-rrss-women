@@ -44,9 +44,9 @@ export const Header = () => {
   //        }
   // }, [search,dispatch]);
 
-  const isActive = (pn) => {
+   const isActive = (pn) => {
     if (pn === pathname) return "active";
-  };
+   };
 
   const handleClose = () => {
     setSearch('');
@@ -59,7 +59,7 @@ export const Header = () => {
 
   try {
      setLoad(true)
-     const res = await getDataApi(`search?username=${search}`);
+     const res = await getDataApi(`search?username=${search}`,auth.token);
      setUsers(res.data.users)
      setLoad(false)
   } catch (err) {
@@ -91,7 +91,7 @@ export const Header = () => {
         <div className="header-searchusers">
         {load && <img src={LoadIcon} alt="" style={{width:'48px', height:"48px"}}/>}
       {
-        search && users.length > 0 && users.map(user =>(
+        search && users.length > 0 && users.map((user) =>(
             <Link to={`profile/${user._id}`} key={user._id}>
             <UserCard user={user}  key={user._id}  handleClose={handleClose}/>
             </Link>
