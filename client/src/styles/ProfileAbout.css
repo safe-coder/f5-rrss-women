@@ -1,11 +1,10 @@
 .profileabout{
-    background-color: #EFECF9;
-    padding:10px;
-    border-radius: 10px;
-    /* box-shadow: 5px 5px 300px 20px rgba(248, 248, 248, 0.808); */
-    max-width: 250px;
-   
-    min-height: 300px;
+    background-color: #EEDAFF;
+    padding:1.5rem;
+    border-radius: 30px;
+    min-height: 400px;
+    width: 15rem;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
 }
 
 .profileabout-container{
@@ -17,14 +16,13 @@
     padding:1rem .3rem;
     font-size:1.5rem;
     font-weight: 700;
-   border-bottom: 2px solid #240046;
+   border-bottom: 1px solid #873CC7;
     
 }
 .profileabout-contentcenter-story{
     padding:.5rem;
-    font-size:14px;
-    font-weight: 500;
-    border-bottom: 2px solid #240046;
+    font-size:18px;
+    border-bottom: 1px solid #873CC7;
 
 }
 .profileabout-contentbottom{

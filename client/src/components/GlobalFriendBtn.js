@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import {useSelector, useDispatch} from 'react-redux';
 import {addfriends , unfriends} from "../redux/actions/profileActions"
+import PersonAddIcon from '@mui/icons-material/PersonAdd';
+import PersonRemoveIcon from '@mui/icons-material/PersonRemove';
 
 const GlobalFriendBtn = ({classbtn, user}) => {
 
@@ -36,8 +38,8 @@ useEffect(()=>{
     <>
      {
             friend ? 
-              <button className={classbtn} onClick = {removefriend} style={{backgroundColor:'crimson'}}>NO SEGUIR</button>
-            : <button className={classbtn} onClick = {addfriend}>SEGUIR</button>
+              <button className={classbtn} onClick = {removefriend} style={{color:'#240046', backgroundColor: "#FF6D00"}}><PersonRemoveIcon fontSize="large"/></button>
+            : <button className={classbtn} onClick = {addfriend}><PersonAddIcon fontSize="large"/></button>
         }
     </>
   )

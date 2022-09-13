@@ -3,6 +3,8 @@ import "../styles/Login.css";
 import { Link, useNavigate } from "react-router-dom";
 import { login } from "../redux/actions/authActions";
 import { useDispatch, useSelector } from "react-redux";
+import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
 const Login = () => {
   const initialState = { email: "", password: "" };
@@ -57,14 +59,14 @@ const Login = () => {
             className="login-showpass"
             onClick={() => setShowpass(!showpass)}
           >
-            {showpass ? "Ocultar" : "Mostrar"}
+            {showpass ? <RemoveRedEyeIcon/> : <VisibilityOffIcon/> }
           </small>
 
           <button className="login-dataformbtn" type="submit">
             Log In
           </button>
           <p className="login-small">
-            ¿No tienes cuenta? <Link to="/register">Regístrate aquí</Link>
+            ¿No tienes cuenta? <Link to="/register" className="register-btn">Regístrate aquí</Link>
           </p>
         </form>
       </div>

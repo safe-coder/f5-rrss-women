@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import "../styles/ProfileInfo.css";
-
+import SettingsIcon from '@mui/icons-material/Settings';
 import EditProfile from "./EditProfile";
 import GlobalFriendBtn from "./GlobalFriendBtn";
 
@@ -39,7 +39,7 @@ const Info = ({ userData, auth, profile, id }) => {
                 alt=""
               />
               {user._id && auth && user._id === auth.user._id ?
-                <button className="profileinfo-centerbutton" onClick={() => setOnEdit(true)}>EDITAR PERFIL</button>
+                <button className="profileinfo-centerbutton" onClick={() => setOnEdit(true)}><SettingsIcon fontSize="large"/></button>
                 :<GlobalFriendBtn classbtn="profileinfo-centerbutton" user={user}/>
                 }
       

@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import "../styles/Register.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
-import {register} from '../redux/actions/authActions'
+import {register} from '../redux/actions/authActions';
+import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
 const Register = () => {
   const initialState = { username:'', fullname:'', email:'', password:'', confirmPassword:''}
@@ -86,7 +88,7 @@ const Register = () => {
             className="register-showcfpass"
             onClick={() => setShowcfpass(!showcfpass)}
           >
-            {showcfpass ? "Ocultar" : "Mostrar"}
+            {showcfpass ?  <RemoveRedEyeIcon/> : <VisibilityOffIcon/>}
           </small>
           <input
             className="register-dataformpass"
@@ -102,13 +104,13 @@ const Register = () => {
             className="register-showpass"
             onClick={() => setShowpass(!showpass)}
           >
-            {showpass ? "Ocultar" : "Mostrar"}
+            {showpass ? <RemoveRedEyeIcon/> : <VisibilityOffIcon/>}
           </small>
           <button className="register-dataformbtn" type="submit">
             Register
           </button>
           <p className="register-small">
-            ¿Ya tienes una cuenta? <Link to="/">Inicia sesión aquí</Link>
+            ¿Ya tienes una cuenta? <Link to="/" className="login-btn">Inicia sesión aquí</Link>
           </p>
         </form>
       </div>

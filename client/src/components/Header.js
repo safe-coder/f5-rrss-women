@@ -14,7 +14,8 @@ import { logout } from "../redux/actions/authActions";
 import { Link, useNavigate } from "react-router-dom";
 import { getDataApi } from "../utils/fetchDataApi";
 import UserCard from "../components/UserCard";
-import LoadIcon from "../images/loading.gif"
+import LoadIcon from "../images/loading.gif";
+import LogoSC from "../images/LOGOSC.png"
 
 
 export const Header = () => {
@@ -76,7 +77,7 @@ export const Header = () => {
   return (
     <div className="header">
       <div className="header-right">
-        <h3>Safe Coders</h3>
+        <img src={LogoSC} width="140rem" alt="" style={{paddingLeft: "1.3rem"}}/>
       </div>
       <form className="header-center" onSubmit={handleSearch}>
         <input

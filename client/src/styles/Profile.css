@@ -13,6 +13,7 @@
     margin: 1rem auto;
     border-radius: 20px;
     background-color: #EFECF9;
+    margin-top: 2rem;
 }
 .profileheader-items{
     display: flex;
@@ -32,3 +33,4 @@
 .profilebody-right{
     flex:0.1;
 }
+
