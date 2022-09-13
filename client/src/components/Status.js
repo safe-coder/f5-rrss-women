@@ -53,13 +53,28 @@ const Status = () => {
             refVideo.current.srcObject = stream;
             refVideo.current.play();
             const track = stream.getTracks();
-            
             setTracks(track[0])
-
             
             
         })).catch(err => console.log(err))
     }
+}
+
+const handlecameraimage = () =>{
+    const width = refVideo.current.clientWidth;
+    const height = refVideo.current.clientWidth;
+
+    refCanvas.current.setAttribute('width', width);
+    refCanvas.current.setAttribute('height', height);
+    const ctx = refCanvas.current.getContext('2d');
+    ctx.drawImage(refVideo.current, 0, 0, width, height)
+    const URL = refCanvas.current.toDataURL();
+    setImages([...images, {camera:URL}])
+}
+
+const handleStreamStop = () =>{
+    tracks.stop();
+    setStream(false)
 }
 
   return (
@@ -86,7 +101,7 @@ const Status = () => {
               <div className="status-middleimagecontainer">
                 <img
                   className="status-middleimages"
-                  src={URL.createObjectURL(image)}
+                  src={image.camera ? image.camera : URL.createObjectURL(image)}
                   alt=""
                 />
                 <span
@@ -100,16 +115,22 @@ const Status = () => {
         </div>
 {
     stream && <div className="status-stream">
-        <video autoPlay muted ref={refVideo} style={{height: "100%", width: "100%"}}/>
-        <span>x</span>
-        <canvas ref={refCanvas}/>
+        <video autoPlay muted ref={refVideo} style={{height: "250px", width: "100%", border: "2px solid gray", padding: "3px", borderRadius: "4px"}}/>
+        <span className="status-middlestreamstop" onClick={handleStreamStop}>x</span>
+        <canvas ref={refCanvas} style={{display: "none"}}/>
     </div>
 }
 
         <div className="status-footer">
-          <div className="status-footerright">
+            <div className="status-footerright">
+            {
+                stream ? <PhotoIcon onClick={handlecameraimage} />
+                :
+                <>
             <PhotoCameraIcon onClick={handleStream}/>
             <PhotoIcon onClick={handleuploadinput} />
+            </>
+            }
             <span>
               <input
                 style={{ display: "none" }}
