@@ -38,7 +38,6 @@ export const getProfileUsers =
         });
       }
     }
-<<<<<<< HEAD
 }
 
 export const addfriends = ({users, user, auth, socket}) => async (dispatch) =>{
@@ -148,8 +147,7 @@ export const addfriends = ({users, user, auth, socket}) => async (dispatch) =>{
             })
         }
     }
-=======
-  };
+
 
 export const updateProfile =
   ({ editData, avatar, auth }) =>
@@ -203,4 +201,3 @@ export const updateProfile =
       });
     }
   };
->>>>>>> main
