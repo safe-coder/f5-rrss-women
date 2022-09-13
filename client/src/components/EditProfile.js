@@ -44,7 +44,7 @@ const EditProfile = ({ user, setOnEdit }) => {
   }
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(updateProfile({editData, avatar}))
+    dispatch(updateProfile({editData, avatar, auth}))
 }
 
   return (
