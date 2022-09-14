@@ -43,12 +43,12 @@ const PostCardBody = ({pos}) =>{
                <span className="postcardbodyimagenext" onClick={()=>shownextimage(pos.images)} > v </span>
                <span className="postcardbodyimageprev" onClick={()=>showprevimage(pos.images)}> v </span>
               
-                {/* {pos.images?.length> 0 && pos.images?.map((image,index)=>(
+                {pos.images?.length> 0 && pos.images?.map((image,index)=>(
                      (index === currentImage) &&
                 <div className="postcardbodyimages" key={index}>
                   
                     {
-                     image.secure_url.match(/video/i) 
+                     image.secure_url?.match(/video/i) 
                      ?<video  controls src={image.secure_url} alt={pos.user?.fullname} height="100%" width="100%"/> :
                       <img src={image.secure_url} alt={pos.user?.fullname}/>
                  
@@ -56,7 +56,7 @@ const PostCardBody = ({pos}) =>{
                   
                 </div>
                 ))}
-                 */}
+                
             </div>
         </div>
     )
