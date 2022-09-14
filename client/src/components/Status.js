@@ -5,13 +5,16 @@ import "../styles/Status.css";
 import PhotoCameraIcon from "@mui/icons-material/PhotoCamera";
 import PhotoIcon from "@mui/icons-material/Photo";
 import { useDispatch } from "react-redux";
+import {createpost , updatepost} from "../redux/actions/postActions";
+import {ALERT_TYPES} from '../redux/actions/alertActions';
 
 const Status = () => {
-  const { auth } = useSelector((state) => state);
+  const { auth, socket } = useSelector((state) => state);
   const [content, setContent] = useState("");
   const [images, setImages] = useState([]);
   const [stream, setStream] = useState(false)
   const [tracks, setTracks] = useState("")
+  const dispatch = useDispatch();
 
   const refVideo = useRef();
   const refCanvas = useRef();
@@ -70,6 +73,7 @@ const handlecameraimage = () =>{
     ctx.drawImage(refVideo.current, 0, 0, width, height)
     const URL = refCanvas.current.toDataURL();
     setImages([...images, {camera:URL}])
+    console.log(images)
 }
 
 const handleStreamStop = () =>{
@@ -77,9 +81,36 @@ const handleStreamStop = () =>{
     setStream(false)
 }
 
+const handleDiscard = (e) =>{
+  e.preventDefault();
+  setContent('')
+  setImages([])
+  if(tracks) tracks.stop()
+  dispatch({type: ALERT_TYPES.STATUS , payload: {edit : false}})
+}
+
+const handleSubmit = (e) =>{
+  e.preventDefault();
+ 
+  if(images.length === 0) {
+   return dispatch({
+      type:'ALERT',
+      payload: {error : "add your image"} 
+  })
+} else {
+      dispatch(createpost({content, images, auth, socket}))
+      setContent('')
+      setImages([])
+      if(tracks) tracks.stop()
+}
+
+setContent('')
+setImages([])
+if(tracks) tracks.stop()
+  }
   return (
     <div className="status">
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="status-header">
           <img src={auth.user.avatar} alt="" />
           <h4>@{auth.user.username}</h4>
@@ -143,9 +174,7 @@ const handleStreamStop = () =>{
             </span>
           </div>
           <div className="status-footerleft">
-            <button className="status-footerleftdiscard">Descartar</button>
-            <button className="status-footerleftcreate">Enviar</button>
-          </div>
+          <button className="status-footerleftdiscard" onClick={handleDiscard}>Discard</button>            <button className="status-footerleftcreate" type="submit">Create</button>          </div>
         </div>
       </form>
     </div>

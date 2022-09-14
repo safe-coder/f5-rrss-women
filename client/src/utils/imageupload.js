@@ -9,8 +9,11 @@ export const imageupload = async (images) => {
   let imgArr = []
     for (const item of images) {
       const formData = new FormData();
+      if(item.camera){
+        formData.append("file", item.camara)
+      } else {
       formData.append("file", item)
-
+}
       formData.append('upload_preset', "llzwckxy")
       formData.append('cloud_name', "dz00dzutg")
 
