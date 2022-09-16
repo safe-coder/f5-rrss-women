@@ -9,13 +9,11 @@
     position: sticky;
     top:0;
     z-index: 4;
-    
 }
 
 .header-center{
- 
     background-color: #FF9E00;
-    border-radius: 5px;
+    border-radius: 50px;
     flex: 0.8;
     position:relative;
 }

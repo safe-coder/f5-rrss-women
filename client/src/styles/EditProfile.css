@@ -10,7 +10,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(144, 80, 204, 0.507);
+  background-color: rgba(92, 42, 138, 0.507);
   z-index:10;
 }
 .editprofile-content{
@@ -20,15 +20,17 @@
   align-items: center;
  
   padding:4rem;
-  background: #615dfa;
+  background-color: #EEDAFF;
+  border: 2px solid #240046;
+  border-radius: 20px;
+  box-shadow: #240046 5px 5px;
   border-radius:10px;
-  margin:1rem 0;
   color:white;
   text-align: center;
   letter-spacing: 1px;;
   font-weight: 500;
   text-transform: capitalize;
-  
+  margin-top: -30rem;
  
 }
 .editprofile-head{
@@ -100,7 +102,7 @@ padding:1rem;
 , .editprofile-userdataphone, .editprofile-userdatastory{
   padding:.5rem;
   display: flex;
-  background-color:#4e4ac8;
+  background-color: #FF9E00;
   border-radius: 10px;
   margin:.5rem;
   color:white;
