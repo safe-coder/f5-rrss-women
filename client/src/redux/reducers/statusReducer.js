@@ -1,12 +1,10 @@
 import {ALERT_TYPES} from '../actions/alertActions';
 
-const initialState = {
 
-};
 
-const alertReducer = (state=initialState , action) => {
+const alertReducer = (state=false, action) => {
     switch (action.type){
-        case ALERT_TYPES.ALERT:
+        case ALERT_TYPES.STATUS:
             return action.payload;
         default:
             return state;

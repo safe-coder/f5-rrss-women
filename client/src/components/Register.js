@@ -23,12 +23,11 @@ const Register = () => {
     setuserData({ ...userData, [name]: value })
   }
   
-  // useEffect(() => {
-  //   if (auth.token) {
-  //     navigate('/');
-  //   }
-  // }, [auth.token, navigate])
-
+//   useEffect(() => {
+//     if (auth.token) {
+//       navigate('/');
+//     }
+//   }, [auth.token, navigate])
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -92,7 +91,7 @@ const Register = () => {
           </small>
           <input
             className="register-dataformpass"
-            type={showpass ? "type" : "password"}
+           type={showpass ? "type" : "password"}
             placeholder={alert.confirmPassword ? `${alert.confirmPassword}` : 'Repite tu contraseña'}
             value={confirmPassword}
             name="confirmPassword"
@@ -109,9 +108,6 @@ const Register = () => {
           <button className="register-dataformbtn" type="submit">
             Register
           </button>
-          <p className="register-small">
-            ¿Ya tienes una cuenta? <Link to="/" className="login-btn">Inicia sesión aquí</Link>
-          </p>
         </form>
       </div>
     </div>
