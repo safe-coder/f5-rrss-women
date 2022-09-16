@@ -4,6 +4,7 @@ import "../styles/ProfileInfo.css";
 import SettingsIcon from '@mui/icons-material/Settings';
 import EditProfile from "./EditProfile";
 import GlobalFriendBtn from "./GlobalFriendBtn";
+import PanelAdminBtn from "./PanelAdminBtn";
 
 const Info = ({ userData, auth, profile, id }) => {
   // const [userData, setUserData] = useState([]);
@@ -42,7 +43,13 @@ const Info = ({ userData, auth, profile, id }) => {
                 <button className="profileinfo-centerbutton" onClick={() => setOnEdit(true)}><SettingsIcon fontSize="large"/></button>
                 :<GlobalFriendBtn classbtn="profileinfo-centerbutton" user={user}/>
                 }
-      
+
+            {user._id && auth && user._id === auth.user._id ?
+                <button className="profileinfo-centersecondbutton" onClick={() => setOnEdit(true)}><SettingsIcon fontSize="large"/></button>
+                :<GlobalFriendBtn classbtn="profileinfo-centersecondbutton" user={user}/>
+                }
+                
+               
             </div>
             <div className="profileinfo-bottom">
               <div className="profileinfo-bottomleft">

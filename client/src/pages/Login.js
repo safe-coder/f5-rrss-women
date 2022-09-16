@@ -66,7 +66,7 @@ const Login = () => {
             Log In
           </button>
           <p className="login-small">
-            ¿No tienes cuenta? <Link to="/register" className="register-btn">Regístrate aquí</Link>
+            ¿No tienes cuenta? <Link to="/admin" className="register-btn">Regístrate aquí</Link>
           </p>
         </form>
       </div>
