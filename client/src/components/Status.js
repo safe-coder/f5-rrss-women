@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useState, useRef } from "react";
 import "../styles/Status.css";
@@ -9,15 +9,23 @@ import {createpost , updatepost} from "../redux/actions/postActions";
 import {ALERT_TYPES} from '../redux/actions/alertActions';
 
 const Status = () => {
-  const { auth, socket } = useSelector((state) => state);
+  const { auth, status,socket } = useSelector((state) => state);
   const [content, setContent] = useState("");
   const [images, setImages] = useState([]);
   const [stream, setStream] = useState(false)
   const [tracks, setTracks] = useState("")
   const dispatch = useDispatch();
-
-  const refVideo = useRef();
+const refVideo = useRef();
   const refCanvas = useRef();
+
+  useEffect(() => {
+    if (status.edit) {
+      setContent(status.Content)
+      setImages(status.images)
+
+    }
+  },[status])
+
 
   const uploadimages = (e) => {
     const files = [...e.target.files];
@@ -81,23 +89,21 @@ const handleStreamStop = () =>{
     setStream(false)
 }
 
-const handleDiscard = (e) =>{
-  e.preventDefault();
-  setContent('')
-  setImages([])
-  if(tracks) tracks.stop()
-  dispatch({type: ALERT_TYPES.STATUS , payload: {edit : false}})
-}
+
 
 const handleSubmit = (e) =>{
   e.preventDefault();
  
-  if(images.length === 0) {
-   return dispatch({
-      type:'ALERT',
-      payload: {error : "add your image"} 
-  })
-} else {
+  if (images.length === 0) 
+    return dispatch({
+      type: 'ALERT',
+      payload: { error: "add your image" }
+    })
+  
+    if (status.edit) {
+      dispatch(updatepost({ content, images, auth, status }))
+      dispatch({type: ALERT_TYPES.STATUS , payload: {edit : false}})
+    } else {
       dispatch(createpost({content, images, auth, socket}))
       setContent('')
       setImages([])
@@ -108,8 +114,17 @@ setContent('')
 setImages([])
 if(tracks) tracks.stop()
   }
+
+  const handleDiscard = (e) =>{
+    e.preventDefault();
+    setContent('')
+    setImages([])
+    if(tracks) tracks.stop()
+    dispatch({type: ALERT_TYPES.STATUS , payload: {edit : false}})
+  }
+
   return (
-    <div className="status">
+    <div className={status.edit ? "editstatus" : "status"}>
       <form onSubmit={handleSubmit}>
         <div className="status-header">
           <img src={auth.user.avatar} alt="" />
@@ -132,7 +147,7 @@ if(tracks) tracks.stop()
               <div className="status-middleimagecontainer">
                 <img
                   className="status-middleimages"
-                  src={image.camera ? image.camera : URL.createObjectURL(image)}
+                  src={image.camera ? image.camera : image.secure_url ? image.secure_url : URL.createObjectURL(image)}
                   alt=""
                 />
                 <span
