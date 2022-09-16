@@ -1,17 +1,11 @@
-.postcardheader{
-    
-    padding:.5rem 1rem;
-}
 .postcardheadertop{
-    display:flex;
-  
-
+    display:flex;  
 }
 .postcardheader{
     display: flex;
-  
     justify-content: space-between;
 }
+
 .postcarddropdown{
     background-color: rgb(226, 226, 226);
     margin-top:.5rem;
@@ -54,7 +48,7 @@
 .postcardheaderinfo{
     margin-left: 5px;
     vertical-align: middle;
-    margin-top: .5rem;;
+    margin-top: .5rem;
   
 }
 .postcardheaderinfo h4{
@@ -71,7 +65,6 @@
 }
 
 .postcardbodycontent{
-
     padding: .5rem 1rem; 
     color:rgb(104, 104, 104);
     font-weight: 500;

@@ -77,7 +77,7 @@ const EditProfile = ({ user, setOnEdit }) => {
         </span>
       </div>
       <div className="editprofile-userdata">
-        <label htmlFor="fullname">Nombre completo </label>
+        <label htmlFor="fullname">Nombre </label>
         <div className="editprofile-userdatafullname">
           <input
             type="text"
@@ -89,7 +89,7 @@ const EditProfile = ({ user, setOnEdit }) => {
           <p>{ fullname.length}/25</p>
         </div>
         
-        <label htmlFor="address">Direccion </label>
+        <label htmlFor="address">Dirección </label>
         <div className="editprofile-userdataaddress">
           <input
             type="text"
@@ -101,7 +101,7 @@ const EditProfile = ({ user, setOnEdit }) => {
          
        </div>
 
-       <label htmlFor="website">Sitio WEb </label>
+       <label htmlFor="website">Sitio Web </label>
         <div className="editprofile-userdatawebsite">
           <input
             type="text"

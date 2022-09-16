@@ -25,7 +25,6 @@ const PostCardHeader = ({pos}) =>{
         navigate.push('/')
 
     }
-
     const handleCopyPostLink = () =>{
         navigator.clipboard.writeText(`${BASE_URL}/post/${pos._id}`)
         setshowdrop(false)
