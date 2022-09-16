@@ -99,7 +99,7 @@ padding:1rem;
   width:100%;
 }
 .editprofile-userdatafullname, .editprofile-userdataaddress, .editprofile-userdatawebsite
-, .editprofile-userdataphone, .editprofile-userdatastory{
+, .editprofile-userdatastory{
   padding:.5rem;
   display: flex;
   background-color: #FF9E00;

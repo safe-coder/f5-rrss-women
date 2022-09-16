@@ -13,12 +13,13 @@ const EditProfile = ({ user, setOnEdit }) => {
     website: "",
     fullname: "",
     story: "",
-    phone: "",
     address: "",
   };
   const [editData, setEditData] = useState(initState);
-  const { website, fullname, story, phone, address } = editData;
+  const { website, fullname, story,  address } = editData;
   const [avatar, setAvatar] = useState("");
+  const [banner, setBanner] = useState("");
+
 
   
 
@@ -27,6 +28,13 @@ const EditProfile = ({ user, setOnEdit }) => {
     const err = checkimage(file)
     if(err) return dispatch({type:"ALERT", payload:{error: err}})
     setAvatar(file)
+  };
+
+  const changebanner = (e) => {
+    const file = e.target.files[0];
+    const err = checkimage(file)
+    if(err) return dispatch({type:"ALERT", payload:{error: err}})
+    setBanner(file)
   };
 
   useEffect(() => {
@@ -38,13 +46,18 @@ const EditProfile = ({ user, setOnEdit }) => {
     setEditData({...editData, [name]:value})
   }
 
-  const selectUpload = () => {
-    const fileuploadinput = document.getElementById("file-upload")
+  const selectUploadAvatar = () => {
+    const fileuploadinput = document.getElementById("file-upload-avatar")
+    fileuploadinput.click()
+  }
+
+  const selectUploadBanner = () => {
+    const fileuploadinput = document.getElementById("file-upload-banner")
     fileuploadinput.click()
   }
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(updateProfile({editData, avatar, auth}))
+    dispatch(updateProfile({editData, avatar,banner, auth}))
 }
 
   return (
@@ -64,15 +77,32 @@ const EditProfile = ({ user, setOnEdit }) => {
           src={avatar ? URL.createObjectURL(avatar) : auth.user.avatar}
           alt=""
         />
-        <i className="fas fa-camera" onClick={selectUpload}>
+        <i className="fas fa-camera" onClick={selectUploadAvatar}>
           <p className="editprofile-userdatapara">Change Pic</p></i>
         <span>
           <input
             style={{display:'none'}}
             type="file"
-            id="file-upload"
+            id="file-upload-avatar"
             accept="image/*"
             onChange={changeavatar}
+          />
+        </span>
+      </div>
+      <div className="editprofile-avatar">
+        <img
+          src={banner ? URL.createObjectURL(banner) : auth.user.banner}
+          alt=""
+        />
+        <i className="fas fa-camera" onClick={selectUploadBanner}>
+          <p className="editprofile-userdatapara">Change Pic</p></i>
+        <span>
+          <input
+            style={{display:'none'}}
+            type="file"
+            id="file-upload-banner"
+            accept="image/*"
+            onChange={changebanner}
           />
         </span>
       </div>
@@ -112,17 +142,7 @@ const EditProfile = ({ user, setOnEdit }) => {
           />
           </div>
         
-          <label htmlFor="phone">Telefono </label>
-        <div className="editprofile-userdataphone">
-          <input
-            type="text"
-            value={phone}
-            onChange={handleChangeInput}
-            name="phone"
-            placeholder="Type your phone number"
-          />
-          
-        </div>
+         
         
         <label htmlFor="story">Sobre mi </label>
         <div className="editprofile-userdatastory">

@@ -7,12 +7,12 @@ import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
 const Register = () => {
-  const initialState = { username:'', fullname:'', email:'', password:'', confirmPassword:''}
+  const initialState = { username:'', fullname:'', email:'', password:'', confirmPassword:'',role:'user'}
  
   const [showcfpass, setShowcfpass] = useState(false);
   const [showpass, setShowpass] = useState(false);
   const [userData, setuserData] = useState(initialState);
-  const { username, fullname, email, password, confirmPassword } = userData;
+  const { username, fullname, email, password, confirmPassword, role } = userData;
 
   const { auth,alert } = useSelector(state => state);
   const dispatch = useDispatch();
@@ -43,6 +43,11 @@ const Register = () => {
         <h6 className="register-subheader">REGISTRO</h6>
 
         <form className="register-dataform" onSubmit={handleSubmit}>
+        <select className="register-dataformselect" name="role" value={role} onChange={handleChange}>
+        <option value="user">user</option>
+        <option value="admin">admin</option>
+        
+      </select>
           <input
             className="data-formemail"
             type="text"

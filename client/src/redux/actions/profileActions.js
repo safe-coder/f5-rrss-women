@@ -150,7 +150,7 @@ export const addfriends = ({users, user, auth, socket}) => async (dispatch) =>{
 
 
 export const updateProfile =
-  ({ editData, avatar, auth }) =>
+  ({ editData, avatar,banner, auth }) =>
   async (dispatch) => {
     if (!editData.fullname)
       return dispatch({
@@ -170,14 +170,17 @@ export const updateProfile =
 
       dispatch({ type: "ALERT", payload: { loading: true } });
         if (avatar) media = await imageupload([avatar]);
+        if (banner) media = await imageupload([banner]);
         const res = await axios.patch("http://localhost:5000/api/user", {
             ...editData,
-            avatar: avatar ? media[0].secure_url : auth.user.avatar
+            avatar: avatar ? media[0].secure_url : auth.user.avatar,
+            banner: banner ? media[0].secure_url : auth.user.banner
         },
             {
            headers : {Authorization: auth.token}
        })
 
+       
         dispatch({
             type: 'AUTH',
             payload: {
@@ -185,7 +188,8 @@ export const updateProfile =
                 user: {
                     ...auth.user,
                     ...editData,
-                    avatar: avatar ? media[0].secure_url : auth.user.avatar
+                    avatar: avatar ? media[0].secure_url : auth.user.avatar,
+                    banner: banner ? media[0].secure_url : auth.user.banner
                 }
             }
         

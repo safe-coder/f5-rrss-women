@@ -65,12 +65,9 @@ const Login = () => {
           <button className="login-dataformbtn" type="submit">
             Log In
           </button>
-<<<<<<< HEAD
           <p className="login-small">
-            ¿No tienes cuenta? <Link to="/admin" className="register-btn">Regístrate aquí</Link>
+            ¿No tienes cuenta? ¿Escribe a tu contacto de Factoría F5!
           </p>
-=======
->>>>>>> main
         </form>
       </div>
      

@@ -33,13 +33,17 @@ const userSchema = mongoose.Schema({
         type:String,
         default:'',
     },
-    phone:{
+    role:{
         type:String,
-        default:''
+        default:'user'
     },
     avatar:{
         type:String,
         default:'https://i.postimg.cc/h48xQ8B0/ava.png'
+    },
+    banner:{
+        type:String,
+        default:'https://static.vecteezy.com/system/resources/thumbnails/001/984/880/small/abstract-colorful-geometric-overlapping-background-and-texture-free-vector.jpg'
     },
     story:{
         type:String,

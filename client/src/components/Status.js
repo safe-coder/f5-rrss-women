@@ -94,11 +94,11 @@ const handleStreamStop = () =>{
 const handleSubmit = (e) =>{
   e.preventDefault();
  
-  if (images.length === 0) 
-    return dispatch({
-      type: 'ALERT',
-      payload: { error: "add your image" }
-    })
+  // if (images.length === 0) 
+  //   return dispatch({
+  //     type: 'ALERT',
+  //     payload: { error: "add your image" }
+  //   })
   
     if (status.edit) {
       dispatch(updatepost({ content, images, auth, status }))

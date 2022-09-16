@@ -31,7 +31,7 @@ const Info = ({ userData, auth, profile, id }) => {
         userData.map((user) => (
           <div className="profileinfo-container" key={user._id}>
             <div className="profileinfo-top">
-              <img src={user.avatar} alt="" />
+              <img src={user.banner} alt="" />
             </div>
             <div className="profileinfo-center">
               <img

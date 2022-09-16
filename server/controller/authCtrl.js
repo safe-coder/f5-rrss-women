@@ -5,7 +5,7 @@ import jwt from "jsonwebtoken";
 const authCtrl = {
   register: async (req, res) => {
     try {
-      const { fullname, username, email, password } = req.body;
+      const { fullname, username, email, password, role } = req.body;
 
       const newUsername = username.toLowerCase().replace(/ /g, "");
 
@@ -29,6 +29,7 @@ const authCtrl = {
         username: newUsername,
         email,
         password: passwordHash,
+        role
       });
 
       const access_token = createAccessToken({ id: newUser._id });
