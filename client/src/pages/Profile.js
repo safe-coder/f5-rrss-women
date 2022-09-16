@@ -9,6 +9,7 @@ import { getProfileUsers } from "../redux/actions/profileActions";
 import { useEffect, useState } from "react";
 import { IconButton } from "@mui/material";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import HomeIcon from '@mui/icons-material/Home';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import PeopleIcon from '@mui/icons-material/People';
 import BookmarksIcon from '@mui/icons-material/Bookmarks';
@@ -74,17 +75,14 @@ const handletoggle = (ht) =>{
       <div className ="profileheader">
               <div className="profileheader-items">
                   <IconButton className="profileheader-item" onClick={()=>handletoggle('showaccount')}>
-                        <AccountCircleIcon/>
+                        <HomeIcon/>
                   </IconButton>
-                  <hr/>
                   <IconButton onClick={()=>handletoggle('showfriends')}>
                         <PeopleIcon/>
                   </IconButton>
-                  <hr/>
                   <IconButton onClick={()=>handletoggle('showfollowing')}>
                         <PersonAddIcon/>
                   </IconButton>
-                  <hr/>
                   <IconButton onClick={()=>handletoggle('showsaved')}>
                         <BookmarksIcon/>
                   </IconButton>

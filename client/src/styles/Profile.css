@@ -8,21 +8,23 @@
 
 .profileheader{
     height: fit-content;
-    width:1000px;
+    width:700px;
     max-width:100%;
     margin: 1rem auto;
-    border-radius: 20px;
-    background-color: #EFECF9;
+    padding: 0.2rem;
+    background-color: #EEDAFF;
     margin-top: 2rem;
+    border: 2px solid #240046;
+    border-radius: 20px;
+    box-shadow: #240046 5px 5px;
 }
 .profileheader-items{
     display: flex;
     justify-content: space-evenly;
-    
 }
 
 .profileheader-items .MuiSvgIcon-root{
-    color:#615dfa;
+    color:#240046;
 }
 .profilebody-left{
     flex:0.1;
@@ -33,4 +35,3 @@
 .profilebody-right{
     flex:0.1;
 }
-

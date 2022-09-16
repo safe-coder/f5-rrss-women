@@ -17,9 +17,9 @@ const Alert = () =>{
     return(
         <div>
             {alert.loading && <Loading/>}
-            {alert.error && <Toast msg={{title:"Error" ,  body:alert.error}} bgColor="rgb(222, 149, 162)"
+            {alert.error && <Toast msg={{title:"Error" ,  body:alert.error}} bgColor="#ed6e6e"
             handleShow={close} />}
-            {alert.success && <Toast msg={{title:"Success", body:alert.success}} bgColor="rgb(177, 222, 149)"
+            {alert.success && <Toast msg={{title:"Success", body:alert.success}} bgColor="#a7ed6e"
             handleShow={close} />}
             
         </div>

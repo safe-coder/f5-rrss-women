@@ -77,7 +77,9 @@ export const Header = () => {
   return (
     <div className="header">
       <div className="header-right">
-        <img src={LogoSC} width="140rem" alt="" style={{paddingLeft: "1.3rem"}}/>
+      <Link to="/">
+        <img src={LogoSC} width="250rem" alt="" style={{paddingLeft: "1.3rem"}}/>
+ </Link>
       </div>
       <form className="header-center" onSubmit={handleSearch}>
         <input
@@ -105,15 +107,15 @@ export const Header = () => {
         <Link to={`profile/${auth.user._id}`}>
           <div className="header-leftAvatar">
             <Avatar src={auth.user.avatar} />
-            <h4 style={{color:'#FF9E00'}}>{auth.user.fullname}</h4>
+            <h4 style={{color:'#FF9E00', paddingLeft:".8rem", paddingRight:".8rem"}}>{auth.user.fullname}</h4>
           </div>
         </Link>
 
-        <Link to="/">
+        {/* <Link to="/">
           <IconButton>
             <HomeIcon className={`${isActive("/")}`} style={{color:"#FF9E00"}}/>
           </IconButton>
-        </Link>
+        </Link> */}
 
         <Link to="/message">
           <IconButton>

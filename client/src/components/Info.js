@@ -50,7 +50,7 @@ const Info = ({ userData, auth, profile, id }) => {
                   <h6 className="profileinfo-statnumber">
                     {user.friends.length}
                   </h6>
-                  <h6 className="profileinfo-statdesc">SEGUIDORES</h6>
+                  <h6 className="profileinfo-statdesc">SEGUIDORAS</h6>
                 </div>
                 <div className="profileinfo-stat">
                   <h6 className="profileinfo-statnumber">
@@ -61,7 +61,7 @@ const Info = ({ userData, auth, profile, id }) => {
               </div>
               <div className="profileinfo-bottomcenter">
                 <h3 className="profileinfo-fullname">{user.fullname}</h3>
-                <h5 className="profileinfo-username">{user.username}</h5>
+                <h5 className="profileinfo-username">@{user.username}</h5>
               </div>
               <div className="profileinfo-bottomright">
                 <div className="profileinfo-stat">

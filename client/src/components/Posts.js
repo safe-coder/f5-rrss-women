@@ -17,8 +17,6 @@ const Posts = () =>{
                         <PostCardHeader pos={pos}/>
                         <PostCardBody pos={pos}/>
                         <PostCardFooter pos={pos}/>
-                   
-                    
                     </div>
                 ))
             }

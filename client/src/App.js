@@ -2,7 +2,7 @@
 import './App.css';
 import './index.js';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Register from './pages/Register';
+import Admin from './pages/Admin';
 import Login from './pages/Login';
 import Post from './pages/Post';
 import NotFound from './pages/NotFound';
@@ -49,7 +49,7 @@ useEffect(()=>{
             <Alert/>
             {auth.token && <Header/>}
           <Routes>
-            <Route  path="/register" element={<Register />} />
+            <Route  path="/admin" element={<Admin />} />
             <Route exact path="/" element={auth.token? <Home/> : <Login />} />
             <Route  path="/login" element={<Login />} />
 
