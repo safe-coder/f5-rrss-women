@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Login.css";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { login } from "../redux/actions/authActions";
 import { useDispatch, useSelector } from "react-redux";
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
@@ -65,9 +65,6 @@ const Login = () => {
           <button className="login-dataformbtn" type="submit">
             Log In
           </button>
-          <p className="login-small">
-            ¿No tienes cuenta? <Link to="/register" className="register-btn">Regístrate aquí</Link>
-          </p>
         </form>
       </div>
      

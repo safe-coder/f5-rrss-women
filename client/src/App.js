@@ -49,7 +49,7 @@ useEffect(()=>{
             <Alert/>
             {auth.token && <Header/>}
           <Routes>
-            <Route  path="/admin" element={<Admin />} />
+            <Route  path="/admin" element={<PrivateRoute><Admin/></PrivateRoute>} />
             <Route exact path="/" element={auth.token? <Home/> : <Login />} />
             <Route  path="/login" element={<Login />} />
 
