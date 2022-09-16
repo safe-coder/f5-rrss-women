@@ -10,7 +10,7 @@ const Loading = () => {
         // height: "100%",
         // width: "100%",
         // textAlign: "center",
-        // zIndex: "50",
+        // zIndex: "100",
         // backgroundColor: "#0008",
         // color: "white",
         // top: "0",

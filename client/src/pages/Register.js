@@ -92,7 +92,7 @@ const Register = () => {
           </small>
           <input
             className="register-dataformpass"
-            type={showpass ? "type" : "password"}
+           type={showpass ? "type" : "password"}
             placeholder={alert.confirmPassword ? `${alert.confirmPassword}` : 'Repite tu contraseña'}
             value={confirmPassword}
             name="confirmPassword"
