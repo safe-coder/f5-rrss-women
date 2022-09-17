@@ -66,6 +66,9 @@
     border-radius: 30px;
 }
 
+.linkhome{
+    display: none;
+}
 /* prueba */
 
 
@@ -99,5 +102,10 @@
 
     .header-leftIcons{
         display: flex;
+    }
+
+    .linkhome{
+        display:flex;
+
     }
 }

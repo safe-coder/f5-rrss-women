@@ -1,8 +1,11 @@
 .status{
-    background-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    padding:.5rem 1rem ;
-    width:500px;
+    background-color: #EEDAFF;
+    border: 2px solid #240046;
+    border-radius: 20px;
+    box-shadow: #240046 5px 5px;
+    border-radius:10px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
 }
 
 .editstatus{

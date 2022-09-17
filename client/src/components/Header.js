@@ -103,6 +103,12 @@ export const Header = () => {
       </div>
       </form>
       
+      <Link to="/" className="linkhome">
+          <IconButton>
+            <HomeIcon className={`${isActive("/")}`} style={{color:"#FF9E00"}}/>
+          </IconButton>
+        </Link>
+
       <div className="header-left">
         <Link to={`profile/${auth.user._id}`}>
           <div className="header-leftAvatar">
@@ -111,11 +117,6 @@ export const Header = () => {
           </div>
         </Link>
 
-        {/* <Link to="/">
-          <IconButton>
-            <HomeIcon className={`${isActive("/")}`} style={{color:"#FF9E00"}}/>
-          </IconButton>
-        </Link> */}
 <div className="header-leftIcons">
         <Link to="/message">
           <IconButton>

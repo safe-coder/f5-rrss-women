@@ -17,7 +17,7 @@ const Posts = () => {
         display: "flex",
         flexDirection: "column",
         gap: "1rem",
-        width: "80%",
+        width: "100%",
       }}
     >
       {homePost &&
@@ -27,18 +27,11 @@ const Posts = () => {
             className="postCards"
             key={pos._id}
             style={{
-                display: "flex",
-                flexDirection:"column",
-                justifyContent: "center",
-                alignContent: "center",
               backgroundColor: "#EEDAFF",
               padding: "1rem",
               border: "2px solid #240046",
               borderRadius: "20px",
-              boxShadow: "#240046 5px 5px",
-              width: "100%",
-              maxWidth: "800px",
-              minWidth:"326px",
+              boxShadow: "#240046 5px 5px",      
             }}
           >
             <PostCardHeader pos={pos} />

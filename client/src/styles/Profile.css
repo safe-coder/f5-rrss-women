@@ -24,11 +24,17 @@
     color:#240046;
 }
 .profilebody-left{
-    flex:0.1;
+    display: grid;
+    place-items: center;
 }
 .profilebody-center{
-    flex:0.6;
+    display: grid;
+    place-items: center;
 }
-.profilebody-right{
-    flex:0.1;
-}
+
+@media only screen and (max-width: 768px) {
+    .profilebody-center{
+        display: grid;
+        place-items: center;
+    }
+  }
