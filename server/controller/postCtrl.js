@@ -94,7 +94,8 @@ catch (err) {
 }
    
 
-},
+    },
+   
 savePost: async(req,res)=> {
 
     try {
@@ -138,28 +139,31 @@ unsavePost: async(req,res)=> {
         }
            
         
-        },
-unlikePost: async(req,res)=> {
-
-    try {
-        
-    
-        const unlinke = await Posts.findOneAndUpdate({_id:req.params.id},{
-            $pull: {likes: req.user._id}
-        },{new:true})
-    
-        if(!unlike) return res.status(400).json({msg:"no post found"})
-        return res.json({
-            msg: "Post UnLikes"
-        })
-    
-    } 
-    catch (err) {
-        return res.status(500).json({msg: err.message})
-    }
-       
-    
     },
+        
+    unlikePost: async(req,res)=> {
+
+        try {
+            
+        
+            const unlinke = await Posts.findOneAndUpdate({_id:req.params.id},{
+                $pull: {likes: req.user._id}
+            },{new:true})
+        
+            if(!unlike) return res.status(400).json({msg:"no post found"})
+            return res.json({
+                msg: "Post UnLikes"
+            })
+        
+        } 
+        catch (err) {
+            return res.status(500).json({msg: err.message})
+        }
+           
+        
+        },
+
+
 getsavedPost: async (req,res)=> {
 
         try {
