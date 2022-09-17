@@ -6,6 +6,7 @@ import cookieparser from "cookie-parser";
 import authRouter from "./router/authRouter.js";
 import userRouter from "./router/userRouter.js";
 import postRouter from "./router/postRouter.js";
+import commentRouter from "./router/commentRoute.js";
 
 
 dotenv.config();
@@ -21,7 +22,7 @@ app.use(cookieparser());
 app.use('/api', authRouter)
 app.use('/api', userRouter)
 app.use('/api', postRouter)
-
+app.use('/api', commentRouter)
 const port = process.env.PORT || 5000;
 const URL = process.env.MONGO_URI;
 
