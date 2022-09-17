@@ -88,7 +88,7 @@ export const Header = () => {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
-        <SearchIcon  style={{opacity: users.length > 0 ? '0' : '1'}} />
+        <SearchIcon style={{opacity: users.length > 0 ? '0' : '1'}} />
         <span className="header-centersearchclose" onClick={handleClose} style={{opacity: users.length > 0 ? '1' : '0'}}>&times;</span>
         <button type="submit" style={{display:'none'}}>Search</button>
         <div className="header-searchusers">
@@ -116,7 +116,7 @@ export const Header = () => {
             <HomeIcon className={`${isActive("/")}`} style={{color:"#FF9E00"}}/>
           </IconButton>
         </Link> */}
-
+<div className="header-leftIcons">
         <Link to="/message">
           <IconButton>
             <MessageIcon className={`${isActive("/message")}`}  style={{color:"#FF9E00"}}/>
@@ -136,6 +136,7 @@ export const Header = () => {
         <IconButton onClick={() => dispatch(logout())}  style={{color:"#FF9E00"}} >
           <ExitToAppIcon />
         </IconButton>
+        </div>
       </div>
     </div>
   );

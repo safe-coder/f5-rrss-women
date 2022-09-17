@@ -1,15 +1,15 @@
 .profilebody{
     display: flex;
     justify-content: space-between;
-    width: 1200px;
-    max-width:100%;
-    margin:auto;
+    width: 100%;
+    margin:1rem;
+    padding-bottom: 2rem;
+    padding-top: 1rem;
 }
 
 .profileheader{
     height: fit-content;
-    width:700px;
-    max-width:100%;
+    width:40%;
     margin: 1rem auto;
     padding: 0.2rem;
     background-color: #EEDAFF;

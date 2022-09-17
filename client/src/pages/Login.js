@@ -46,8 +46,8 @@ const Login = () => {
             onChange={handleChange}
             placeholder="Email"
           />
+          <div className="login-dataformpass">
           <input
-            className="login-dataformpass"
             type={showpass ? "type" : "password"}
             placeholder="Contraseña"
             value={password}
@@ -61,12 +61,12 @@ const Login = () => {
           >
             {showpass ? <RemoveRedEyeIcon/> : <VisibilityOffIcon/> }
           </small>
-
+</div>
           <button className="login-dataformbtn" type="submit">
             Log In
           </button>
           <p className="login-small">
-            ¿No tienes cuenta? ¿Escribe a tu contacto de Factoría F5!
+            ¿No tienes cuenta? ¡Escribe a tu contacto de Factoría F5!
           </p>
         </form>
       </div>

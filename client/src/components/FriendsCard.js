@@ -1,7 +1,6 @@
 import React from 'react' ;
 import  GlobalCard  from './GlobalCard';
 
-
 const FriendsCard = ({user}) =>{
     
     return (
@@ -12,7 +11,7 @@ const FriendsCard = ({user}) =>{
             {user.length} <span> Seguidoras </span> 
             </h4>
         </div>
-        <div style={{width:'1100px', maxWidth:'100%', margin:'1rem auto',display:'grid', gridTemplateColumns:'repeat(4,1fr)'}}>
+        <div style={{width:'80%', maxWidth:'100%', margin:'1rem auto',display:'grid', gridTemplateColumns:'repeat(4,1fr)'}}>
             
             {user.length > 0 && user.map(fr => (
                

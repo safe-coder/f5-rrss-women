@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import "../styles/GlobalCard.css";
-import CloseIcon from '@mui/icons-material/Close'
+import CircleIcon from '@mui/icons-material/Circle';
 import { useSelector } from "react-redux";
 import GlobalFriendBtn from "./GlobalFriendBtn";
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import { Link } from "react-router-dom";
+import { Grid } from "@mui/material";
 
 const GlobalCard = ({ user }) => {
   const [showinfo, setshowinfo] = useState(true);
@@ -26,7 +27,7 @@ const GlobalCard = ({ user }) => {
     <div className="globalcard">
       <div className="globalcard-uitop">
       <h6>@{user.username}</h6>
-      <CloseIcon className="closebtn"/>
+      <CircleIcon fontSize="small" className="closebtn"/>
       </div>
       <div className="globalcard-content">
         <div className="globalcard-contenttop">
