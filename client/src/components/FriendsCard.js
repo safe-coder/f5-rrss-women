@@ -1,5 +1,6 @@
 import React from 'react' ;
 import  GlobalCard  from './GlobalCard';
+import { Grid } from '@mui/material';
 
 const FriendsCard = ({user}) =>{
     
@@ -11,14 +12,14 @@ const FriendsCard = ({user}) =>{
             {user.length} <span> Seguidoras </span> 
             </h4>
         </div>
-        <div style={{width:'80%', maxWidth:'100%', margin:'1rem auto',display:'grid', gridTemplateColumns:'repeat(4,1fr)'}}>
+        <Grid container style={{display: "flex", justifyContent: "center"}}>
             
             {user.length > 0 && user.map(fr => (
                
             <GlobalCard user={fr} key={fr._id} />
              
             ))}
-        </div>
+        </Grid>
         </>
     )
 }

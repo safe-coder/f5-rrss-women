@@ -68,7 +68,7 @@ const handletoggle = (ht) =>{
 
   return (
     <div className="profile">
-      <Info userData={userData} profile={profile} auth={auth} id={ id} />
+      <Info userData={userData} profile={profile} auth={auth} id={ id}/>
       <div className ="profileheader">
               <div className="profileheader-items">
                   <IconButton className="profileheader-item" onClick={()=>handletoggle('showaccount')}>
@@ -87,18 +87,18 @@ const handletoggle = (ht) =>{
               </div>
         </div>  
         { showaccount &&
-            <Grid container spacing={2}
+            <Grid container
             direction="row"
             justifyContent="space-around"
             alignItems="flex-start"
             className="profilebody">
-                <Grid item className='profilebody-left'>
+                <Grid item md={3} className='profilebody-left'>
                 <About userData={userData} profile={profile} auth={auth} id={ id}/>
             </Grid>
-            <Grid item className='profilebody-center'>
+            <Grid item md={6} className='profilebody-center'>
                 <Posts />
             </Grid>
-            <Grid item className='profilebody-right'>
+            <Grid item  md={3} className='profilebody-right'>
                 {/* <Posts /> */}
             </Grid>
          

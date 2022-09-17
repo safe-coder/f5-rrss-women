@@ -24,14 +24,14 @@ const GlobalCard = ({ user }) => {
   };
 
   return (
-    <div className="globalcard">
+    <Grid item className="globalcard" style={{margin: "1rem"}}>
       <div className="globalcard-uitop">
       <h6>@{user.username}</h6>
       <CircleIcon fontSize="small" className="closebtn"/>
       </div>
       <div className="globalcard-content">
         <div className="globalcard-contenttop">
-          <img src={user.avatar} alt="" />
+          <img src={user.banner} alt="" />
         </div>
         <div className="globalcard-contentmiddle">
           <img src={user.avatar} alt="" />
@@ -82,7 +82,7 @@ const GlobalCard = ({ user }) => {
           <span onClick={() => toggleshowinfo("showinfoabout")}> <NavigateNextIcon/> </span>
         </div>
       </div>
-    </div>
+    </Grid>
   );
 };
 
