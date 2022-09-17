@@ -25,6 +25,7 @@ const Info = ({ userData, auth, profile, id }) => {
 
   const [onEdit, setOnEdit]= useState(false)
 
+
   return (
     <div className="profileinfo">
       {userData.length > 0 &&
@@ -44,9 +45,10 @@ const Info = ({ userData, auth, profile, id }) => {
                 :<GlobalFriendBtn classbtn="profileinfo-centerbutton" user={user}/>
                 }
 
-            {user._id && auth && user._id === auth.user._id ?
-                <button className="profileinfo-centersecondbutton" onClick={() => setOnEdit(true)}><SettingsIcon fontSize="large"/></button>
-                :<GlobalFriendBtn classbtn="profileinfo-centersecondbutton" user={user}/>
+            {user._id && auth && user.role === 'admin' ?
+            <PanelAdminBtn /> : null
+
+    
                 }
                 
                

@@ -15,4 +15,4 @@ postUserId:mongoose.Types.ObjectId
     timestamps:true
 })
 
-export const Comment=   mongoose.model('comment',commentSchema)
+export const Comment = mongoose.model('comment', commentSchema);
