@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import "../styles/PostCard.css"
+import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
+import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
 
 const PostCardBody = ({pos}) =>{
     const [readMore ,setreadMore] = useState(false)
@@ -30,9 +32,9 @@ const PostCardBody = ({pos}) =>{
                 <span>
                     {
                         pos.content?.length > 60 &&
-                        <span style={{color:'black', cursor:'pointer'}} onClick={()=>setreadMore(!readMore)}>
+                        <span style={{color:'#240046', cursor:'pointer'}} onClick={()=>setreadMore(!readMore)}>
                         {
-                        readMore ? 'Hide ' : "Show "
+                        readMore ? 'Ocultar ' : "Mostrar "
                         }
                         </span>
                     }
@@ -40,8 +42,8 @@ const PostCardBody = ({pos}) =>{
             </div>
             <div className="postcardbodyimage">
                
-               <span className="postcardbodyimagenext" onClick={()=>shownextimage(pos.images)} > v </span>
-               <span className="postcardbodyimageprev" onClick={()=>showprevimage(pos.images)}> v </span>
+               <span className="postcardbodyimagenext" onClick={()=>shownextimage(pos.images)} > <KeyboardDoubleArrowRightIcon fontSize="large"/></span>
+               <span className="postcardbodyimageprev" onClick={()=>showprevimage(pos.images)}> <KeyboardDoubleArrowLeftIcon fontSize="large" /> </span>
               
                 {pos.images?.length> 0 && pos.images?.map((image,index)=>(
                      (index === currentImage) &&

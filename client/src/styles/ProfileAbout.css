@@ -3,7 +3,7 @@
     min-height: 300px;
     margin-bottom: 1.5rem;
     border: 2px solid #240046;
-    width: 16rem;
+    width: 19rem;
     box-shadow: #240046 5px 5px;
     border-radius: 20px;
 }
@@ -29,8 +29,10 @@
     border-radius: 16px 16px 0px 0px;
 }
 .profileabout-contentcenter-story{
-    padding:.5rem;
-    font-size:18px;
+    padding:.6rem;
+    padding-bottom: 1.2rem;
+    text-align: center;
+    font-size:16px;
     border-bottom: 1px solid #873CC7;
 
 }
@@ -38,7 +40,7 @@
     display: flex;
     flex-direction: column;
     justify-content:flex-end;
-    padding:1rem 0;
+    padding:1rem;
     background-color: #EEDAFF;
 }
 

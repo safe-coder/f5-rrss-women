@@ -8,7 +8,7 @@ const commentCtrl = {
   
       const post = await Posts.findById(postId)
   
-      if (!post) return res.status(400).json({ msg: "no post found" })
+      if (!post) return res.status(400).json({ msg: "Post no encontrado" })
           
       const newComment = await new Comment({
         user: req.user._id, content, tag, reply, postUserId, postId

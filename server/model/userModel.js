@@ -43,7 +43,7 @@ const userSchema = mongoose.Schema({
     },
     banner:{
         type:String,
-        default:'https://static.vecteezy.com/system/resources/thumbnails/001/984/880/small/abstract-colorful-geometric-overlapping-background-and-texture-free-vector.jpg'
+        default:'https://i.ibb.co/ZVH0kb7/user-banner.png'
     },
     story:{
         type:String,

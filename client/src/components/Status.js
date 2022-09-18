@@ -173,8 +173,8 @@ if(tracks) tracks.stop()
                 stream ? <PhotoIcon onClick={handlecameraimage} />
                 :
                 <>
-            <PhotoCameraIcon onClick={handleStream}/>
-            <PhotoIcon onClick={handleuploadinput} />
+            {/* <PhotoCameraIcon onClick={handleStream}/> */}
+            <PhotoIcon onClick={handleuploadinput} style={{color: "#240046", cursor: "pointer"}}/>
             </>
             }
             <span>
@@ -189,7 +189,7 @@ if(tracks) tracks.stop()
             </span>
           </div>
           <div className="status-footerleft">
-          <button className="status-footerleftdiscard" onClick={handleDiscard}>Discard</button>            <button className="status-footerleftcreate" type="submit">Create</button>          </div>
+          <button className="status-footerleftdiscard" onClick={handleDiscard}>Borrar</button>            <button className="status-footerleftcreate" type="submit">Enviar</button>          </div>
         </div>
       </form>
     </div>

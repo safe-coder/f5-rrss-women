@@ -88,13 +88,8 @@
         margin-right: .5rem;
     }
 
-    .header-center{
-        margin-left: .3rem;
-        max-width: 13rem;
-    }
-
     .header-leftAvatar{
-        margin-left: .5rem;
+        margin-left: .1rem;
     }
     .header-leftAvatar>h4{
         display: none;
@@ -106,6 +101,5 @@
 
     .linkhome{
         display:flex;
-
     }
 }

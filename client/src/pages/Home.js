@@ -2,9 +2,13 @@ import React from "react";
 import HomeLeft from "../components/HomeLeft";
 import HomeMid from "../components/HomeMid";
 import Banner from "../components/Banner";
+import { Grid } from "@mui/material";
+
 const Home = () => {
   return (
-    <div className="home" style={{ width: "100%", display: "grid", placeItems: "center" }}>
+    <div container
+    className="homebody" style={{    display: "grid",
+      placeItems: "center"}}>
       <div className="homebanner">
         <Banner />
       </div>
