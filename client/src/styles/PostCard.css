@@ -116,15 +116,18 @@ cursor: pointer;
 .postcardfooterbottom{
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    border-top:1px solid gray;
-    padding:.5rem 0;
-    
+    justify-content: space-around;
+    padding:.1rem 0;
+    background-color:#401368;
+    color:#FF9E00;
+    margin: 0 auto;
+    width: 80%;
+    border-radius: 50px;
+    margin-bottom: .5rem;
 }
 .postcardfooterbottom p{
     font-size:1rem;
     padding:.5rem;
-    color:gray;
     font-weight:bold;
 }
 .postcardfootertopitems{
@@ -132,7 +135,7 @@ cursor: pointer;
 }
 .postcardfootertopitems span{
     padding:0 .5rem;
-    color:gray;
+    color:#240046;
     font-weight:bold;
 }
 .postcardfooterbottomitems{

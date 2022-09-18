@@ -69,7 +69,7 @@ const PostCommentCard = ({ comment, pos }) => {
         </div>
         <div className="postCommentCardavatarcommentcontent-likes">
          <p className="postCommentCardavatarcommentcontent-likescount">{comment.likes.length}</p> 
-          <FavoriteBorderIcon style={{color:'red'}}/><p className="postCommentCardavatarcommentcontent-reply">Respuesta</p>
+          <FavoriteBorderIcon style={{color:'#240046'}}/><p className="postCommentCardavatarcommentcontent-reply">Respuesta</p>
         </div>
       </div>
       <div className="postCmmentCardLikeButton">
