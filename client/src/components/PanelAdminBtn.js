@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const PanelAdminBtn = ({ classbtn, user }) => {
+const PanelAdminBtn = () => {
   return (
     <>
       <Link to="/admin" style={{ position: "absolute", height: "50px" }}>

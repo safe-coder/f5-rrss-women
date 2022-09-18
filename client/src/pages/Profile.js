@@ -25,6 +25,7 @@ import Following from "../components/Following";
 const Profile = () => {
 
   const [userData, setUserData] = useState([]);
+  console.log(userData);
   const { id } = useParams();
   const { auth, profile } = useSelector(state => state);
   const dispatch = useDispatch();

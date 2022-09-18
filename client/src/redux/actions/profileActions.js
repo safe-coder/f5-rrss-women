@@ -7,10 +7,13 @@ import { imageupload } from "../../utils/imageupload";
 import axios from "axios";
 
 export const PROFILE_TYPES = {
+
     LOADING : 'LOADING',
     GET_USER : 'GET_USER',
     FRIEND: 'FRIEND',
     UNFRIEND:'UNFRIEND',
+    LOADING_USERS: 'LOADING_USERS',
+    GET_USERS: 'GET_USERS',
 }
 
 
@@ -205,3 +208,20 @@ export const updateProfile =
       });
     }
   };
+
+  export const getUsers = (token) => async (dispatch) =>{
+    try {
+       dispatch({type: PROFILE_TYPES.LOADING_POSTS, payload: true})
+        const res = await getDataApi('users',token)
+       dispatch({type:PROFILE_TYPES.GET_POSTS , payload: res.data}) 
+       dispatch({type: PROFILE_TYPES.LOADING_POSTS, payload:false})
+
+    } catch (err) {
+        dispatch({
+            type:'ALERT',
+            payload:{
+                error: err.response.data.msg
+            }
+        })
+    }
+}

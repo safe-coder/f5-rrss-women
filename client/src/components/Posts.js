@@ -10,7 +10,7 @@ import PostComments from './PostComments';
 
 const Posts = () =>{
     const {homePost} = useSelector(state=>state)
-
+console.log(homePost)
     return(
         <div className="posts">
             {
