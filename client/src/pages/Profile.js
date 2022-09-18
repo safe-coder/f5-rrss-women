@@ -15,12 +15,9 @@ import PeopleIcon from '@mui/icons-material/People';
 import BookmarksIcon from '@mui/icons-material/Bookmarks';
 import Friends from "../components/Friends";
 import Following from "../components/Following";
+import {Grid} from '@mui/material'
 // import SingleUserPosts from "../components/SingleUserPosts";
 // import SavedPost from "../components/SavedPost";
-
-
-
-
 
 const Profile = () => {
 
@@ -72,7 +69,7 @@ const handletoggle = (ht) =>{
 
   return (
     <div className="profile">
-      <Info userData={userData} profile={profile} auth={auth} id={ id} />
+      <Info userData={userData} profile={profile} auth={auth} id={ id}/>
       <div className ="profileheader">
               <div className="profileheader-items">
                   <IconButton className="profileheader-item" onClick={()=>handletoggle('showaccount')}>
@@ -91,18 +88,22 @@ const handletoggle = (ht) =>{
               </div>
         </div>  
         { showaccount &&
-            <div className="profilebody">
-                <div className='profilebody-left'>
+            <Grid container
+            direction="row"
+            justifyContent="space-around"
+            alignItems="flex-start"
+            className="profilebody">
+                <Grid item md={3} className='profilebody-left'>
                 <About userData={userData} profile={profile} auth={auth} id={ id}/>
-            </div>
-            <div className='profilebody-center'>
+            </Grid>
+            <Grid item md={4} className='profilebody-center'>
                 <Posts />
-            </div>
-            <div className='profilebody-right'>
+            </Grid>
+            <Grid item  md={3} className='profilebody-right'>
                 {/* <Posts /> */}
-            </div>
+            </Grid>
          
-              </div>
+              </Grid>
 }
 {
     showfriends && <Friends userData={userData} dispatch={dispatch} profile={profile} auth={auth} id={id}/>

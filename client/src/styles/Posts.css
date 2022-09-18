@@ -1,0 +1,26 @@
+.posts{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.postCards{
+        background-color: #EEDAFF;
+        border: 2px solid #240046;
+        border-radius: 20px;
+        box-shadow: #240046 5px 5px;
+        width: 140%;
+}
+
+.post-head {
+    background-color: #401368;
+    border-radius: 16px 16px 0px 0px;
+    padding: .5rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .postCards{
+        width: 87vw;
+    }
+  }

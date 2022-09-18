@@ -5,7 +5,6 @@
   justify-content: center;
   margin: 20vh auto;
   height: 60vh;
-  width: 60vw;
   max-width: 100%;
 
 }
@@ -19,6 +18,7 @@
   padding: 3rem;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 20rem;
 }
 
 .login-header{
@@ -68,17 +68,13 @@
   border-radius: 30px;
   background-color: #FF9E00;
   position:relative;
+  display: flex;
 }
 
 .login-showpass{
-  position: fixed;
-  top:50.5%;
-  left:54.7%;
   color:#240046;
-  padding:3px;
-  border-radius:10px;
-  vertical-align: middle;
   cursor:pointer;
+  padding-right: .4rem;
 }
 
 .login-dataformbtn{
@@ -93,7 +89,12 @@
  cursor:pointer;
 }
 
-.register-btn{
-  color:#FF9E00;
-  font-weight: 600;
+.login-dataformbtn:hover{
+  background-color: #240046;
+  color: #FF9E00;
+}
+
+.login-small{
+  font-size: 0.8rem;
+  text-align: center;
 }

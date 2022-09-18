@@ -36,11 +36,11 @@ const [content, SetContent] = useState('')
       
     </div>
    {children}
-    <input className="inputpostcomments-input" type="text" placeholder="input your opinion" value={content}
+    <input className="inputpostcomments-input" type="text" placeholder="Escribe tu respuesta" value={content}
     onChange={(e)=>{SetContent(e.target.value)}}/>
  
     
-    <button className="inputpostcomments-button" onClick={handleSubmit}> Say it </button>
+    <button className="inputpostcomments-button" onClick={handleSubmit}> Enviar </button>
 </div>
   )
 }

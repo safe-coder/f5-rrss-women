@@ -1,11 +1,11 @@
 import React from 'react'
 import PostCommentCard from './PostCommentCard'
 
-const PostCommentDisplay = ({ comment }) => {
+const PostCommentDisplay = ({ comment, pos }) => {
   
   return (
     <div>
-    <PostCommentCard></PostCommentCard>
+    <PostCommentCard comment={comment} pos={pos}></PostCommentCard>
     </div>
   )
 }

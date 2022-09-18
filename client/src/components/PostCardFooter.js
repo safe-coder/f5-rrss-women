@@ -52,17 +52,17 @@ const PostCardFooter = ({pos}) =>{
             <div className="postcardfooterbottom">
                 <div className="postcardfooterbottomitems">
                     <LikePost isLike={isLike} handleLike={ handleLike} handleUnLike={handleUnLike} />
-                <p> Favorite </p>
+                <p> Like </p>
                 </div>
                 <Link to={`/post/${pos._id}`}>
                 <div className="postcardfooterbottomitems">
                 <CommentIcon/>
-                <p> Opinion </p>
+                <p> Respuesta </p>
                 </div>
                 </Link>
                 <div className="postcardfooterbottomitems">
                 <SaveAltIcon/>
-                <p> Save </p>
+                <p> Guardar </p>
                 </div>
             </div>
         </div>

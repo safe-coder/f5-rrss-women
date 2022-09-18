@@ -1,7 +1,7 @@
 
 import React from "react";
 import "../styles/ProfileAbout.css"
-import CloseIcon from '@mui/icons-material/Close';
+import CircleIcon from '@mui/icons-material/Circle';
 import { RadioGroup } from "@mui/material";
 const About = ({userData, auth,profile, id}) =>{
 
@@ -11,7 +11,7 @@ const About = ({userData, auth,profile, id}) =>{
         <div className="profileabout">
                     <div className="profileabout-contenttop">
                         <h4 className="profileabout-contenttop-head">Sobre Mi</h4>
-                        <CloseIcon fontSize="large" className="closebtn" style={{paddingRight:"0.5rem"}}/>
+                        <CircleIcon fontSize="small" className="closebtn" style={{paddingRight:"1rem", color:"#FF6D00"}}/>
                         </div>
             {userData.length > 0 && userData.map((user) => (
                 <div className="profileabout-container" key={user._id}>

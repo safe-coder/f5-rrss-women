@@ -6,7 +6,7 @@ const PostComments = ({pos}) => {
     <div>
       {
         pos.commentss && pos.commentss.map(comment => (
-         <PostCommentDisplay comment={comment}/> 
+          <PostCommentDisplay comment={comment} pos={pos} /> 
         ))
      }
     </div>

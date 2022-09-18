@@ -1,8 +1,11 @@
 .status{
-    background-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    padding:.5rem 1rem ;
-    width:500px;
+    background-color: #EEDAFF;
+    border: 2px solid #240046;
+    border-radius: 20px;
+    box-shadow: #240046 5px 5px;
+    border-radius:10px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
 }
 
 .editstatus{
@@ -83,8 +86,6 @@ video.status-middleimages{
     height: 50px;
     display: flex;
     padding:.3rem 1rem;
-    border-bottom: 2px solid gray;
-
 }
 
 .status-header img{
@@ -105,12 +106,13 @@ video.status-middleimages{
     
 }
 .status-middle textarea{
-    background-color:rgb(231, 231, 231);
+    background-color:#d1b0f0;
     border:none;
-    padding:0 0 0 .5rem;
+    border-radius: 10px;
+    padding: .6rem;
     outline:none;
     resize: none;
-    width:480px;
+    width:96%;
     height:125px;
     font-size:1.2rem;
     font-weight: 400;
@@ -124,7 +126,6 @@ video.status-middleimages{
 .status-footer{
     display: flex;
     justify-content: space-between;
-    border-top: 2px solid gray;
     padding:.5rem 1rem
 }
 .status-footerleft button{
@@ -135,9 +136,11 @@ video.status-middleimages{
     border-radius: 3px;;
 }
 .status-footerleftdiscard{
-    background-color: black;
-    border:1px solid rgb(211, 209, 209);
-    color:white;
+    background-color: #240046;
+    border:none;
+    color:#FF9E00;
+    font-weight: 600;
+    cursor: pointer;
     transition: transform 0.3s ease-in;
     
 }
@@ -145,19 +148,36 @@ video.status-middleimages{
     padding:0 1rem;
 }
 .status-footerleftcreate{
-    background-color: #615dfa;
-    border: 1px solid black;
-    color:white;
-    box-shadow: 1px 1px 3px #615dfa;
+    background-color: #FF9E00;
+    cursor: pointer;
+    border: none;
+    color:#240046;
+    font-weight: 600;
     transition: transform 0.3s ease-in;
 
 }
 .status-footerleftcreate:hover{
-    background-color: #4e4ac8;
-    transform:scale(1.1);
+    background-color: #240046;
+    color:#FF9E00;
 }
 
 .status-footerleftdiscard:hover{
-    background-color: #4e4ac8;
-    transform:scale(1.1);
+    background-color: #FF9E00;
+    color:#240046;
 }
+
+
+@media only screen and (max-width: 768px) {
+    .status{
+        width: 93vw;
+    }
+
+    .status-middle textarea{
+        width: 80vw;
+        position: relative;
+    }
+
+    .status-middle small{
+        display: none;
+    }
+  }

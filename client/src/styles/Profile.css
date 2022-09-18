@@ -1,15 +1,12 @@
 .profilebody{
-    display: flex;
-    justify-content: space-between;
-    width: 1200px;
-    max-width:100%;
-    margin:auto;
+    width: 100%;
+    padding-bottom: 2rem;
+    padding-top: 1rem;
 }
 
 .profileheader{
     height: fit-content;
-    width:700px;
-    max-width:100%;
+    width:40%;
     margin: 1rem auto;
     padding: 0.2rem;
     background-color: #EEDAFF;
@@ -27,11 +24,11 @@
     color:#240046;
 }
 .profilebody-left{
-    flex:0.1;
+    display: grid;
+    place-items: center;
 }
 .profilebody-center{
-    flex:0.6;
+    display: grid;
+    place-items: center;
 }
-.profilebody-right{
-    flex:0.1;
-}
+

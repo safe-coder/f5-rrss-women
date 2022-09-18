@@ -7,14 +7,14 @@
 }
 
 .postcarddropdown{
-    background-color: rgb(226, 226, 226);
+    background-color: #FF9E00;
     margin-top:.5rem;
     padding:15px;
     border-radius:10px;
     position: absolute;
     right:30%;
     min-width:100px;
-    color:rgb(81, 61, 173);
+    color:#401368;
     z-index:4;
     
     
@@ -31,16 +31,17 @@
 }
 .postcardheaderdown p{
     font-size:14px;
-    color:gray;
+    color:#FF9E00;
     font-weight: 700;
     margin-top: 8px;
+    margin-right: 8px;
     cursor: pointer;
 }
 
 .postcardheadertopavatar{
     width:40px;
     height:40px;
-    border: 2px solid gray;
+    border: 2px solid #FF9E00;
     padding:3px;
     object-fit: cover;
     border-radius: 50%;
@@ -52,21 +53,20 @@
   
 }
 .postcardheaderinfo h4{
-    font-size:.5rem;
+    color: #FF9E00;
+    font-size:.8rem;
     font-weight:400;
-    color:gray;
-
 }
 .postcardheaderinfo h6{
     font-size:14px;
     font-weight:700;
-    color:black;
+    color: #FF6D00;
     align-items: flex-start;
 }
 
 .postcardbodycontent{
-    padding: .5rem 1rem; 
-    color:rgb(104, 104, 104);
+    padding: .5rem 2.5rem; 
+    color:#240046;
     font-weight: 500;
 }
 .postcardbodyimage{
@@ -78,9 +78,8 @@
 position: absolute;
 top:40%;
 font-size:2rem;
-transform: rotate(90deg);
 left:-1%;
-color:rgb(170, 169, 169);
+color:#240046;
 padding:5px;
 cursor: pointer;
 
@@ -90,9 +89,8 @@ cursor: pointer;
     position: absolute;
     top:40%;
     font-size:2rem;
-    transform: rotate(-90deg);
     right:-1%;
-    color:rgb(177, 174, 174);
+    color:#240046;
     padding:5px;
     cursor: pointer;
     
