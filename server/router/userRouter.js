@@ -5,6 +5,7 @@ import  userCtrl from '../controller/userCtrl.js';
 const router = Router();
 
 router.get('/search', auth, userCtrl.searchUser)
+router.get('/users', auth, userCtrl.getUsers)
 router.get('/user/:id',auth, userCtrl.getUser)
 router.patch('/user',auth, userCtrl.updateUser)
 router.patch('/user/:id/friend',auth, userCtrl.friend)

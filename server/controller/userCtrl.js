@@ -22,6 +22,16 @@ import { Users } from "../model/userModel.js";
           return res.status(500).json({msg: err.message})
       }
     },
+
+    getUsers: async (req,res)=>{
+      try {
+          const users =  await Users.find()
+          
+          res.json({users})
+      } catch (err) {
+          return res.status(500).json({msg: err.message})
+      }
+    },
     updateUser: async (req, res) => {
     try {
       const { website, fullname, story, address, avatar, banner } = req.body;

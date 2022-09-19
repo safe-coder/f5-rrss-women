@@ -12,8 +12,7 @@ export const PROFILE_TYPES = {
     GET_USER : 'GET_USER',
     FRIEND: 'FRIEND',
     UNFRIEND:'UNFRIEND',
-    LOADING_USERS: 'LOADING_USERS',
-    GET_USERS: 'GET_USERS',
+
 }
 
 
