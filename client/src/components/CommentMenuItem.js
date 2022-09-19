@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const CommentMenuItem = ({ comment, pos, auth }) => {
+const CommentMenuItem = ({ comment, pos, auth, setonEdit }) => {
 
   const [menuitem, setMenuitem] = useState(false)
   
@@ -9,7 +9,7 @@ const CommentMenuItem = ({ comment, pos, auth }) => {
     return (
       <>
       <div className="commentMenuitemlist">
-          <h6 className="commentMenuitemedit"  style={{cursor:'pointer'}}>Edit</h6>
+          <h6 className="commentMenuitemedit" style={{ cursor: 'pointer' }} onClick={()=> setonEdit(true)}>Edit</h6>
           <h6 className="commentMenuitemdelete" style={{cursor:'pointer'}} >Remove</h6>
       </div>
       </>
