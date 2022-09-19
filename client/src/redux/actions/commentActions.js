@@ -57,3 +57,50 @@ export const updateComment = ({comment,content,pos,auth}) => async (dispatch) =>
    })
     }
 }
+
+export const likecomment = ({comment, pos, auth}) => async (dispatch) =>{
+    console.log({comment, pos, auth})
+
+    const newcomment = {...comment, likes:[...comment.likes, auth.user]}
+
+    const newComments = EditData(pos.commentss, comment._id, newcomment)
+
+    const newPost = {...pos, commentss: newComments}
+
+    dispatch({type:POST_TYPES.UPDATE_POST , payload : newPost})
+    try {
+        const res = await patchDataApi(`comment/${comment._id}/like`, null , auth.token)
+        console.log(res)
+    } catch (err) {
+        dispatch({
+            type:'ALERT',
+           payload:{
+            error: err.response.data.msg
+           }
+   })
+    }
+}
+export const unlikecomment = ({comment, pos, auth}) => async (dispatch) =>{
+    console.log({comment, pos, auth})
+    const newcomment = {...comment, likes:DeleteData(comment.likes, auth.user._id)}
+
+    const newComments = EditData(pos.commentss, comment._id, newcomment)
+
+    const newPost = {...pos, commentss: newComments}
+
+    dispatch({type:POST_TYPES.UPDATE_POST , payload : newPost})
+
+    try {
+        const res = await patchDataApi(`comment/${comment._id}/unlike`, null , auth.token)
+        
+        
+    } catch(err){
+        dispatch({
+            type:'ALERT',
+           payload:{
+            error: err.response.data.msg
+           }
+   })
+    }
+}
+
