@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {Link , useNavigate} from "react-router-dom"
 import "../styles/PostCard.css"
 import moment from 'moment'
+import 'moment/locale/es';
 import {useDispatch, useSelector} from"react-redux"
 import {ALERT_TYPES} from "../redux/actions/alertActions"
 import { deletePost } from '../redux/actions/postActions';

@@ -1,13 +1,13 @@
 import React from 'react';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';;
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 const LikePost = ({isLike, handleLike,handleUnLike}) =>{
     return (
         <div>
            {
                isLike 
-               ? <FavoriteBorderIcon onClick={handleUnLike} style={{color:'purple'}}/>
-               : <FavoriteBorderIcon onClick={handleLike} style={{color:'black'}}/>
+               ? <FavoriteIcon onClick={handleUnLike}  style={{color:'#FF9E00'}}/>
+               : <FavoriteIcon onClick={handleLike}  style={{color:'#FF6D00'}}/>
 
            }
         </div>

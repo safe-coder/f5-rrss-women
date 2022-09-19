@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
 const CommentMenuItem = ({ comment, pos, auth, setonEdit }) => {
 
@@ -20,10 +21,10 @@ const CommentMenuItem = ({ comment, pos, auth, setonEdit }) => {
     <div className='CommentMenuItem'>
     
       {
-        (pos.user._id === auth.user._id || comment.user._id === auth.user._id) && <div className='CommentMenuItem' style={{cursor:"pointer"}} onClick={()=>setMenuitem(!menuitem)}> ooo </div>
+        (pos.user._id === auth.user._id || comment.user._id === auth.user._id) && <div className='CommentMenuItem' style={{cursor:"pointer"}} onClick={()=>setMenuitem(!menuitem)}> <MoreHorizIcon fontSize="large" style={{color: "#240046"}}/> </div>
       }
       {
-       menuitem ? ( pos.user._id === auth.user._id ? comment.user._id === auth.user._id ? MenuItem() : <h6 className='commentMenuitemdelete'>Remove</h6> :comment.user._id === auth.user._id && MenuItem()) : ""
+       menuitem ? ( pos.user._id === auth.user._id ? comment.user._id === auth.user._id ? MenuItem() : <h6 className='commentMenuitemdelete'>Borrar</h6> :comment.user._id === auth.user._id && MenuItem()) : ""
       }
     </div>
   )
