@@ -1,121 +1,121 @@
-.inputpostcomments{
-  display:flex;
-
- justify-content: space-around;
-  padding:5px 3px;
+.inputpostcomments {
+  display: flex;
+  justify-content: space-around;
+  padding: 5px 3px;
 }
 
-.inputpostcomments-left img{
-  width:40px;
+.inputpostcomments-left img {
+  width: 40px;
   height: 40px;
   border-radius: 10px;
   object-fit: cover;
   padding: 2px;
- 
-}
-.inputpostcomments-input{
-  outline:none;
-  border:2px solid gray;
-  color:black;
-  margin:0rem 3px;
-  padding:0 2px;
 }
 
-.inputpostcomments-button{
-
-  background-color: #615dfa;
-  color:'black';
-  width:100px;
-  border: 2px solid gray;
-  padding:3px;
-  border-radius:5px;
-
-
+.inputpostcomments-input {
+  outline: none;
+  background-color: #b16eed;
+  margin: 0rem 5px;
+  padding: 0 2px;
+  height: 45px;
 }
 
-.postCommentCard{
-  background-color: rgb(243, 243, 243);
-  padding:10px;
-  margin:10px;
+.inputpostcomments-button {
+  background-color: #240046;
+  color: #FF6D00;
+  font-weight: 800;
+  width: 100px;
+  height: 50px;
+  padding: 3px;
+  border-radius: 25px;
+}
+.inputpostcomments-button:hover {
+  background-color: #FF6D00;
+  color: #240046;}
+
+.postCommentCard {
+  background-color: none;
+  padding: 10px;
+  margin: 10px;
   border-radius: 15px;
-  border:2px solid gray;
+  border: 2px solid #240046;
   position: relative;
-
 }
-.postCommentCarduser{
+.postCommentCarduser {
   display: flex;
   align-items: center;
-  justify-content:space-between;
+  justify-content: space-between;
   margin-bottom: 2px;
-
 }
-.postCommentCardfullname{
-  font-size:1rem;
-  color:black;
-  font-weight:700;
+.postCommentCardfullname {
+  font-size: 1rem;
+  color: black;
+  font-weight: 700;
   letter-spacing: 1.5px;
 }
-.postCommentCardcommentcontent-content{
-  font-weight:500;
-  color:gray;
+.postCommentCardcommentcontent-content {
+  font-weight: 500;
+  color: #240046;
 }
-.postCommentCardtime{
-  font-size:10px;
-  color:black;
-  font-weight:300;
+.postCommentCardtime {
+  font-size: 10px;
+  color: black;
+  font-weight: 300;
 }
-.postCommentCardavatar{
+.postCommentCardavatar {
   height: 40px;
-  width:40px;
-  object-fit:cover;
+  width: 40px;
+  object-fit: cover;
   border-radius: 10px;
-  margin-right:10px;
+  margin-right: 10px;
 }
-.postCommentCarduserinfo{
+.postCommentCarduserinfo {
   display: flex;
- 
-
 }
 
-.postCommentCardcommentcontent{
-  padding:10px 5px;
-  border-top: 1px solid gray;
+.postCommentCardcommentcontent {
+  padding: 10px 5px;
+  border-top: 1px solid #240046;
 }
-.postCommentCardavatarcommentcontent-likes{
-  display:flex;
-  margin-top:10px;
+.postCommentCardavatarcommentcontent-likes {
+  display: flex;
+  margin-top: 10px;
 }
-.postCommentCardavatarcommentcontent-reply{
-  margin-left:15px
+.postCommentCardavatarcommentcontent-reply {
+  margin-left: 15px;
 }
-.postCommentCardavatarcommentcontent-likescount{
-  margin-right:5px;
+.postCommentCardavatarcommentcontent-likescount {
+  margin-right: 5px;
 }
-.commentMenuitemlist{
-  position:absolute;
-  background-color: gray;
-  padding:.5rem 1rem;
-  border-radius: 10px;
-  transform: translateX(-50px);
-  z-index:9;
-}
-.commentMenuitemedit{
-  font-size: 10px;;
-  padding:6px;
-  font-weight: 900;
-  letter-spacing: 3px;
-  border-bottom: 1px solid gray;
-}
-.commentMenuitemdelete{
-  font-size: 10px;;
-  padding:6px;
-  font-weight: 900;
-  letter-spacing: 3px;
-  border-bottom: 1px solid gray;
-}
-.postCommentCardLikeButton{
+.commentMenuitemlist {
   position: absolute;
- transform:translate(350px,-140px);
+  background-color: #FF9E00;
+  margin-top:.5rem;
+  padding:15px;
+  border-radius:10px;
+  color: #240046;
+  transform: translateX(-30px);
+  z-index: 9;
+}
+.commentMenuitemedit {
+  font-size:1rem;
+  padding: 6px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color:#401368;
+}
+.commentMenuitemdelete {
+  font-size:1rem;
+  padding: 6px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color:#401368;
+}
 
-
+.commentMenuitemdelete:hover, .commentMenuitemedit:hover{
+  color: black;
+}
+.postCommentCardLikeButton {
+  position: absolute;
+  transform: translate(350px, -140px);
 }

@@ -2,16 +2,23 @@
     background-color: #EEDAFF;
     border: 2px solid #240046;
     border-radius: 20px;
-    box-shadow: #240046 5px 5px;
-    border-radius:10px;
     margin-bottom: 1rem;
     margin-top: 1rem;
+    box-shadow: #240046 5px 5px;
+}
+
+.status-header{
+    background-color: #401368;
+    color:#FF9E00;
+    border-radius: 16px 16px 0px 0px;
 }
 
 .editstatus{
     position: fixed;
     top:10rem;
-    background-color:#615dfa ;
+    left:42.5rem;
+    background-color:#ffb949 ;
+    border: 2px solid #240046;
     z-index:5;
     border-radius:10px;
     padding:.5rem 1rem;
@@ -106,7 +113,7 @@ video.status-middleimages{
     
 }
 .status-middle textarea{
-    background-color:#d1b0f0;
+    background-color:#b16eed;
     border:none;
     border-radius: 10px;
     padding: .6rem;

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import moment from "moment";
+import 'moment/locale/es';
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { useSelector } from "react-redux";
 import CommentMenuItem from "./CommentMenuItem";
@@ -69,7 +70,7 @@ const PostCommentCard = ({ comment, pos }) => {
         </div>
         <div className="postCommentCardavatarcommentcontent-likes">
          <p className="postCommentCardavatarcommentcontent-likescount">{comment.likes.length}</p> 
-          <FavoriteBorderIcon style={{color:'red'}}/><p className="postCommentCardavatarcommentcontent-reply">Respuesta</p>
+          <FavoriteBorderIcon style={{color:'#240046'}}/><p className="postCommentCardavatarcommentcontent-reply">Respuesta</p>
         </div>
       </div>
       <div className="postCmmentCardLikeButton">
