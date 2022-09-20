@@ -22,6 +22,7 @@ import {Grid} from '@mui/material'
 const Profile = () => {
 
   const [userData, setUserData] = useState([]);
+  console.log(userData);
   const { id } = useParams();
   const { auth, profile } = useSelector(state => state);
   const dispatch = useDispatch();

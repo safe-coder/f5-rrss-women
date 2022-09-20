@@ -3,10 +3,10 @@ import {useSelector} from "react-redux"
 import GlobalCard from "./GlobalCard"
 
 const HomeLeft = () =>{
-    // const {auth} = useSelector(state => state)
+     const {auth} = useSelector(state => state)
     return (
         <div>
-            {/* <GlobalCard user={auth.user}/> */}
+            <GlobalCard user={auth.user}/>
         </div>
     )
 }
