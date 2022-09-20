@@ -7,24 +7,21 @@ import { Grid } from "@mui/material";
 const Home = () => {
   return (
     <div container
-    className="homebody" style={{    display: "grid",
-      placeItems: "center"}}>
+    className="homebody">
       <div className="homebanner">
         <Banner />
       </div>
-      <div className="homemaincontainer">
-        <div className="homemain-contentleft">
+      <Grid container className="homemaincontainer">
+        <Grid item sx={12} md={2} className="homemain-contentleft">
           <HomeLeft />
-        </div>
-        <div
+        </Grid>
+        <Grid item sx={12} md={6} 
           className="homemain-contentmid"
+          style={{width: "100%", maxWidth: "32.5rem"}}
         >
           <HomeMid />
-        </div>
-        {/* <div className="homemain-contentright">
-                    <HomeRight/>
-                </div> */}
-      </div>
+        </Grid>
+      </Grid>
     </div>
   );
 };
