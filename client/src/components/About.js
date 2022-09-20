@@ -3,6 +3,9 @@ import React from "react";
 import "../styles/ProfileAbout.css"
 import CircleIcon from '@mui/icons-material/Circle';
 import { RadioGroup } from "@mui/material";
+import moment from "moment";
+
+
 const About = ({userData, auth,profile, id}) =>{
 
    
@@ -21,7 +24,7 @@ const About = ({userData, auth,profile, id}) =>{
                             <div className="profileabout-contentbottom">
                                 <div className="profileabout-contentbottominfo">
                                     <h6 className="profileabout-contentbottominfo-head">Unida</h6>
-                                    <p className="profileabout-contentbottominfo-body">{user.createdAt}</p>
+                                    <p className="profileabout-contentbottominfo-body">{moment(user.createdAt).format('YYYY-MM-DD')}</p>
                                     </div>
                                     <div className="profileabout-contentbottominfo">
                                     <h6 className="profileabout-contentbottominfo-head">Email</h6>
@@ -29,7 +32,7 @@ const About = ({userData, auth,profile, id}) =>{
                                     </div>
                                     <div className="profileabout-contentbottominfo">
                                     <h6 className="profileabout-contentbottominfo-head">Website</h6>
-                                    <p className="profileabout-contentbottominfo-body">{user.website}</p>
+                                    <a href={`${user.website}`}  target="_blank" rel="noopener noreferrer" className='profileabout-contentbottominfo-body'> {user.website} </a>
                                     </div>
                                 </div>
                     </div>

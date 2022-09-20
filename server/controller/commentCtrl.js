@@ -24,7 +24,66 @@ const commentCtrl = {
     } catch (err) {
       return res.status(500).json({ msg: err.message })
     }
-  }
+  },
+
+
+  updateComment: async (req, res) => {
+    try {
+      const { content} = req.body;
+  
+      await Comment.findOneAndUpdate({_id: req.params.id, user:req.user._id},{content})
+      
+  
+      
+    
+      return res.json({ msg:'update succesfully'})
+    } catch (err) {
+      return res.status(500).json({ msg: err.message })
+    }
+  },
+  likeComment: async(req,res)=> {
+
+    try {
+        
+        const comment = await Comment.find({_id: req.params.id, likes: req.user._id})
+       
+        if(comment.length > 0) return res.status(400).json({msg:"you have already like this comment"})
+    
+        await Comment.findOneAndUpdate({_id:req.params.id},{
+            $push: {likes: req.user._id}
+        },{new:true})
+    
+        return res.json({
+            msg: "Comment Likes"
+        })
+    
+    } 
+    catch (err) {
+        return res.status(500).json({msg: err.message})
+    }
+       
+    
+},
+unlikeComment: async(req,res)=> {
+    
+        try {
+            
+        
+            await Comment.findOneAndUpdate({_id:req.params.id},{
+                $pull: {likes: req.user._id}
+            },{new:true})
+        
+            return res.json({
+                msg: "Comment UnLiked"
+            })
+        
+        } 
+        catch (err) {
+            return res.status(500).json({msg: err.message})
+        }
+           
+        
+},
 }
 
   export default commentCtrl;
