@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useState, useRef } from "react";
 import "../styles/Status.css";
-import PhotoCameraIcon from "@mui/icons-material/PhotoCamera";
+import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
 import PhotoIcon from "@mui/icons-material/Photo";
 import { useDispatch } from "react-redux";
 import {createpost , updatepost} from "../redux/actions/postActions";
@@ -154,7 +154,7 @@ if(tracks) tracks.stop()
                   className="status-middleimagedelete"
                   onClick={() => deleteimage(index)}
                 >
-                  x
+                  <CancelRoundedIcon fontSize="large"/>
                 </span>
               </div>
             ))}
