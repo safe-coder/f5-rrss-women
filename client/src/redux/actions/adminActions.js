@@ -2,17 +2,17 @@ import {getDataApi} from "../../utils/fetchDataApi";
 
 
 export const ADMIN_TYPES= {
-    LOADING_USERS: 'LOADING_USERS',
     GET_USERS: 'GET_USERS',
 }
 
 
-export const getUsers = (token) => async (dispatch) =>{
+export const getUsers = () => async (dispatch) =>{
     try {
-       dispatch({type: ADMIN_TYPES.LOADING_USERS, payload: true})
-        const res = await getDataApi('users',token)
+      
+        const res = await getDataApi('users','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMjQ3MWQ1Mzk0Njg3M2Y4MzA1NmViMyIsImlhdCI6MTY2MzYyNzcxMiwiZXhwIjoxNjYzNzE0MTEyfQ.MUh6slc8-KN-rZ-4lYPG1na_ubSZTg3LKSVA2RAicHI')
+        console.log(res);
        dispatch({type:ADMIN_TYPES.GET_USERS , payload: res.data}) 
-       dispatch({type: ADMIN_TYPES.LOADING_USERS, payload:false})
+    
 
     } catch (err) {
         dispatch({
