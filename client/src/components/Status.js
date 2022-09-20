@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useState, useRef } from "react";
 import "../styles/Status.css";
-import PhotoCameraIcon from "@mui/icons-material/PhotoCamera";
+//import PhotoCameraIcon from "@mui/icons-material/PhotoCamera";
 import PhotoIcon from "@mui/icons-material/Photo";
 import { useDispatch } from "react-redux";
 import {createpost , updatepost} from "../redux/actions/postActions";
@@ -15,8 +15,8 @@ const Status = () => {
   const [stream, setStream] = useState(false)
   const [tracks, setTracks] = useState("")
   const dispatch = useDispatch();
-const refVideo = useRef();
-  const refCanvas = useRef();
+// const refVideo = useRef();
+//   const refCanvas = useRef();
 
   useEffect(() => {
     if (status.edit) {
@@ -56,40 +56,38 @@ const refVideo = useRef();
     imageuploadfunc.click();
   };
 
-  const handleStream = () =>{
-    setStream(true)
-    if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia){
-        navigator.mediaDevices.getUserMedia({video:true})
-        .then((stream =>{
-            refVideo.current.srcObject = stream;
-            refVideo.current.play();
-            const track = stream.getTracks();
-            setTracks(track[0])
+//   const handleStream = () =>{
+//     setStream(true)
+//     if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia){
+//         navigator.mediaDevices.getUserMedia({video:true})
+//         .then((stream =>{
+//             refVideo.current.srcObject = stream;
+//             refVideo.current.play();
+//             const track = stream.getTracks();
+//             setTracks(track[0])
             
             
-        })).catch(err => console.log(err))
-    }
-}
+//         })).catch(err => console.log(err))
+//     }
+// }
 
-const handlecameraimage = () =>{
-    const width = refVideo.current.clientWidth;
-    const height = refVideo.current.clientWidth;
+// const handlecameraimage = () =>{
+//     const width = refVideo.current.clientWidth;
+//     const height = refVideo.current.clientWidth;
 
-    refCanvas.current.setAttribute('width', width);
-    refCanvas.current.setAttribute('height', height);
-    const ctx = refCanvas.current.getContext('2d');
-    ctx.drawImage(refVideo.current, 0, 0, width, height)
-    const URL = refCanvas.current.toDataURL();
-    setImages([...images, {camera:URL}])
-    console.log(images)
-}
+//     refCanvas.current.setAttribute('width', width);
+//     refCanvas.current.setAttribute('height', height);
+//     const ctx = refCanvas.current.getContext('2d');
+//     ctx.drawImage(refVideo.current, 0, 0, width, height)
+//     const URL = refCanvas.current.toDataURL();
+//     setImages([...images, {camera:URL}])
+//     console.log(images)
+// }
 
 const handleStreamStop = () =>{
     tracks.stop();
     setStream(false)
 }
-
-
 
 const handleSubmit = (e) =>{
   e.preventDefault();
@@ -127,8 +125,8 @@ if(tracks) tracks.stop()
     <div className={status.edit ? "editstatus" : "status"}>
       <form onSubmit={handleSubmit}>
         <div className="status-header">
-          <img src={auth.user.avatar} alt="" />
-          <h4>@{auth.user.username}</h4>
+          {/* <img src={auth.user.avatar} alt="" /> */}
+          {/* <h4>@{auth.user.username}</h4> */}
         </div>
         <div className="status-middle">
           <textarea
@@ -161,16 +159,16 @@ if(tracks) tracks.stop()
         </div>
 {
     stream && <div className="status-stream">
-        <video autoPlay muted ref={refVideo} style={{height: "250px", width: "100%", border: "2px solid gray", padding: "3px", borderRadius: "4px"}}/>
+        {/* <video autoPlay muted ref={refVideo} style={{height: "250px", width: "100%", border: "2px solid gray", padding: "3px", borderRadius: "4px"}}/> */}
         <span className="status-middlestreamstop" onClick={handleStreamStop}>x</span>
-        <canvas ref={refCanvas} style={{display: "none"}}/>
+        {/* <canvas ref={refCanvas} style={{display: "none"}}/> */}
     </div>
 }
 
         <div className="status-footer">
             <div className="status-footerright">
             {
-                stream ? <PhotoIcon onClick={handlecameraimage} />
+                stream ? <PhotoIcon/>
                 :
                 <>
             {/* <PhotoCameraIcon onClick={handleStream}/> */}
@@ -189,7 +187,9 @@ if(tracks) tracks.stop()
             </span>
           </div>
           <div className="status-footerleft">
-          <button className="status-footerleftdiscard" onClick={handleDiscard}>Borrar</button>            <button className="status-footerleftcreate" type="submit">Enviar</button>          </div>
+            <button className="status-footerleftdiscard" onClick={handleDiscard}>Borrar</button>
+            <button className="status-footerleftcreate" type="submit">Enviar</button>
+        </div>
         </div>
       </form>
     </div>

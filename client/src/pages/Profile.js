@@ -1,6 +1,6 @@
 import React from 'react'
 import Info from '../components/Info'
-import Posts from '../components/Posts'
+import HomeMid from '../components/HomeMid'
 import About from '../components/About'
 import "../styles/Profile.css"
 import {useSelector, useDispatch} from 'react-redux';
@@ -8,7 +8,7 @@ import {useParams} from 'react-router-dom';
 import { getProfileUsers } from "../redux/actions/profileActions";
 import { useEffect, useState } from "react";
 import { IconButton } from "@mui/material";
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+//import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import HomeIcon from '@mui/icons-material/Home';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import PeopleIcon from '@mui/icons-material/People';
@@ -97,10 +97,10 @@ const handletoggle = (ht) =>{
                 <About userData={userData} profile={profile} auth={auth} id={ id}/>
             </Grid>
             <Grid item md={4} className='profilebody-center'>
-                <Posts />
+                <HomeMid/>
             </Grid>
             <Grid item  md={3} className='profilebody-right'>
-                {/* <Posts /> */}
+              
             </Grid>
          
               </Grid>
