@@ -27,16 +27,26 @@ export default function UserList() {
   console.log(auth)
   
 
-  useEffect(() => {
-    axios
-      .get("http://localhost:5000/api/users/", {
-        headers: { 'Authorization': + 'Bearer' + auth.token }
-      })
-      .then((res) => {
-        console.log(res.data);
-        setData(res.data);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get("http://localhost:5000/api/users/", {
+  //       headers: { 'Authorization': + 'Bearer' + auth.token }
+  //     })
+  //     .then((res) => {
+  //       console.log(res.data);
+  //       setData(res.data);
+  //     });
+  // }, []);
+
+
+  const getDataApi = async (auth) =>{
+    const res = await axios.get("http://localhost:5000/api/users/",{
+        headers : {Authorization : auth.token}
+    })
+    return res;
+}
+console.log(getDataApi)
+
   return (
     <Box sx={{ flexGrow: 1, maxWidth: 500 }}>
        {/* {

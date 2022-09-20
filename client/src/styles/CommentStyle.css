@@ -119,3 +119,19 @@
   position: absolute;
   transform: translate(350px, -140px);
 }
+
+.postCommentCardavatarcommentcontent-likes{
+  display: flex;
+  align-items: center;
+}
+
+.postCommentCard-cancelar{
+  background-color: #240046;
+  color:#FF6D00;
+}
+
+.postCommentCard-aplicar{
+  background-color: #FF6D00;
+  color:#240046;
+  margin-right: 10px;
+}
