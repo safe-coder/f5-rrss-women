@@ -14,9 +14,10 @@ const EditProfile = ({ user, setOnEdit }) => {
     fullname: "",
     story: "",
     address: "",
+    password: "",
   };
   const [editData, setEditData] = useState(initState);
-  const { website, fullname, story, address } = editData;
+  const { website, fullname, story, address, password } = editData;
   const [avatar, setAvatar] = useState("");
   const [banner, setBanner] = useState("");
 
@@ -54,7 +55,7 @@ const EditProfile = ({ user, setOnEdit }) => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(updateProfile({ editData, avatar, banner, auth }));
+    dispatch(updateProfile({ editData, avatar, banner, auth, password }));
   };
 
   return (
@@ -152,6 +153,16 @@ const EditProfile = ({ user, setOnEdit }) => {
               placeholder="Escribe tu Bio"
             />
             <p>{story.length}/200</p>
+          </div>
+          <label htmlFor="password">Contraseña </label>
+          <div className="editprofile-userdatastory">
+            <input
+              type="text"
+              value={password}
+              onChange={handleChangeInput}
+              name="password"
+              placeholder="Escribe tu Password"
+            />
           </div>
           <button onClick={handleSubmit} className="editprofile-userdatabutton">
             Aplicar

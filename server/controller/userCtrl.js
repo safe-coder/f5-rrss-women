@@ -34,11 +34,11 @@ import { Users } from "../model/userModel.js";
     },
     updateUser: async (req, res) => {
     try {
-      const { website, fullname, story, address, avatar, banner } = req.body;
+      const { website, fullname, story, address, avatar, banner, password } = req.body;
       if (!fullname) return res.status(500).json({ msg: "fullname is requires" })
       
       await Users.findOneAndUpdate({ _id: req.user._id }, {
-        website, fullname, story, address, avatar, banner 
+        website, fullname, story, address, avatar, banner, password
       })
 
       res.json({msg:'update success'})

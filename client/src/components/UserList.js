@@ -12,13 +12,13 @@ import FolderIcon from '@mui/icons-material/Folder';
 import DeleteIcon from '@mui/icons-material/Delete';
 import {useSelector} from "react-redux"
 
-function generate(element) {
-  return [0, 1, 2].map((value) =>
-    React.cloneElement(element, {
-      key: value,
-    }),
-  );
-}
+// function generate(element) {
+//   return [0, 1, 2].map((value) =>
+//     React.cloneElement(element, {
+//       key: value,
+//     }),
+//   );
+// }
 
 export default function UserList() {
   const [data, setData] = useState([]);
@@ -27,28 +27,24 @@ export default function UserList() {
   console.log(auth)
   
 
-  useEffect(() => {
+  useEffect( () => {
     axios
       .get("http://localhost:5000/api/users/", {
-        headers: { 'Authorization': + 'Bearer' + auth.token }
+        headers: { Authorization:  auth.token }
       })
       .then((res) => {
         console.log(res.data);
-        setData(res.data);
+        setData(res.data.users);
       });
-  }, []);
+  }, [auth.token]);
+
+
   return (
     <Box sx={{ flexGrow: 1, maxWidth: 500 }}>
-       {/* {
-                usersList && usersList. > 0 && homePost.post.map((pos)=>(
-                    <div className="postCards" key={pos._id}style={{backgroundColor:'white',padding:'1rem', marginTop:'1rem', borderRadius:'10px', boxShadow:'3px 3px 5px gray',width:'500px'}} >
-                        
-                    </div>
-                ))
-            } */}
+     
         <Grid item xs={12} md={6}>
             <List>
-              {generate(
+            {data.map((user) => (
                 <ListItem
                   secondaryAction={
                     <IconButton edge="end" aria-label="delete">
@@ -61,9 +57,10 @@ export default function UserList() {
                       <FolderIcon />
                     </Avatar>
                   </ListItemAvatar>
-<p>Nombre de usuaria</p>
-                </ListItem>,
-              )}
+<p>{user.username}</p>
+                </ListItem>
+              ))}
+          
             </List>
         </Grid>
     </Box>
