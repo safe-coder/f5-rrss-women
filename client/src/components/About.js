@@ -23,8 +23,12 @@ const About = ({userData, auth,profile, id}) =>{
                             </div>
                             <div className="profileabout-contentbottom">
                                 <div className="profileabout-contentbottominfo">
-                                    <h6 className="profileabout-contentbottominfo-head">Unida</h6>
+                                    <h6 className="profileabout-contentbottominfo-head">Fem-5 desde</h6>
                                     <p className="profileabout-contentbottominfo-body">{moment(user.createdAt).format('YYYY-MM-DD')}</p>
+                                    </div>
+                                    <div className="profileabout-contentbottominfo">
+                                    <h6 className="profileabout-contentbottominfo-head">Ubicación</h6>
+                                    <p className="profileabout-contentbottominfo-body">{user.address}</p>
                                     </div>
                                     <div className="profileabout-contentbottominfo">
                                     <h6 className="profileabout-contentbottominfo-head">Email</h6>

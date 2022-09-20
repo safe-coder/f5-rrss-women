@@ -12,8 +12,11 @@ const Home = () => {
       <div className="homebanner">
         <Banner />
       </div>
-      <Grid container className="homemaincontainer">
-        <Grid item sx={12} md={2} className="homemain-contentleft">
+      <Grid container className="homemaincontainer" style={{display: "flex", flexDirection:"row",
+            justifyContent:"space-around",
+            alignItems:"flex-start",
+            className:"profilebody"}}>
+        <Grid item sx={12} md={3} className="homemain-contentleft" style={{paddingLeft: "5%"}}>
           <HomeLeft />
         </Grid>
         <Grid item sx={12} md={6} 
@@ -23,9 +26,9 @@ const Home = () => {
           <Status/>
           {/* <HomeMid /> */}
         </Grid>
-        {/* <div className="homemain-contentright">
-                    <HomeRight/>
-                </div> */}
+        <Grid item md={3}  className="homemain-contentright">
+              
+                </Grid>
       </Grid>
     </div>
   );
