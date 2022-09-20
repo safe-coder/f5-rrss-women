@@ -1,8 +1,9 @@
 import React from "react";
 import HomeLeft from "../components/HomeLeft";
-import HomeMid from "../components/HomeMid";
+//import HomeMid from "../components/HomeMid";
 import Banner from "../components/Banner";
 import { Grid } from "@mui/material";
+import Status from "../components/Status";
 
 const Home = () => {
   return (
@@ -19,8 +20,12 @@ const Home = () => {
           className="homemain-contentmid"
           style={{width: "100%", maxWidth: "32.5rem"}}
         >
-          <HomeMid />
+          <Status/>
+          {/* <HomeMid /> */}
         </Grid>
+        {/* <div className="homemain-contentright">
+                    <HomeRight/>
+                </div> */}
       </Grid>
     </div>
   );
