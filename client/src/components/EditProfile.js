@@ -4,6 +4,8 @@ import { updateProfile } from "../redux/actions/profileActions.js";
 import "../styles/EditProfile.css";
 import { checkimage } from "../utils/imageupload.js";
 import CloseIcon from "@mui/icons-material/Close";
+import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
 const EditProfile = ({ user, setOnEdit }) => {
   const { auth } = useSelector((state) => state);
@@ -20,6 +22,7 @@ const EditProfile = ({ user, setOnEdit }) => {
   const { website, fullname, story, address, password } = editData;
   const [avatar, setAvatar] = useState("");
   const [banner, setBanner] = useState("");
+  const [showcfpass, setShowcfpass] = useState(false);
 
   const changeavatar = (e) => {
     const file = e.target.files[0];
@@ -157,12 +160,18 @@ const EditProfile = ({ user, setOnEdit }) => {
           <label htmlFor="password">Contraseña </label>
           <div className="editprofile-userdatastory">
             <input
-              type="text"
+              type={showcfpass ? "hide" : "password"}
               value={password}
               onChange={handleChangeInput}
               name="password"
               placeholder="Escribe tu Password"
             />
+             <small
+            
+            onClick={() => setShowcfpass(!showcfpass)}
+          >
+            {showcfpass ?  <RemoveRedEyeIcon/> : <VisibilityOffIcon/>}
+          </small>
           </div>
           <button onClick={handleSubmit} className="editprofile-userdatabutton">
             Aplicar
