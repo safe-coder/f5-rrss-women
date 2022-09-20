@@ -95,13 +95,13 @@ export const register = (data) =>async (dispatch) =>{
         const res =await  postDataApi('register', data)
         
         console.log(res)
-        dispatch({
-            type: 'AUTH',
-            payload:{
-                token:res.data.access_token,
-                user: res.data.user
-            } 
-        })
+        // dispatch({
+        //     type: 'AUTH',
+        //     payload:{
+        //         token:res.data.access_token,
+        //         user: res.data.user
+        //     } 
+        // })
 
         
         localStorage.setItem('login',true);

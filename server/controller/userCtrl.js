@@ -1,4 +1,5 @@
 import { Users } from "../model/userModel.js";
+import bcrypt from "bcrypt";
 
   const userCtrl = {
   searchUser: async (req, res) => {
@@ -34,11 +35,16 @@ import { Users } from "../model/userModel.js";
     },
     updateUser: async (req, res) => {
     try {
-      const { website, fullname, story, address, avatar, banner } = req.body;
+      const { website, fullname, story, address, avatar, banner, password } = req.body;
+      if (password.length < 6)
+        return res
+          .status(400)
+          .json({ msg: "password must be atleast 6 characters long" });
+      const passwordHash = await bcrypt.hash(password, 13);
       if (!fullname) return res.status(500).json({ msg: "fullname is requires" })
       
       await Users.findOneAndUpdate({ _id: req.user._id }, {
-        website, fullname, story, address, avatar, banner 
+        website, fullname, story, address, avatar, banner, password: passwordHash
       })
 
       res.json({msg:'update success'})

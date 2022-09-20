@@ -4,6 +4,8 @@ import { updateProfile } from "../redux/actions/profileActions.js";
 import "../styles/EditProfile.css";
 import { checkimage } from "../utils/imageupload.js";
 import CloseIcon from "@mui/icons-material/Close";
+import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
 const EditProfile = ({ user, setOnEdit }) => {
   const { auth } = useSelector((state) => state);
@@ -14,11 +16,13 @@ const EditProfile = ({ user, setOnEdit }) => {
     fullname: "",
     story: "",
     address: "",
+    password: "",
   };
   const [editData, setEditData] = useState(initState);
-  const { website, fullname, story, address } = editData;
+  const { website, fullname, story, address, password } = editData;
   const [avatar, setAvatar] = useState("");
   const [banner, setBanner] = useState("");
+  const [showcfpass, setShowcfpass] = useState(false);
 
   const changeavatar = (e) => {
     const file = e.target.files[0];
@@ -54,7 +58,7 @@ const EditProfile = ({ user, setOnEdit }) => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(updateProfile({ editData, avatar, banner, auth }));
+    dispatch(updateProfile({ editData, avatar, banner, auth, password }));
   };
 
   return (
@@ -152,6 +156,22 @@ const EditProfile = ({ user, setOnEdit }) => {
               placeholder="Escribe tu Bio"
             />
             <p>{story.length}/200</p>
+          </div>
+          <label htmlFor="password">Contraseña </label>
+          <div className="editprofile-userdatastory">
+            <input
+              type={showcfpass ? "hide" : "password"}
+              value={password}
+              onChange={handleChangeInput}
+              name="password"
+              placeholder="Escribe tu Password"
+            />
+             <small
+            
+            onClick={() => setShowcfpass(!showcfpass)}
+          >
+            {showcfpass ?  <RemoveRedEyeIcon/> : <VisibilityOffIcon/>}
+          </small>
           </div>
           <button onClick={handleSubmit} className="editprofile-userdatabutton">
             Aplicar
