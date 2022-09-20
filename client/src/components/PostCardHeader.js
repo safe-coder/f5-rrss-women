@@ -10,7 +10,7 @@ import {BASE_URL} from "../utils/config"
 import ArrowDropDownCircleIcon from '@mui/icons-material/ArrowDropDownCircle';
 
 const PostCardHeader = ({pos}) =>{
-    const {auth, socket} = useSelector(state => state)
+    const {auth} = useSelector(state => state)
     const [showdrop,setshowdrop] = useState(false)
     const dispatch = useDispatch()
     const navigate = useNavigate();
@@ -22,7 +22,7 @@ const PostCardHeader = ({pos}) =>{
     }
     
     const handleDeletePost = () =>{
-        dispatch(deletePost({pos, auth,socket}))
+        dispatch(deletePost({pos, auth}))
         setshowdrop(false)
         navigate.push('/')
 
