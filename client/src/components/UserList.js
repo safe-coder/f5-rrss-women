@@ -1,5 +1,7 @@
 import * as React from 'react';
+import { useState, useEffect } from "react";
 import Box from '@mui/material/Box';
+import axios from 'axios';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
@@ -19,8 +21,22 @@ function generate(element) {
 }
 
 export default function UserList() {
-  const {usersList} = useSelector(state=>state)
-  console.log(usersList)
+  const [data, setData] = useState([]);
+  const {auth} = useSelector(state => state)
+  console.log(data);
+  console.log(auth)
+  
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/api/users/", {
+        headers: { 'Authorization': + 'Bearer' + auth.token }
+      })
+      .then((res) => {
+        console.log(res.data);
+        setData(res.data);
+      });
+  }, []);
   return (
     <Box sx={{ flexGrow: 1, maxWidth: 500 }}>
        {/* {

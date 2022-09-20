@@ -1,26 +1,18 @@
 import {ADMIN_TYPES} from "../actions/adminActions";
 
 const inititalState = {
-    users: [],
-    loading:false,
-    results:0,
-    page:0
+    user: []
     
 }
 
 const adminReducer = (state= inititalState, action) =>{
     switch(action.type){
-       
-        case ADMIN_TYPES.LOADING_POSTS:
-            return {
-                    ...state,
-                   loading : action.payload
-                }
-        case ADMIN_TYPES.GET_POSTS:
+
+        case ADMIN_TYPES.GET_USERS:
             return{
-                ...state,
-                users: action.payload.users,
-                results :action.payload.result
+           ...state,
+                user: action.payload.users,
+            
                 }
         default: 
         return state
