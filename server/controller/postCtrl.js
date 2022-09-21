@@ -51,19 +51,31 @@ getPost: async (req, res) =>{
     }
     },
 //////////
-// getPosts: async (req, res) =>{
-//     try {
+ getPosts: async (req, res) =>{
+    try {
         
-//         const posts = await Posts.find().sort("-createdAt")
+   
+        const posts = await Posts.find().sort("-createdAt")
+        .populate("user likes", "username avatar fullname friends")
+        .populate({
+            path:"commentss",
+            populate:{
+                path:"user likes",
+                select:"-password"
+            }
+        })
         
-//         return res.status(200).json({
-//             posts
-//         })
+       
+        return res.status(200).json({
+            msg:'post found',
+            result:posts.length,
+            posts
+        })
         
-//     }catch (err) {
-//         return res.status(500).json({msg: err.message})
-//     }
-//     },
+    }catch (err) {
+        return res.status(500).json({msg: err.message})
+    }
+    },
 ////////
 updatePost: async (req, res) =>{
     try {

@@ -26,7 +26,15 @@ const postReducer = (state= inititalState, action) =>{
                 ...state,
                 post: action.payload.posts,
                 results :action.payload.result
-                }
+            }
+        //////////////////////////
+            // case POST_TYPES.GET_ALL:
+            //     return{
+            //         ...state,
+            //         post: action.payload.posts,
+            //         results :action.payload.result
+            // }
+        ////////////////////////////
         case POST_TYPES.UPDATE_POST:
             return{
                  ...state,
