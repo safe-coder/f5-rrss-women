@@ -5,7 +5,8 @@ import {createNotify, removeNotify} from "./notifyActions"
 
 export const POST_TYPES= {
     CREATE_POST : "CREATE_POST",
-    GET_POSTS :"GET_POSTS",
+    GET_POSTS: "GET_POSTS",
+    GET_ALL: "GET_ALL",
     UPDATE_POST : "UPDATE_POST",
     LOADING_POSTS :"LOADING_POSTS",
     GET_POST:"GET_POST",
@@ -69,7 +70,9 @@ export const getPost = (token) => async (dispatch) =>{
         })
     }
 }
+///////
 
+/////////////////////
 export const updatepost = ({content, images, auth, status}) => async(dispatch) => {
     
     

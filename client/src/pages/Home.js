@@ -4,6 +4,8 @@ import HomeLeft from "../components/HomeLeft";
 import Banner from "../components/Banner";
 import { Grid } from "@mui/material";
 import Status from "../components/Status";
+import PostAll from "../components/PostAll";
+import PostMid from "../components/PostMid";
 
 const Home = () => {
   return (
@@ -23,8 +25,9 @@ const Home = () => {
           className="homemain-contentmid"
           style={{width: "100%", maxWidth: "32.5rem"}}
         >
-          <Status/>
-          {/* <HomeMid /> */}
+          <PostMid/>
+          {/* <Status/> */}
+          {/* <PostAll /> */}
         </Grid>
         <Grid item md={3}  className="homemain-contentright">
               

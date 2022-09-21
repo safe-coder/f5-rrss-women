@@ -6,11 +6,14 @@ import PostCardBody from "./PostCardBody";
 import PostCardFooter from "./PostCardFooter";
 import PostCardHeader from "./PostCardHeader";
 import PostComments from "./PostComments";
+import Status from "./Status";
 
-const Posts = () => {
-  const { homePost } = useSelector((state) => state);
-console.log(homePost);
+const PostAll = () => {
+  const { postAll } = useSelector((state) => state);
+console.log(postAll);
   return (
+    <>
+    {/* <Status/> */}
     <div
       className="posts"
       // style={{
@@ -20,9 +23,9 @@ console.log(homePost);
       //   gap: "1rem",
       // }}
     >
-      {homePost &&
-        homePost.post.length > 0 &&
-        homePost.post.map((pos) => (
+      {postAll &&
+        postAll.post.length > 0 &&
+        postAll.post.map((pos) => (
           <div
             className="postCards"
             key={pos._id}
@@ -44,8 +47,9 @@ console.log(homePost);
             </div>
           </div>
         ))}
-    </div>
+      </div>
+      </>
   );
 };
 
-export default Posts;
+export default PostAll;

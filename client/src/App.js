@@ -17,8 +17,9 @@ import Explore from './pages/Explore';
 import Notification from './pages/Notification';
 import PrivateRoute from './utils/PrivateRoute';
 import Profile from './pages/Profile';
-import { getPost } from './redux/actions/postActions';
-import { getNotify } from './redux/actions/notifyActions';
+import { getPost } from './redux/actions/postActions.js';
+import {getPosts} from './redux/actions/postallActions'
+import { getNotify } from './redux/actions/notifyActions.js';
 
 
 function App() {
@@ -35,7 +36,8 @@ function App() {
 )
 
 useEffect(()=>{
-  if(auth.token){
+  if (auth.token) {
+    dispatch(getPosts(auth.token))
   dispatch(getPost(auth.token))
   dispatch(getNotify(auth))
   }

@@ -97,8 +97,9 @@ const handletoggle = (ht) =>{
                 <About userData={userData} profile={profile} auth={auth} id={ id}/>
             </Grid>
             <Grid item md={4} className='profilebody-center'>
-                <HomeMid/>
-            </Grid>
+            <HomeMid />
+                  </Grid>
+                
             <Grid item  md={3} className='profilebody-right'>
               
             </Grid>
