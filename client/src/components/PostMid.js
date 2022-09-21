@@ -2,6 +2,7 @@ import React from "react"
 import Posts from "./Posts"
 import Status from "./Status";
 import {useSelector} from "react-redux"
+import PostAll from "./PostAll";
 
 const PostMid = () =>{
     const {postAll} = useSelector(state => state)
@@ -14,7 +15,7 @@ const PostMid = () =>{
             ? <p> Loading .... </p>
             : postAll.result === 0 
             ? <h4> No Post Available </h4>
-            : <Posts/>
+            : <PostAll/>
         }
         </div>
     )
