@@ -23,6 +23,15 @@ import bcrypt from "bcrypt";
           return res.status(500).json({msg: err.message})
       }
     },
+    deleteUser: async (req,res)=>{
+      try {
+          const user =  await Users.deleteOne({_id : req.params.id})
+          if(!user) return res.status(400).json({msg: "No user Exists"})
+          res.json({msg:'delete success'})
+      } catch (err) {
+          return res.status(500).json({msg: err.message})
+      }
+    },
 
     getUsers: async (req,res)=>{
       try {
