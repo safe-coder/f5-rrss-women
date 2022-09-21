@@ -32,7 +32,7 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // if (auth.token) {
-    //   navigate('/');
+    //   navigate('/admin');
     // }
     dispatch(register(userData))
   }
