@@ -16,7 +16,7 @@ const UserCard = ({user,handleClose}) =>{
             <Avatar src={user?.avatar}/>
             <div style={{marginLeft:'6px', color:'white'}}>
                 <span style={{display:'block'}}>{user?.fullname}</span>
-                <small>{user?.username}</small>
+                <small>@{user?.username}</small>
             </div>
             </Link>
             </div>

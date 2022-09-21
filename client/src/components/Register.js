@@ -77,7 +77,7 @@ const Register = () => {
             onChange={handleChange}
             style={{background:`${alert.email ? '#fa8e96' : ''}`}}
           />
-          
+         <div className="register-showpass">
           <input
             className="register-dataformpass"
             type={showcfpass ? "hide" : "password"}
@@ -94,6 +94,8 @@ const Register = () => {
           >
             {showcfpass ?  <RemoveRedEyeIcon/> : <VisibilityOffIcon/>}
           </small>
+</div>
+<div className="register-showpass">
           <input
             className="register-dataformpass"
            type={showpass ? "type" : "password"}
@@ -103,13 +105,13 @@ const Register = () => {
             onChange={handleChange}
             style={{background:`${alert.confirmPassword ? '#fa8e96' : ''}`}}
           />
-
           <small
-            className="register-showpass"
+           
             onClick={() => setShowpass(!showpass)}
           >
             {showpass ? <RemoveRedEyeIcon/> : <VisibilityOffIcon/>}
           </small>
+</div>
           <button className="register-dataformbtn" type="submit">
             Register
           </button>
