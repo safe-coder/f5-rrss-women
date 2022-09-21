@@ -39,31 +39,15 @@ const PostCardFooter = ({pos}) =>{
     }
     return (
         <div className="postcardfooter">
-            <div className="postcardfootertop">
-                <div className="postcardfootertopitems">
-                   <span> {pos.likes?.length} </span> 
-                   <FavoriteBorderIcon style={{color:'#240046'}}/>
-                </div>
-                <div className="postcardfootertopitems">
-                <span> {pos.commentss?.length} </span> 
-                <CommentIcon style={{color:'#240046'}}/>
-                </div>
-            </div>
             <div className="postcardfooterbottom">
                 <div className="postcardfooterbottomitems">
                     <LikePost isLike={isLike} handleLike={ handleLike} handleUnLike={handleUnLike} />
-                <p>Like</p>
+                <p> {pos.likes?.length} Likes </p>
                 </div>
-                <Link to={`/post/${pos._id}`}>
                 <div className="postcardfooterbottomitems">
                 <CommentIcon style={{color:'#FF9E00'}}/>
-                <p style={{color:'#FF9E00'}}> Respuesta </p>
+                <p style={{color:'#FF9E00'}}>  {pos.commentss?.length}  Respuestas </p>
                 </div>
-                </Link>
-                {/* <div className="postcardfooterbottomitems">
-                <SaveAltIcon style={{color:'#FF9E00'}}/>
-                <p> Guardar </p>
-                </div> */}
             </div>
         </div>
     )

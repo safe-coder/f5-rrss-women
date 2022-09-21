@@ -40,6 +40,7 @@ const PostCardBody = ({pos}) =>{
                     }
                 </span>
             </div>
+            {pos.images?.length > 0 && pos.images?.map((image,index)=>(
             <div className="postcardbodyimage">
                
                <span className="postcardbodyimagenext" onClick={()=>shownextimage(pos.images)} > <KeyboardDoubleArrowRightIcon fontSize="large"/></span>
@@ -60,6 +61,7 @@ const PostCardBody = ({pos}) =>{
                 ))}
                 
             </div>
+            ))}
         </div>
     )
 }
