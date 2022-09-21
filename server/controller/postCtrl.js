@@ -49,7 +49,22 @@ getPost: async (req, res) =>{
     }catch (err) {
         return res.status(500).json({msg: err.message})
     }
-},
+    },
+//////////
+// getPosts: async (req, res) =>{
+//     try {
+        
+//         const posts = await Posts.find().sort("-createdAt")
+        
+//         return res.status(200).json({
+//             posts
+//         })
+        
+//     }catch (err) {
+//         return res.status(500).json({msg: err.message})
+//     }
+//     },
+////////
 updatePost: async (req, res) =>{
     try {
         
@@ -241,7 +256,7 @@ getSinglePost: async (req, res) =>{
 deletePost: async(req,res)=>{
     try {
         const post = await Posts.findOneAndDelete({_id:req.params.id, user:req.user._id})
-        await Comments.deleteMany({_id: {$in: post.commentss}})
+        await Comment.deleteMany({_id: {$in: post.commentss}})
 
         return res.json({
             msg:"Post deleted",

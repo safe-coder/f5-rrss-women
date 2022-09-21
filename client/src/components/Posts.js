@@ -35,7 +35,7 @@ console.log(homePost);
             //   width: "100%",
             // }}
           >
-            <div className="post-head"><PostCardHeader pos={pos} /></div>
+            <div className="post-head"><PostCardHeader pos={pos}/></div>
 <div className="post-body">
             <PostCardBody pos={pos} />
             <PostCardFooter pos={pos} />
