@@ -5,6 +5,7 @@ import { login } from "../redux/actions/authActions";
 import { useDispatch, useSelector } from "react-redux";
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import Logo from "../images/LOGOSC.png"
 
 const Login = () => {
   const initialState = { email: "", password: "" };
@@ -34,8 +35,8 @@ const Login = () => {
   return (
     <div className="login">
       <div className="login-container">
-        <h3 className="login-header">Safe Coders</h3>
-        <h6 className="login-subheader">Login</h6>
+        <img src={Logo} alt="" className="login-header"/>
+        <h6 className="login-subheader">L0gin</h6>
 
         <form className="login-dataform" onSubmit={handleSubmit}>
           <input
