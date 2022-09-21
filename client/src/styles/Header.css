@@ -14,7 +14,8 @@
 .header-center{
     background-color: #FF9E00;
     border-radius: 50px;
-    flex: 0.8;
+    flex: 0.5;
+    height: 3rem;
     position:relative;
     display: flex;
     flex-direction: row-reverse;

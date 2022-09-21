@@ -65,7 +65,7 @@ video.status-middleimages{
  object-fit:cover;
  padding:5px;
  margin:5px;
- border:2px solid gray;
+ border:2px solid #240046;
  border-radius:4px;
 
 
@@ -75,17 +75,24 @@ video.status-middleimages{
     margin:10px;
 }
 .status-middleimagedelete{
+    overflow: hidden; 
     position:absolute;
     top:-5%;
-    left:2%;
+    left:-2%;
     opacity: 0;;
-    color:crimson;
+    color:#ffb949;
+    background-color: #240046;
+    border-radius: 50px;
     font-size: 20px;
    font-weight: bolder;
    vertical-align: middle;
-   transform: translateY(-5px);
    cursor: pointer;
 }
+
+::-webkit-scrollbar {
+    display: none;
+}
+
 .status-middleimagecontainer:hover span{
     opacity: 1;;
 }

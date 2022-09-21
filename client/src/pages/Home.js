@@ -2,31 +2,34 @@ import React from "react";
 import HomeLeft from "../components/HomeLeft";
 //import HomeMid from "../components/HomeMid";
 import Banner from "../components/Banner";
-
+import { Grid } from "@mui/material";
 import Status from "../components/Status";
 
 const Home = () => {
   return (
     <div container
-    className="homebody" style={{    display: "grid",
-      placeItems: "center"}}>
+    className="homebody">
       <div className="homebanner">
         <Banner />
       </div>
-      <div className="homemaincontainer">
-        <div className="homemain-contentleft">
+      <Grid container className="homemaincontainer" style={{display: "flex", flexDirection:"row",
+            justifyContent:"space-around",
+            alignItems:"flex-start",
+            className:"profilebody"}}>
+        <Grid item sx={12} md={3} className="homemain-contentleft" style={{paddingLeft: "5%"}}>
           <HomeLeft />
-        </div>
-        <div
+        </Grid>
+        <Grid item sx={12} md={6} 
           className="homemain-contentmid"
+          style={{width: "100%", maxWidth: "32.5rem"}}
         >
           <Status/>
           {/* <HomeMid /> */}
-        </div>
-        {/* <div className="homemain-contentright">
-                    <HomeRight/>
-                </div> */}
-      </div>
+        </Grid>
+        <Grid item md={3}  className="homemain-contentright">
+              
+                </Grid>
+      </Grid>
     </div>
   );
 };

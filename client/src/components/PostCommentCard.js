@@ -6,6 +6,7 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { useSelector, useDispatch } from "react-redux";
 import CommentMenuItem from "./CommentMenuItem";
 import LikePost from "./LikePost";
+import "../styles/CommentStyle.css"
 import { updateComment, likecomment, unlikecomment } from '../redux/actions/commentActions.js'
 
 
@@ -111,11 +112,15 @@ const PostCommentCard = ({ comment, pos }) => {
             <p className="postCommentCardavatarcommentcontent-likescount">
               {comment.likes.length}
             </p>
-            <FavoriteBorderIcon style={{ color: "red" }} />
+            <LikePost
+            isLike={isLike}
+            handleLike={handleLike}
+            handleUnLike={handleUnLike}
+          />
             {onEdit ?
               <>
-                <p className="postCommentCardavatarcommentcontent-reply" onClick={() => handleupdatecomment()} style={{ cursor: 'pointer' }}>update</p>
-                <p className="postCommentCardavatarcommentcontent-reply" onClick={() => setonEdit(false)}>cancel</p>
+                <button className="postCommentCard-aplicar" onClick={() => handleupdatecomment()} style={{ cursor: 'pointer' }}>Aplicar</button>
+                <button className="postCommentCard-cancelar" onClick={() => setonEdit(false)}>Cancelar</button>
               </>
               :
               <p className="postCommentCardavatarcommentcontent-reply" onClick={() => handleupdatecomment()}>Respuesta</p>
@@ -123,11 +128,6 @@ const PostCommentCard = ({ comment, pos }) => {
           </div>
         </div>
         <div className="postCmmentCardLikeButton">
-          <LikePost
-            isLike={isLike}
-            handleLike={handleLike}
-            handleUnLike={handleUnLike}
-          />
         </div>
       </div>
     );

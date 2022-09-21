@@ -60,10 +60,10 @@ const PostCardFooter = ({pos}) =>{
                 <p style={{color:'#FF9E00'}}> Respuesta </p>
                 </div>
                 </Link>
-                <div className="postcardfooterbottomitems">
+                {/* <div className="postcardfooterbottomitems">
                 <SaveAltIcon style={{color:'#FF9E00'}}/>
                 <p> Guardar </p>
-                </div>
+                </div> */}
             </div>
         </div>
     )

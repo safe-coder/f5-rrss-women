@@ -81,9 +81,9 @@ const handletoggle = (ht) =>{
                   <IconButton onClick={()=>handletoggle('showfollowing')}>
                         <PersonAddIcon/>
                   </IconButton>
-                  <IconButton onClick={()=>handletoggle('showsaved')}>
+                  {/* <IconButton onClick={()=>handletoggle('showsaved')}>
                         <BookmarksIcon/>
-                  </IconButton>
+                  </IconButton> */}
                   
               </div>
         </div>  
