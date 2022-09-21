@@ -11,6 +11,7 @@ import Grid from '@mui/material/Grid';
 import FolderIcon from '@mui/icons-material/Folder';
 import DeleteIcon from '@mui/icons-material/Delete';
 import {useSelector} from "react-redux"
+import Button from '@mui/material/Button'
 
 // function generate(element) {
 //   return [0, 1, 2].map((value) =>
@@ -38,6 +39,12 @@ export default function UserList() {
       });
   }, [auth.token]);
 
+  const handleClick = (userId) => {
+    axios
+    .delete(`http://localhost:5000/api/user/${userId}`, {
+      headers: { Authorization:  auth.token }
+    })
+}
 
   return (
     <Box sx={{ flexGrow: 1, maxWidth: 500 }}>
@@ -48,7 +55,9 @@ export default function UserList() {
                 <ListItem
                   secondaryAction={
                     <IconButton edge="end" aria-label="delete">
-                      <DeleteIcon />
+                      <Button variant="text"  onClick={() => handleClick(user._id)}>
+                        
+                      <DeleteIcon /></Button>
                     </IconButton>
                   }
                 >
@@ -57,7 +66,7 @@ export default function UserList() {
                       <FolderIcon />
                     </Avatar>
                   </ListItemAvatar>
-<p>{user.username}</p>
+<p>{user.username} </p>
                 </ListItem>
               ))}
           
