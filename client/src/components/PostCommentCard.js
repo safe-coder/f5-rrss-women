@@ -63,7 +63,7 @@ const PostCommentCard = ({ comment, pos }) => {
               />
               <div className="postCommentCardavatarinfo">
                 <h4 className="postCommentCardfullname">
-                  {comment.user.fullname}
+                 @{comment.user.fullname}
                 </h4>
                 <h6 className="postCommentCardtime">
                   {moment(comment.createdAt).fromNow()}
@@ -123,7 +123,7 @@ const PostCommentCard = ({ comment, pos }) => {
                 <button className="postCommentCard-cancelar" onClick={() => setonEdit(false)}>Cancelar</button>
               </>
               :
-              <p className="postCommentCardavatarcommentcontent-reply" onClick={() => handleupdatecomment()}>Respuesta</p>
+              <p className="postCommentCardavatarcommentcontent-reply" onClick={() => handleupdatecomment()}></p>
             }
           </div>
         </div>

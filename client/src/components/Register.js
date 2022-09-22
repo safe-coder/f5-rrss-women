@@ -39,17 +39,17 @@ const Register = () => {
   return (
     <div className="register">
       <div className="register-container">
-        <h3 className="register-header">Safe Coders</h3>
+        <h3 className="register-header">Admin</h3>
         <h6 className="register-subheader">REGISTRO</h6>
 
         <form className="register-dataform" onSubmit={handleSubmit}>
         <select className="register-dataformselect" name="role" value={role} onChange={handleChange}>
-        <option value="user">user</option>
-        <option value="admin">admin</option>
+        <option value="user">User</option>
+        <option value="admin">Admin</option>
         
       </select>
           <input
-            className="data-formemail"
+            className="register-dataformpass"
             type="text"
             value={fullname}
             name="fullname"
@@ -59,7 +59,7 @@ const Register = () => {
           />
          
           <input
-            className="data-formemail"
+            className="register-dataformpass"
             type="text"
             name="username"
             value={username.toLowerCase().replace(/ /g,'')}
@@ -77,7 +77,7 @@ const Register = () => {
             onChange={handleChange}
             style={{background:`${alert.email ? '#fa8e96' : ''}`}}
           />
-          
+         <div className="register-showpass">
           <input
             className="register-dataformpass"
             type={showcfpass ? "hide" : "password"}
@@ -94,6 +94,8 @@ const Register = () => {
           >
             {showcfpass ?  <RemoveRedEyeIcon/> : <VisibilityOffIcon/>}
           </small>
+</div>
+<div className="register-showpass">
           <input
             className="register-dataformpass"
            type={showpass ? "type" : "password"}
@@ -103,13 +105,13 @@ const Register = () => {
             onChange={handleChange}
             style={{background:`${alert.confirmPassword ? '#fa8e96' : ''}`}}
           />
-
           <small
-            className="register-showpass"
+           
             onClick={() => setShowpass(!showpass)}
           >
             {showpass ? <RemoveRedEyeIcon/> : <VisibilityOffIcon/>}
           </small>
+</div>
           <button className="register-dataformbtn" type="submit">
             Register
           </button>

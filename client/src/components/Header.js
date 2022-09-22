@@ -4,7 +4,7 @@ import { IconButton } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
 import ExploreIcon from "@mui/icons-material/Explore";
 //import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import MessageIcon from "@mui/icons-material/Message";
+import CancelIcon from '@mui/icons-material/Cancel';
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import SearchIcon from "@mui/icons-material/Search";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
@@ -88,14 +88,14 @@ export const Header = () => {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
-        <SearchIcon style={{opacity: users.length > 0 ? '0' : '1'}} />
-        <span className="header-centersearchclose" onClick={handleClose} style={{opacity: users.length > 0 ? '1' : '0'}}>&times;</span>
-        <button type="submit" style={{display:'none'}}>Search</button>
+        <span className="header-centersearchclose" onClick={handleClose} style={{opacity: users.length > 0 ? '1' : '0'}}><CancelIcon fontSize="large" style={{color: "#240046", cursor: "pointer"}}/></span>
+        {/* <button type="submit" style={{display:'none'}}>Search</button> */}
+        <SearchIcon style={{color: "#240046", opacity: users.length > 0 ? '0' : '1'}} fontSize="large"/>
         <div className="header-searchusers">
         {load && <img src={LoadIcon} alt="" style={{width:'48px', height:"48px"}}/>}
       {
         search && users.length > 0 && users.map((user) =>(
-            <Link to={`profile/${user._id}`} key={user}>
+          <Link to={`profile/${user._id}`} key={user}>
             <UserCard user={user}  key={user}  handleClose={handleClose}/>
             </Link>
         ))

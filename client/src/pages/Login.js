@@ -3,8 +3,9 @@ import "../styles/Login.css";
 import { useNavigate } from "react-router-dom";
 import { login } from "../redux/actions/authActions";
 import { useDispatch, useSelector } from "react-redux";
-import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
-import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+import Logo from "../images/LOGOSC.png";
 
 const Login = () => {
   const initialState = { email: "", password: "" };
@@ -13,7 +14,7 @@ const Login = () => {
   const [showpass, setShowpass] = useState(false);
   const [userData, setUserData] = useState(initialState);
   const dispatch = useDispatch();
-  
+
   useEffect(() => {
     if (auth.token) {
       navigate("/");
@@ -34,8 +35,8 @@ const Login = () => {
   return (
     <div className="login">
       <div className="login-container">
-        <h3 className="login-header">Safe Coders</h3>
-        <h6 className="login-subheader">Login</h6>
+        <img src={Logo} alt="" className="login-header" />
+        <h6 className="login-subheader">L0gin</h6>
 
         <form className="login-dataform" onSubmit={handleSubmit}>
           <input
@@ -47,21 +48,21 @@ const Login = () => {
             placeholder="Email"
           />
           <div className="login-dataformpass">
-          <input
-            type={showpass ? "type" : "password"}
-            placeholder="Contraseña"
-            value={password}
-            name="password"
-            onChange={handleChange}
-          />
+            <input
+              type={showpass ? "type" : "password"}
+              placeholder="Contraseña"
+              value={password}
+              name="password"
+              onChange={handleChange}
+            />
 
-          <small
-            className="login-showpass"
-            onClick={() => setShowpass(!showpass)}
-          >
-            {showpass ? <RemoveRedEyeIcon/> : <VisibilityOffIcon/> }
-          </small>
-</div>
+            <small
+              className="login-showpass"
+              onClick={() => setShowpass(!showpass)}
+            >
+              {showpass ? <RemoveRedEyeIcon /> : <VisibilityOffIcon />}
+            </small>
+          </div>
           <button className="login-dataformbtn" type="submit">
             Log In
           </button>
@@ -70,7 +71,6 @@ const Login = () => {
           </p>
         </form>
       </div>
-     
     </div>
   );
 };
