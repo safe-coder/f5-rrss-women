@@ -104,7 +104,7 @@ export const register = (data) =>async (dispatch) =>{
         // })
 
         
-        localStorage.setItem('login',true);
+        // localStorage.setItem('login',true);
         dispatch({
             type:ALERT_TYPES.ALERT,
             payload:{
