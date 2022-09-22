@@ -8,16 +8,10 @@ export const NOTIFY_TYPES = {
     DELETE_NOTIFIES:"DELETE_NOTIFIES"
 
 }
-export const createNotify = ({msg, auth, socket}) => async (dispatch) =>{
+export const createNotify = ({msg, auth}) => async (dispatch) =>{
     try {
         const res = await postDataApi('notify', msg, auth.token)
-        socket.emit('createNotify', {
-            ...res.data.notify,
-            user:{
-            fullname: auth.user.fullname,
-            avatar:auth.user.avatar
-            }
-        })
+      
     } catch (err) {
         dispatch({
             type:'ALERT',
@@ -28,10 +22,10 @@ export const createNotify = ({msg, auth, socket}) => async (dispatch) =>{
     }
 }
 
-export const removeNotify = ({msg, auth, socket}) => async (dispatch) =>{
+export const removeNotify = ({msg, auth}) => async (dispatch) =>{
     try {
         const res = await deleteDataApi(`notify/${msg.id}?url=${msg.url}`, auth.token)
-        socket.emit('removeNotify', msg)
+      
 
     } catch (err) {
         dispatch({
@@ -44,17 +38,18 @@ export const removeNotify = ({msg, auth, socket}) => async (dispatch) =>{
 }
 
 export const getNotify = (auth) => async (dispatch) =>{
-    try {
+    // try {
         const res = await getDataApi(`notifies`, auth.token)
        dispatch({type: NOTIFY_TYPES.GET_NOTIFIES, payload: res.data.notifies})
-    } catch (err) {
-        dispatch({
-            type:'ALERT',
-            payload:{
-                error: "Do not"
-            }
-        })
-    }
+    // } 
+    // catch (err) {
+    //     dispatch({
+    //         type:'ALERT',
+    //         payload:{
+    //             error: "eira"
+    //         }
+    //     })
+    // }
 }
 
 export const readnotify = ({dt , auth}) => async (dispatch) => {

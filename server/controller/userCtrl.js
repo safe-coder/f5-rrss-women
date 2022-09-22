@@ -1,4 +1,6 @@
 import { Users } from "../model/userModel.js";
+import { Comment } from "../model/commentModel.js";
+import { Posts } from "../model/postModel.js";
 import bcrypt from "bcrypt";
 
   const userCtrl = {
@@ -25,9 +27,13 @@ import bcrypt from "bcrypt";
     },
     deleteUser: async (req,res)=>{
       try {
+        // if(user= "test28") return res.status(400).json({msg: "No tienes permisos para eliminar este usuario"})
           const user =  await Users.deleteOne({_id : req.params.id})
+          await Comment.deleteMany({user : req.params.id})
+          await Posts.deleteMany({user : req.params.id})
           if(!user) return res.status(400).json({msg: "No user Exists"})
-          res.json({msg:'delete success'})
+         
+          res.json({msg:'delete success'})          
       } catch (err) {
           return res.status(500).json({msg: err.message})
       }
