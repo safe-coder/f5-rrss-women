@@ -12,6 +12,7 @@ import { Pagination } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useSelector } from "react-redux";
 import Button from "@mui/material/Button";
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableFooter, TableRow, Paper, TablePagination } from "@mui/material";
 
 export default function UserList() {
   const [data, setData] = useState([]);
@@ -19,6 +20,18 @@ export default function UserList() {
 
   console.log(data);
   console.log(auth);
+
+const [page, setPage] = useState(0);
+const [rowsPerPage, setRowsPerPage] = useState(10);
+
+const handleChangePage = (event, newPage) => {
+  setPage(newPage);
+}
+
+const handleChangeRowsPerPage = (event) => {
+  setRowsPerPage(+event.target.value);
+  setPage(0);
+}
 
   useEffect(() => {
     axios
@@ -57,52 +70,48 @@ export default function UserList() {
   // }
 
   return (
-    <Box sx={{ flexGrow: 1, maxWidth: 500 }}>
-      <h2
-        style={{
-          backgroundColor: "#FF9E00",
-          color: "#240046",
-          width: "fit-content",
-          padding: ".5rem",
-          marginBottom: ".8rem",
-        }}
-      >
-        Lista de Usuarias
-      </h2>
-      <Grid item xs={12} md={6}>
-        <List>
-          {data.map((user) => (
-            <ListItem
-              style={{
-                backgroundColor: "#EEDAFF",
-                borderRadius: "50px",
-                marginBottom: "1rem",
-              }}
-              secondaryAction={
-                <IconButton edge="end" aria-label="delete">
-                  <Button variant="text" onClick={() => handleClick(user._id)}>
-                    <DeleteIcon fontSize="large" style={{ color: "#240046" }} />
-                  </Button>
-                </IconButton>
-              }
-            >
+    <TableContainer component={Paper} style={{width: "40%", fontFamily: "Jet"}}>
+      <Table aria-label="simple table">
+        <TableHead>
+          <TableRow key={data.user}>
+            <TableCell>Nombre Completo</TableCell>
+            <TableCell>Username</TableCell>
+            <TableCell>Email</TableCell>
+            <TableCell>Rol</TableCell>
+            <TableCell>Eliminar</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((user) => (
+            <TableRow key={user.username}>
+              <TableCell style={{display: "flex", alignItems: "center"}}>
               <ListItemAvatar>
                 <Avatar src={user.avatar} />
               </ListItemAvatar>
-              <p>@{user.username} </p>
-            </ListItem>
+                {user.fullname}
+                </TableCell>
+                <TableCell>
+                @{user.username}</TableCell>
+                <TableCell>{user.email}</TableCell>
+                <TableCell>{user.role}</TableCell>
+                <TableCell>
+                    <DeleteIcon style={{ color: "#240046" }}  onClick={() => handleClick(user._id)}/>
+                </TableCell>
+            </TableRow>
           ))}
-        </List>
-        <Pagination
-          count={5}
-          style={{
-            backgroundColor: "#EEDAFF",
-            borderRadius: "50px",
-            display: "flex",
-            justifyContent: "center",
-          }}
-        />
-      </Grid>
-    </Box>
+        </TableBody>
+        <TableFooter>
+          <TablePagination
+          rowsPerPageOptions={[0]}
+          component="div"
+          count={data.length}
+          rowsPerPage={rowsPerPage}
+          page={page}
+          onPageChange={handleChangePage}
+          onChangeRowsPerPage={handleChangeRowsPerPage}
+          />
+        </TableFooter>
+      </Table>
+      </TableContainer>
   );
 }
