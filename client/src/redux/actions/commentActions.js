@@ -103,4 +103,37 @@ export const unlikecomment = ({comment, pos, auth}) => async (dispatch) =>{
    })
     }
 }
+////////////
+export const deleteComment = ({comment, pos, auth}) => async (dispatch) =>{
+   
+    const deleteArr = [...pos.commentss.filter(cm =>cm.reply === comment._id), comment]
+    const newPost = {
+        ...pos,
+        commentss: pos.commentss.filter(cm=> !deleteArr.find(da => cm._id === da._id))
+    }
+    dispatch({type: POST_TYPES.UPDATE_POST , payload: newPost})
 
+    try {
+        deleteArr.forEach(item=>{
+            deleteDataApi(`comment/${item._id}`, auth.token)
+            const msg = {
+                id: item._id,
+                text: comment.reply ? 'mentioned you in comment' : 'comment on the post',
+                url: `/post/${pos._id}`,
+                recipients: comment.reply?  [comment.tag._id] : [pos.user._id],
+                
+    
+            }
+            dispatch(removeNotify({msg, auth}))
+        })
+
+       // socket.emit('deleteComment', newPost)
+    } catch (err) {
+        dispatch({
+            type:'ALERT',
+           payload:{
+            error: err.response.data.msg
+           }
+   })
+    }
+}

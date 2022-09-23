@@ -50,6 +50,11 @@ const handleChangeRowsPerPage = (event) => {
     });
   };
 
+  const newData = data.filter((user) => {
+    return !user.fullname.includes('developer') 
+  });
+  console.log(newData);
+
   // const [pagination, setPagination] = useState({
   //   count: 0,
   //   from: 0,
@@ -73,7 +78,7 @@ const handleChangeRowsPerPage = (event) => {
     <TableContainer component={Paper} style={{width: "40%", fontFamily: "Jet"}}>
       <Table aria-label="simple table">
         <TableHead>
-          <TableRow key={data.user}>
+          <TableRow key={newData.user}>
             <TableCell>Nombre Completo</TableCell>
             <TableCell>Username</TableCell>
             <TableCell>Email</TableCell>
@@ -82,7 +87,7 @@ const handleChangeRowsPerPage = (event) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((user) => (
+          {newData.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((user) => (
             <TableRow key={user.username}>
               <TableCell style={{display: "flex", alignItems: "center"}}>
               <ListItemAvatar>
@@ -104,7 +109,7 @@ const handleChangeRowsPerPage = (event) => {
           <TablePagination
           rowsPerPageOptions={[0]}
           component="div"
-          count={data.length}
+          count={newData.length}
           rowsPerPage={rowsPerPage}
           page={page}
           onPageChange={handleChangePage}
