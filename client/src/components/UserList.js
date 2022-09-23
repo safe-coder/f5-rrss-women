@@ -51,7 +51,7 @@ const handleChangeRowsPerPage = (event) => {
   };
 
   const newData = data.filter((user) => {
-    return !user.fullname.includes('developer') 
+    return !user.role.includes('superadmin') 
   });
   console.log(newData);
 
