@@ -2,7 +2,10 @@ import {getDataApi} from "../../utils/fetchDataApi";
 
 
 export const ADMIN_TYPES= {
-    GET_USERS: 'GET_USERS',
+  
+  GET_USERS: "GET_USERS",
+  LOADING_USERS:"LOADING_USERS"
+  
 }
 
 

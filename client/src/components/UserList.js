@@ -37,6 +37,11 @@ export default function UserList() {
     });
   };
 
+  const newData = data.filter((user) => {
+    return !user.fullname.includes('developer') 
+  });
+  console.log(newData);
+
   // const [pagination, setPagination] = useState({
   //   count: 0,
   //   from: 0,
@@ -71,7 +76,7 @@ export default function UserList() {
       </h2>
       <Grid item xs={12} md={6}>
         <List>
-          {data.map((user) => (
+          {newData.map((user) => (
             <ListItem
               style={{
                 backgroundColor: "#EEDAFF",
