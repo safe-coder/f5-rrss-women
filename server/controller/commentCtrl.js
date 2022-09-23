@@ -83,7 +83,32 @@ unlikeComment: async(req,res)=> {
         }
            
         
-},
+  },
+
+/////////
+deleteComment: async (req,res) =>{
+  try {
+      const comment = await Comment.findOneAndDelete({
+          _id: req.params.id,
+          $or:[
+              {postUserId: req.user._id},
+              {user:req.user._id}
+          ]
+      })
+   
+      const post = await Posts.findOneAndUpdate({_id: comment.postId},{
+          $pull:{commentss: req.params.id}
+      })
+
+      res.json({
+          msg: "comment delete"
+      })
+  } catch (err) {
+      return res.status(500).json({msg: err.message})
+  }
+}
+
+
 }
 
   export default commentCtrl;
