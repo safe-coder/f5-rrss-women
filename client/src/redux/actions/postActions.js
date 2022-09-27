@@ -117,7 +117,7 @@ export const updatepost = ({content, images, auth, status}) => async(dispatch) =
 }
 
 export const likepost = ({pos, auth,socket}) => async (dispatch) =>{
-    
+    console.log({pos, auth,socket})
     const newPost = {...pos, likes:[...pos.likes, auth.user]}
    
     dispatch({type:POST_TYPES.UPDATE_POST, payload: newPost})
