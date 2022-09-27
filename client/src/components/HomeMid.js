@@ -3,8 +3,8 @@ import Posts from "./Posts"
 import Status from "./Status";
 import {useSelector} from "react-redux"
 
-const HomeMid = () =>{
-    const {homePost} = useSelector(state => state)
+const HomeMid = ({homePost}) =>{
+    // const {homePost} = useSelector(state => state)
     console.log(homePost)
     return (
         <div className="homemid">

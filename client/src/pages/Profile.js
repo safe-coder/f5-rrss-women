@@ -6,6 +6,7 @@ import "../styles/Profile.css"
 import {useSelector, useDispatch} from 'react-redux';
 import {useParams} from 'react-router-dom';
 import { getProfileUsers } from "../redux/actions/profileActions";
+import { getPost } from "../redux/actions/postActions";
 import { useEffect, useState } from "react";
 import { IconButton } from "@mui/material";
 //import AccountCircleIcon from '@mui/icons-material/AccountCircle';
@@ -22,9 +23,10 @@ import {Grid} from '@mui/material'
 const Profile = () => {
 
   const [userData, setUserData] = useState([]);
+  const [homePostt, setHomePostt] = useState([]);
   console.log(userData);
   const { id } = useParams();
-  const { auth, profile } = useSelector(state => state);
+  const { auth, profile, homePost } = useSelector(state => state);
   const dispatch = useDispatch();
   const [showaccount, setshowaccount] = useState(true);
 const [showfriends, setshowfriends] = useState(false);
@@ -67,6 +69,15 @@ const handletoggle = (ht) =>{
     }
   }, [id, auth, profile.users, dispatch]);
 
+  useEffect(() => {
+    const token= auth.token
+    dispatch(getPost({ token, id }))
+      const newData = homePost.post
+    //   console.log(newData)
+      setHomePostt(newData)
+    
+  }, [id, auth, homePost.post,dispatch]);
+
   return (
     <div className="profile">
       <Info userData={userData} profile={profile} auth={auth} id={ id}/>
@@ -97,7 +108,7 @@ const handletoggle = (ht) =>{
                 <About userData={userData} profile={profile} auth={auth} id={ id}/>
             </Grid>
             <Grid item md={4} className='profilebody-center'>
-            <HomeMid />
+            <HomeMid  homePost={homePostt}/>
                   </Grid>
                 
             <Grid item  md={3} className='profilebody-right'>
