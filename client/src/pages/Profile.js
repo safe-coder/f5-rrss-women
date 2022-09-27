@@ -23,7 +23,7 @@ import {Grid} from '@mui/material'
 const Profile = () => {
 
   const [userData, setUserData] = useState([]);
-  const [homePostt, setHomePostt] = useState([]);
+  const [homePostData, setHomePostData] = useState([]);
   console.log(userData);
   const { id } = useParams();
   const { auth, profile, homePost } = useSelector(state => state);
@@ -74,7 +74,7 @@ const handletoggle = (ht) =>{
     dispatch(getPost({ token, id }))
       const newData = homePost.post
     //   console.log(newData)
-      setHomePostt(newData)
+    setHomePostData(newData)
     
   }, [id, auth, homePost.post,dispatch]);
 
@@ -108,7 +108,7 @@ const handletoggle = (ht) =>{
                 <About userData={userData} profile={profile} auth={auth} id={ id}/>
             </Grid>
             <Grid item md={4} className='profilebody-center'>
-            <HomeMid  homePost={homePostt}/>
+            <HomeMid  homePost={homePostData}/>
                   </Grid>
                 
             <Grid item  md={3} className='profilebody-right'>
