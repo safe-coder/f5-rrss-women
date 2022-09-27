@@ -75,7 +75,7 @@ const handleChangeRowsPerPage = (event) => {
   // }
 
   return (
-    <TableContainer component={Paper} style={{width: "40%", fontFamily: "Jet"}}>
+    <TableContainer style={{width: "40%", fontFamily: "Jet"}}>
       <Table aria-label="simple table">
         <TableHead>
           <TableRow key={newData.user}>
@@ -88,7 +88,7 @@ const handleChangeRowsPerPage = (event) => {
         </TableHead>
         <TableBody>
           {newData.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((user) => (
-            <TableRow key={user.username}>
+            <TableRow key={user.username} style={{border: "3px solid red"}}>
               <TableCell style={{display: "flex", alignItems: "center"}}>
               <ListItemAvatar>
                 <Avatar src={user.avatar} />

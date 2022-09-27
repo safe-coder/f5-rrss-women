@@ -122,7 +122,7 @@ export const likepost = ({pos, auth,socket}) => async (dispatch) =>{
    
     dispatch({type:POST_TYPES.UPDATE_POST, payload: newPost})
 
-    socket.emit('likePost', newPost )
+    // socket.emit('likePost', newPost )
     try {
         const res = await patchDataApi(`post/${pos._id}/like`,null, auth.token)
 
