@@ -8,7 +8,7 @@ import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import { Link } from "react-router-dom";
 import { Grid } from "@mui/material";
 
-const GlobalCard = ({ user }) => {
+const GlobalCard = ({ user },{ posts }) => {
   const [showinfo, setshowinfo] = useState(true);
   const [showinfoabout, setshowinfoabout] = useState(false);
   const { auth } = useSelector((state) => state);
@@ -54,7 +54,7 @@ const GlobalCard = ({ user }) => {
               </div>
               <div className="globalcard-contentbottomstat">
                 <h6>0</h6>
-                <p>Posts</p>
+                <p>Post</p>
               </div>
             </div>
 

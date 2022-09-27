@@ -14,9 +14,10 @@
 .header-center{
     background-color: #FF9E00;
     border-radius: 50px;
-    flex: 0.5;
+    flex: 0.4;
+    min-width: 25rem;
     height: 3rem;
-    position:relative;
+    /* position:relative; */
     /* display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -117,6 +118,7 @@
     .header-center{
         height: 2.6rem;
         margin-left: 1rem;
+        min-width: 19rem;
     }
     .header-center input{
         width: 10rem;
