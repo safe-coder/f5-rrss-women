@@ -103,13 +103,13 @@ export default function UserList() {
   return (
     <TableContainer
       component={Paper} 
-      style={{ width: "40%", fontFamily: "Jet", backgroundColor: "#FF9E00" }}
+      style={{fontFamily: "Jet", backgroundColor: "#FF9E00" }}
     >
       <Table aria-label="simple table"  size="small">
         <TableHead style={{ backgroundColor: "#FF9E00" }}>
           <TableRow key={newData.user}>
             <TableCell>Nombre Completo</TableCell>
-            <TableCell>Username</TableCell>
+            {/* <TableCell>Username</TableCell> */}
             <TableCell>Email</TableCell>
             <TableCell>Rol</TableCell>
             <TableCell>Eliminar</TableCell>
@@ -127,9 +127,9 @@ export default function UserList() {
                   <ListItemAvatar>
                     <Avatar src={user.avatar} />
                   </ListItemAvatar>
-                  {user.fullname}
+                  {user.fullname} @{user.username}
                 </TableCell>
-                <TableCell>@{user.username}</TableCell>
+                {/* <TableCell></TableCell> */}
                 <TableCell>{user.email}</TableCell>
                 <TableCell>{user.role}</TableCell>
                 <TableCell>
