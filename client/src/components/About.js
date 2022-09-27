@@ -35,7 +35,7 @@ const About = ({userData, auth,profile, id}) =>{
                                     <p className="profileabout-contentbottominfo-body">{user.email}</p>
                                     </div>
                                     <div className="profileabout-contentbottominfo">
-                                    <h6 className="profileabout-contentbottominfo-head">Website</h6>
+                                    <h6 className="profileabout-contentbottominfo-head">Github</h6>
                                     <a href={`${user.website}`}  target="_blank" rel="noopener noreferrer" className='profileabout-contentbottominfo-body'> {user.website} </a>
                                     </div>
                                 </div>
