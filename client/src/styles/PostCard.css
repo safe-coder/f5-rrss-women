@@ -144,3 +144,8 @@ cursor: pointer;
 .postcardfooterbottom .MuiSvgIcon-root{
     margin-top: .5rem;
 }
+
+@media (max-width: 575.98px)and (orientation:portrait) {
+.postcardbodyimage{
+    width: 26rem}
+}
