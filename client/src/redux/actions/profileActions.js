@@ -1,7 +1,7 @@
 
 import {getDataApi, patchDataApi} from '../../utils/fetchDataApi'
 import { ALERT_TYPES } from '../actions/alertActions';
-import {createNotify, removeNotify} from "./notifyActions"
+//import {createNotify, removeNotify} from "./notifyActions"
 import { DeleteData} from "./alertActions"
 import { imageupload } from "../../utils/imageupload";
 import axios from "axios";
@@ -47,7 +47,7 @@ export const addfriends = ({users, user, auth, socket}) => async (dispatch) =>{
     let newUser;
     if(users.every(item => item._id !== user._id)){
          newUser = {...user, friends:[...user.friends, auth.user]}
-        console.log(newUser)
+       // console.log(newUser)
     }else {
         users.forEach(item =>{
             if(item._id === user._id){
@@ -56,9 +56,6 @@ export const addfriends = ({users, user, auth, socket}) => async (dispatch) =>{
         })
     }
     
-    
-        
-       
         dispatch({
             type: PROFILE_TYPES.FRIEND,
             payload:newUser
@@ -72,21 +69,21 @@ export const addfriends = ({users, user, auth, socket}) => async (dispatch) =>{
                 user: {...auth.user , following: [...auth.user.following, newUser]}
             }
         })
-    
+      
+            
       
         try {
             const res = await patchDataApi(`user/${user._id}/friend`, null, auth.token)
             socket.emit('addfriend', res.data.newUser)
-            
-            const msg = {
-                id: auth.user._id,
-                text: 'add you as friend you',
-                url: `/profile/${auth.user._id}`,
-                recipients: [newUser._id],
+            // const msg = {
+            //     id: auth.user._id,
+            //     text: 'add you as friend you',
+            //     url: `/profile/${auth.user._id}`,
+            //     recipients: [newUser._id],
                 
     
-            }
-            dispatch(createNotify({msg, auth, socket}))
+            // }
+            // dispatch(createNotify({msg, auth, socket}))
         } catch (err) {
             dispatch({
                 type:'ALERT',
@@ -99,8 +96,7 @@ export const addfriends = ({users, user, auth, socket}) => async (dispatch) =>{
     
     export const unfriends = ({users, user, auth,socket}) => async (dispatch) =>{
     
-        
-        
+      
     let newUser;
     if(users.every(item => item._id !== user._id)){
         newUser = {...user, friends: DeleteData(user.friends, auth.user._id)}
@@ -125,21 +121,21 @@ export const addfriends = ({users, user, auth, socket}) => async (dispatch) =>{
                 user: {...auth.user , following:DeleteData(auth.user.following, newUser._id)}
             }
         })
-      
+       
+    
         try {
     
             const res = await patchDataApi(`user/${user._id}/unfriend`, null, auth.token)
             socket.emit('unfriend', res.data.newUser)
-    
-            const msg = {
-                id: auth.user._id,
-                text: 'unfriend you',
-                url: `/profile/${auth.user._id}`,
-                recipients: [newUser._id],
+            // const msg = {
+            //     id: auth.user._id,
+            //     text: 'unfriend you',
+            //     url: `/profile/${auth.user._id}`,
+            //     recipients: [newUser._id],
                 
     
-            }
-            dispatch(removeNotify({msg, auth, socket}))
+            // }
+            // dispatch(removeNotify({msg, auth, socket}))
         } catch (err) {
             dispatch({
                 type:'ALERT',

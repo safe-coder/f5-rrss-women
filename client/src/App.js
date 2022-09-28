@@ -12,25 +12,28 @@ import {useSelector, useDispatch} from 'react-redux';
 import Home from './pages/Home';
 import { useEffect } from "react";
 import { refreshToken } from './redux/actions/authActions';
-import Messages from './pages/Messages';
+//import Messages from './pages/Messages';
 import Explore from './pages/Explore';
-import Notification from './pages/Notification';
+//import Notification from './pages/Notification';
 import PrivateRoute from './utils/PrivateRoute';
 import Profile from './pages/Profile';
 import { getPost } from './redux/actions/postActions.js';
 import {getPosts} from './redux/actions/postallActions'
-import { getNotify } from './redux/actions/notifyActions.js';
-
+//import { getNotify } from './redux/actions/notifyActions.js';
+import io from 'socket.io-client';
+import { ALERT_TYPES } from './redux/actions/alertActions';
+import SocketioClient from './SocketioClient';
 
 function App() {
   const {auth} = useSelector(state =>state);
   const dispatch = useDispatch();
-
+  //const login = localStorage.getItem('login');
 
   useEffect(()=>{
     dispatch(refreshToken())
-   
-   
+   const socket = io()
+    dispatch({ type: ALERT_TYPES.SOCKET, payload: socket })
+    return () => socket.close();
   }
 ,[dispatch]
 )
@@ -39,9 +42,9 @@ useEffect(()=>{
   if (auth.token) {
     dispatch(getPosts(auth.token))
   dispatch(getPost(auth.token))
-  dispatch(getNotify(auth))
+ // dispatch(getNotify(auth))
   }
-},[auth.token, auth,  dispatch])
+},[auth.token,  dispatch])
 
 
   return (
@@ -49,16 +52,17 @@ useEffect(()=>{
       <BrowserRouter>
         <div className="App">
             <Alert/>
-            {auth.token && <Header/>}
+          {auth.token && <Header />}
+          {auth.token && <SocketioClient/> }
           <Routes>
             <Route  path="/admin" element={<PrivateRoute><Admin/></PrivateRoute>} />
             <Route exact path="/" element={auth.token? <Home/> : <Login />} />
             <Route  path="/login" element={<Login />} />
 
           
-            <Route path="/message/*" element={<PrivateRoute><Messages/></PrivateRoute>}/>
-            <Route  path="/explore/*" element={<PrivateRoute><Explore/></PrivateRoute>} />
-            <Route path="/notification/*" element={<PrivateRoute><Notification /></PrivateRoute>} />
+            {/* <Route path="/message/*" element={<PrivateRoute><Messages/></PrivateRoute>}/> */}
+            {/* <Route  path="/explore/*" element={<PrivateRoute><Explore/></PrivateRoute>} />
+            <Route path="/notification/*" element={<PrivateRoute><Notification /></PrivateRoute>} /> */}
          
            <Route path="/post/:id" element={<PrivateRoute><Post /></PrivateRoute>} />
           

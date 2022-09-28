@@ -1,6 +1,7 @@
 export const ALERT_TYPES = {
     ALERT: 'ALERT',
-    STATUS: 'STATUS'
+    STATUS: 'STATUS',
+    SOCKET: 'SOCKET'
     
    
 }
