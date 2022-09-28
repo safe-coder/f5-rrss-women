@@ -6,9 +6,11 @@ const router = Router();
 
 router.route('/posts')
 .post(auth, postCtrl.createPost)
-.get( auth, postCtrl.getPost)
+
 
 router.get('/postall',auth, postCtrl.getPosts)
+
+router.get('/posts/:id',auth, postCtrl.getPost)
 
 router.route('/post/:id')
 .patch(auth, postCtrl.updatePost)

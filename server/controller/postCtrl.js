@@ -27,9 +27,9 @@ createPost: async (req, res) =>{
 },
 getPost: async (req, res) =>{
     try {
-        
-   
-        const posts = await Posts.find({user: [...req.user.following, req.user._id]}).sort("-createdAt")
+        const user =  await Users.findOne({_id : req.params.id})
+        // console.log(user)
+        const posts = await Posts.find({user: [...user.following, req.params.id]}).sort("-createdAt")
         .populate("user likes", "username avatar fullname friends")
         .populate({
             path:"commentss",

@@ -135,7 +135,7 @@ const EditProfile = ({ user, setOnEdit }) => {
             />
           </div>
 
-          <label htmlFor="website">Sitio Web </label>
+          <label htmlFor="website">Github </label>
           <div className="editprofile-userdatawebsite">
             <input
               type="text"
