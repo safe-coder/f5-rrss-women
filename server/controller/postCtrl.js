@@ -17,8 +17,8 @@ createPost: async (req, res) =>{
         return res.status(200).json({
             msg: "Post saved",
             newPost: {
-                ...newPost._doc,
-                user: req.user
+                // ...newPost._doc,
+                // user: req.user
             }
         })
     } catch (err) {
@@ -123,57 +123,57 @@ catch (err) {
 
     },
    
-savePost: async(req,res)=> {
+// savePost: async(req,res)=> {
 
-    try {
+//     try {
         
-        const user = await Users.find({_id: req.user._id, saved: req.params.id})
+//         const user = await Users.find({_id: req.user._id, saved: req.params.id})
        
-        if(user.length > 0) return res.status(400).json({msg:"you have already save this post"})
+//         if(user.length > 0) return res.status(400).json({msg:"you have already save this post"})
     
-        await Users.findOneAndUpdate({_id:req.user._id},{
-            $push: {saved: req.params.id}
-        },{new:true})
+//         await Users.findOneAndUpdate({_id:req.user._id},{
+//             $push: {saved: req.params.id}
+//         },{new:true})
     
-        return res.json({
-            msg: "Post Saved"
-        })
+//         return res.json({
+//             msg: "Post Saved"
+//         })
     
-    } 
-    catch (err) {
-        return res.status(500).json({msg: err.message})
-    }
+//     } 
+//     catch (err) {
+//         return res.status(500).json({msg: err.message})
+//     }
        
     
-    },
-unsavePost: async(req,res)=> {
+//     },
+// unsavePost: async(req,res)=> {
 
-        try {
+//         try {
             
           
         
-            await Users.findOneAndUpdate({_id:req.user._id},{
-                $pull: {saved: req.params.id}
-            },{new:true})
+//             await Users.findOneAndUpdate({_id:req.user._id},{
+//                 $pull: {saved: req.params.id}
+//             },{new:true})
         
-            return res.json({
-                msg: "Post unSaved"
-            })
+//             return res.json({
+//                 msg: "Post unSaved"
+//             })
         
-        } 
-        catch (err) {
-            return res.status(500).json({msg: err.message})
-        }
+//         } 
+//         catch (err) {
+//             return res.status(500).json({msg: err.message})
+//         }
            
         
-    },
+//     },
         
     unlikePost: async(req,res)=> {
 
         try {
             
         
-            const unlinke = await Posts.findOneAndUpdate({_id:req.params.id},{
+            const unlike = await Posts.findOneAndUpdate({_id:req.params.id},{
                 $pull: {likes: req.user._id}
             },{new:true})
         
@@ -191,28 +191,28 @@ unsavePost: async(req,res)=> {
         },
 
 
-getsavedPost: async (req,res)=> {
+// getsavedPost: async (req,res)=> {
 
-        try {
+//         try {
             
         
-        const savedposts = await Posts.find({ _id: { $in: req.user.saved}})
-        .sort("-createdAt")
-        .populate("user likes", "username avatar fullname")
+//         const savedposts = await Posts.find({ _id: { $in: req.user.saved}})
+//         .sort("-createdAt")
+//         .populate("user likes", "username avatar fullname")
   
          
-        return res.json({
-            msg:"something",
-            savedposts
-        })
+//         return res.json({
+//             msg:"something",
+//             savedposts
+//         })
         
-        } 
-        catch (err) {
-            return res.status(500).json({msg: "wrong"})
-        }
+//         } 
+//         catch (err) {
+//             return res.status(500).json({msg: "wrong"})
+//         }
            
         
-        },
+//         },
 getUserPosts: async (req, res) =>{
         try {
             
@@ -240,31 +240,31 @@ getUserPosts: async (req, res) =>{
             return res.status(500).json({msg: err.message})
         }
 },
-getSinglePost: async (req, res) =>{
-    try {
+// getSinglePost: async (req, res) =>{
+//     try {
         
     
-        const post = await Posts.findById(req.params.id)
-        .populate("user likes", "username avatar fullname friends")
-        .populate({
-        path:"commentss",
-        populate:{
-            path:"user likes",
-            select:"-password"
-        }
-    })
+//         const post = await Posts.findById(req.params.id)
+//         .populate("user likes", "username avatar fullname friends")
+//         .populate({
+//         path:"commentss",
+//         populate:{
+//             path:"user likes",
+//             select:"-password"
+//         }
+//     })
       
 
 
-        return res.status(200).json({
+//         return res.status(200).json({
             
-            post
-        })
+//             post
+//         })
         
-    }catch (err) {
-        return res.status(500).json({msg: err.message})
-    }
-},
+//     }catch (err) {
+//         return res.status(500).json({msg: err.message})
+//     }
+// },
 deletePost: async(req,res)=>{
     try {
         const post = await Posts.findOneAndDelete({_id:req.params.id, user:req.user._id})
@@ -272,10 +272,10 @@ deletePost: async(req,res)=>{
 
         return res.json({
             msg:"Post deleted",
-            newPost:{
-                ...post,
-                user: req.user
-            }
+            // newPost:{
+            //     ...post,
+            //     user: req.user
+            // }
         })
     } catch (err) {
         return res.status(500).json({msg: err.message})

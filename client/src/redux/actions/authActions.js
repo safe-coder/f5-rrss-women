@@ -84,6 +84,7 @@ export const refreshToken = () => async( dispatch) => {
     }
 }}
 
+
 export const register = (data) =>async (dispatch) =>{
     try {
         const check = valid(data)
@@ -95,16 +96,16 @@ export const register = (data) =>async (dispatch) =>{
         const res =await  postDataApi('register', data)
         
         console.log(res)
-        // dispatch({
-        //     type: 'AUTH',
-        //     payload:{
-        //         token:res.data.access_token,
-        //         user: res.data.user
-        //     } 
-        // })
+        dispatch({
+            type: 'AUTH',
+            payload:{
+                token:res.data.access_token,
+                user: res.data.user
+            } 
+        })
 
         
-        // localStorage.setItem('login',true);
+        localStorage.setItem('login',true);
         dispatch({
             type:ALERT_TYPES.ALERT,
             payload:{

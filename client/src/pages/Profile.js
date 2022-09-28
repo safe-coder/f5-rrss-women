@@ -23,6 +23,7 @@ import {Grid} from '@mui/material'
 const Profile = () => {
 
   const [userData, setUserData] = useState([]);
+  //console.log(userData);
   const [homePostData, setHomePostData] = useState([]);
   console.log(userData);
   const { id } = useParams();

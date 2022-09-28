@@ -1,7 +1,7 @@
 import {patchDataApi, postDataApi , deleteDataApi} from "../../utils/fetchDataApi"
 import {POST_TYPES} from "./postActions"
 import {EditData, DeleteData} from "./alertActions"
-import {createNotify, removeNotify} from "./notifyActions"
+//import {createNotify, removeNotify} from "./notifyActions"
 
 export const createComment = ({pos, newComment, auth, socket}) => async (dispatch) =>{
  
@@ -19,16 +19,16 @@ export const createComment = ({pos, newComment, auth, socket}) => async (dispatc
 
         socket.emit('createComment', newPost)
        console.log(newPost)
-        const msg = {
-            id: res.data.newComment._id,
-            text: newComment.reply ? 'mentioned you in comment' : 'comment on the post',
-            url: `/post/${pos._id}`,
-            recipients: newComment.reply ?  [newComment.tag._id] : [pos.user._id],
-            content: pos.content,
-            image:pos.images[0].secure_url,
+        // const msg = {
+        //     id: res.data.newComment._id,
+        //     text: newComment.reply ? 'mentioned you in comment' : 'comment on the post',
+        //     url: `/post/${pos._id}`,
+        //     recipients: newComment.reply ?  [newComment.tag._id] : [pos.user._id],
+        //     content: pos.content,
+        //     image:pos.images[0].secure_url,
 
-        }
-        dispatch(createNotify({msg, auth, socket}))
+        // }
+        // dispatch(createNotify({msg, auth, socket}))
 
     } catch (err) {
         dispatch({
@@ -46,7 +46,7 @@ export const updateComment = ({comment,content,pos,auth}) => async (dispatch) =>
     console.log(newComment)
     dispatch({type: POST_TYPES.UPDATE_POST, payload : newComment})
     try {
-        const res= await patchDataApi(`comment/${comment._id}`,{content}, auth.token)
+     await patchDataApi(`comment/${comment._id}`,{content}, auth.token)
         
     } catch (err) {
         dispatch({
@@ -91,7 +91,7 @@ export const unlikecomment = ({comment, pos, auth}) => async (dispatch) =>{
     dispatch({type:POST_TYPES.UPDATE_POST , payload : newPost})
 
     try {
-        const res = await patchDataApi(`comment/${comment._id}/unlike`, null , auth.token)
+        await patchDataApi(`comment/${comment._id}/unlike`, null , auth.token)
         
         
     } catch(err){
@@ -104,7 +104,7 @@ export const unlikecomment = ({comment, pos, auth}) => async (dispatch) =>{
     }
 }
 ////////////
-export const deleteComment = ({comment, pos, auth}) => async (dispatch) =>{
+export const deleteComment = ({comment, pos, auth,socket}) => async (dispatch) =>{
    
     const deleteArr = [...pos.commentss.filter(cm =>cm.reply === comment._id), comment]
     const newPost = {
@@ -116,18 +116,19 @@ export const deleteComment = ({comment, pos, auth}) => async (dispatch) =>{
     try {
         deleteArr.forEach(item=>{
             deleteDataApi(`comment/${item._id}`, auth.token)
-            const msg = {
-                id: item._id,
-                text: comment.reply ? 'mentioned you in comment' : 'comment on the post',
-                url: `/post/${pos._id}`,
-                recipients: comment.reply?  [comment.tag._id] : [pos.user._id],
+           // socket.emit('createComment', newPost)
+            // const msg = {
+            //     id: item._id,
+            //     text: comment.reply ? 'mentioned you in comment' : 'comment on the post',
+            //     url: `/post/${pos._id}`,
+            //     recipients: comment.reply?  [comment.tag._id] : [pos.user._id],
                 
     
-            }
-            dispatch(removeNotify({msg, auth}))
+            // }
+            // dispatch(removeNotify({msg, auth}))
         })
 
-       // socket.emit('deleteComment', newPost)
+        socket.emit('deleteComment', newPost)
     } catch (err) {
         dispatch({
             type:'ALERT',
