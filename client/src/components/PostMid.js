@@ -4,9 +4,13 @@ import Status from "./Status";
 import {useSelector} from "react-redux"
 import PostAll from "./PostAll";
 
+
+
+
 const PostMid = () =>{
     const {postAll} = useSelector(state => state)
     // console.log(postAll)
+   
     return (
         <div className="homemid">
             <Status/>
