@@ -52,10 +52,10 @@ const GlobalCard = ({ user },{ posts }) => {
                 <h6>{user.following.length}</h6>
                 <p>Siguiendo</p>
               </div>
-              <div className="globalcard-contentbottomstat">
+              {/* <div className="globalcard-contentbottomstat">
                 <h6>0</h6>
                 <p>Post</p>
-              </div>
+              </div> */}
             </div>
 
             {auth.user._id !== user._id && (

@@ -52,10 +52,7 @@ useEffect(()=>{
   
   return ()=>socket.off('unfriendToClient')
 },[socket,dispatch , auth])
-  return 
-    <>
-    </>
-  
+
 }
 
 export default SocketioClient

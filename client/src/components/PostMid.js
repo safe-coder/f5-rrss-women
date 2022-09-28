@@ -6,7 +6,7 @@ import PostAll from "./PostAll";
 
 const PostMid = () =>{
     const {postAll} = useSelector(state => state)
-    console.log(postAll)
+    // console.log(postAll)
     return (
         <div className="homemid">
             <Status/>
