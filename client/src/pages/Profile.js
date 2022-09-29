@@ -24,7 +24,6 @@ const Profile = () => {
   const [userData, setUserData] = useState([]);
   //console.log(userData);
   const [homePostData, setHomePostData] = useState([]);
-  console.log(userData);
   const { id } = useParams();
   const { auth, profile, homePost } = useSelector((state) => state);
   const dispatch = useDispatch();

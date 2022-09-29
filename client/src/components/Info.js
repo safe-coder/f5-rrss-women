@@ -25,7 +25,7 @@ const Info = ({ userData, auth, profile, id }) => {
 
   const [onEdit, setOnEdit]= useState(false)
 
-console.log(userData)
+
   return (
     <div className="profileinfo">
       {userData.length > 0 &&
