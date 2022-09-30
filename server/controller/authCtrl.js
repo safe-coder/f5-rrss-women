@@ -45,7 +45,7 @@ const authCtrl = {
 
       res.json({
         msg: "registerd sucess",
-        // access_token,
+         access_token,
         user: {
           ...newUser._doc,
           password: "",

@@ -31,7 +31,7 @@ function App() {
 
   useEffect(()=>{
     dispatch(refreshToken())
-   const socket = io()
+    const socket = io("http://localhost:5000")
     dispatch({ type: ALERT_TYPES.SOCKET, payload: socket })
     return () => socket.close();
   }

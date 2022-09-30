@@ -7,7 +7,7 @@ import {useDispatch} from "react-redux";
 import {createpost , updatepost} from "../redux/actions/postActions"
 import {ALERT_TYPES} from "../redux/actions/alertActions"
 
-const Status = () =>{
+const StatusProfile = () =>{
     const {auth,status,socket} = useSelector(state => state)
     const [content, setContent] = useState('')
     const dispatch = useDispatch();
@@ -214,4 +214,4 @@ if(err) { dispatch({type:"ALERT", payload:{error: err}}) }
     )
 }
 
-export default Status
+export default StatusProfile

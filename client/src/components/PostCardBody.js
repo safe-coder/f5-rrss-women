@@ -40,19 +40,19 @@ const PostCardBody = ({pos}) =>{
                     }
                 </span>
             </div>
-            {pos.images?.length > 0 && pos.images?.map((image,index)=>(
-            <div className="postcardbodyimage">
+            {/* {pos.images?.length > 0 && pos.images?.map((image,index)=>( */}
+          
                
-               <span className="postcardbodyimagenext" onClick={()=>shownextimage(pos.images)} > <KeyboardDoubleArrowRightIcon fontSize="large"/></span>
-               <span className="postcardbodyimageprev" onClick={()=>showprevimage(pos.images)}> <KeyboardDoubleArrowLeftIcon fontSize="large" /> </span>
-              
+             
                 {pos.images?.length> 0 && pos.images?.map((image,index)=>(
                      (index === currentImage) &&
                 <div className="postcardbodyimages" key={index}>
-                  
+                    <span className="postcardbodyimagenext" onClick={()=>shownextimage(pos.images)} > <KeyboardDoubleArrowRightIcon fontSize="large"/></span>
+               <span className="postcardbodyimageprev" onClick={()=>showprevimage(pos.images)}> <KeyboardDoubleArrowLeftIcon fontSize="large" /> </span>
+              
                     {
-                     image.secure_url?.match(/video/i) 
-                     ?<video  controls src={image.secure_url} alt={pos.user?.fullname} height="100%" width="100%"/> :
+                    //  image.secure_url?.match(/video/i) 
+                    //  ?<video  controls src={image.secure_url} alt={pos.user?.fullname} height="100%" width="100%"/> :
                       <img src={image.secure_url} alt={pos.user?.fullname}/>
                  
                     }
@@ -61,8 +61,8 @@ const PostCardBody = ({pos}) =>{
                 ))}
                 
             </div>
-            ))}
-        </div>
+            
+      
     )
 }
 

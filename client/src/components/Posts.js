@@ -22,10 +22,10 @@ console.log(homePost);
     >
       {homePost &&
         homePost.post.length > 0 &&
-        homePost.post.map((pos) => (
+        homePost.post.map((pos, index) => (
           <div
             className="postCards"
-            key={pos._id}
+            key={index}
             // style={{
             //   backgroundColor: "#EEDAFF",
             //   padding: "1rem",
