@@ -1,3 +1,7 @@
+/* Estilo del componente - GlobalCard */
+
+/* -------------- Contenedor general ---------------- */
+
 .globalcard {
   max-width: 250px;
   min-height: 400px;
@@ -8,12 +12,12 @@
   border-radius: 20px;
 }
 
-.globalcard-uitop{
+.globalcard-uitop {
   background-color: #401368;
   border-radius: 18px 18px 0px 0px;
-  color: #FF9E00;
+  color: #ff9e00;
   font-size: 2rem;
-  padding: .4rem .8rem;
+  padding: 0.4rem 0.8rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -27,35 +31,42 @@
   border: none;
   background-color: #240046;
   border-radius: 50px;
-  color: #FF9E00;
+  color: #ff9e00;
 }
+
 .globalcard-content {
-  background-color: #EEDAFF;
+  background-color: #eedaff;
   border-radius: 0px 0px 18px 18px;
   width: 100%;
   height: 400px;
   position: relative;
 }
 
+/* -------------- Información Usuaria ---------------- */
+
 .globalcard-contentbottomabout {
   padding-top: 2.5rem;
 }
+
 .globalcard-contentbottomabout-story {
   font-size: 14px;
   font-weight: 500;
   text-align: center;
 }
+
 .globalcard-contentbottomabout-email {
-    text-align: center;
-    padding: 2px;
-    padding-top: 0.7rem;
+  text-align: center;
+  padding: 2px;
+  padding-top: 0.7rem;
 }
+
 .globalcard-contentbottomabout-website {
   text-align: center;
   font-size: 12px;
   padding-top: 0.5rem;
   text-decoration: underline;
 }
+
 .globalcard-contentbottomnavigate {
   position: absolute;
   bottom: 0%;
@@ -72,9 +83,8 @@
   text-align: center;
   font-size: 1rem;
   font-weight: 700;
-
-  
 }
+
 .globalcard-contentbottomstat p {
   text-align: center;
   font-size: 0.8rem;
@@ -99,12 +109,15 @@
 .globalcard-contentmiddleinfo h6 {
   font-size: 14px;
   font-weight: 300;
-
 }
+
 .globalcard-contentmiddle {
   position: relative;
   border: 1px solid #240046;
 }
+
+/* -------------- Imágenes ---------------- */
+
 .globalcard-contentmiddle img {
   width: 90px;
   height: 90px;
@@ -113,7 +126,7 @@
   top: 50%;
   right: 30%;
   transform: translateY(-50%);
-  border: 5px solid #EEDAFF;
+  border: 5px solid #eedaff;
   object-fit: cover;
 }
 
@@ -127,10 +140,12 @@
   color: #240046;
 }
 
+/* -------------- Botones ---------------- */
+
 .closebtn:not(:active) {
   opacity: 1;
- }
- 
- .closebtn:active {
-   opacity: 0;
- }
+}
+
+.closebtn:active {
+  opacity: 0;
+}

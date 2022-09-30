@@ -1,3 +1,7 @@
+/* Estilo de los componentes - PostCommentCard - InputPostComment */
+
+/* ------------------- Inputpostcomments ------------------------- */
+
 .inputpostcomments {
   display: flex;
   justify-content: space-around;
@@ -14,7 +18,7 @@
 .inputpostcomments-input {
   outline: none;
   background-color: #b16eed;
-  color:#240046;
+  color: #240046;
   margin: 0rem 5px;
   padding: 2px 20px;
   height: 35px;
@@ -24,7 +28,7 @@
 .inputpostcomments-button {
   background-color: #240046;
   border: none;
-  color: #FF6D00;
+  color: #ff6d00;
   font-weight: 800;
   width: 90px;
   height: 40px;
@@ -32,8 +36,13 @@
   border-radius: 25px;
 }
 .inputpostcomments-button:hover {
-  background-color: #FF6D00;
-  color: #240046;}
+  background-color: #ff6d00;
+  color: #240046;
+}
+
+/* ------------------- PostCommentCard ------------------------- */
+
+/* -------- General ---------- */
 
 .postCommentCard {
   background-color: none;
@@ -43,27 +52,32 @@
   border: 2px solid #240046;
   position: relative;
 }
+
 .postCommentCarduser {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 2px;
 }
+
 .postCommentCardfullname {
   font-size: 1rem;
   color: black;
   font-weight: 700;
   letter-spacing: 1.5px;
 }
+
 .postCommentCardcommentcontent-content {
   font-weight: 500;
   color: #240046;
 }
+
 .postCommentCardtime {
   font-size: 10px;
   color: black;
   font-weight: 300;
 }
+
 .postCommentCardavatar {
   height: 40px;
   width: 40px;
@@ -71,6 +85,7 @@
   border-radius: 10px;
   margin-right: 10px;
 }
+
 .postCommentCarduserinfo {
   display: flex;
 }
@@ -79,87 +94,95 @@
   padding: 10px 5px;
   border-top: 1px solid #240046;
 }
+
 .postCommentCardavatarcommentcontent-likes {
   display: flex;
   margin-top: 10px;
 }
+
 .postCommentCardavatarcommentcontent-reply {
   margin-left: 15px;
 }
+
 .postCommentCardavatarcommentcontent-likescount {
   margin-right: 5px;
 }
+
 .commentMenuitemlist {
   position: absolute;
-  background-color: #FF9E00;
-  margin-top:.5rem;
-  padding:15px;
-  border-radius:10px;
+  background-color: #ff9e00;
+  margin-top: 0.5rem;
+  padding: 15px;
+  border-radius: 10px;
   color: #240046;
   transform: translateX(-30px);
   z-index: 9;
 }
+
 .commentMenuitemedit {
-  font-size:1rem;
+  font-size: 1rem;
   padding: 6px;
   font-weight: 900;
   letter-spacing: 3px;
-  color:#401368;
-}
-.commentMenuitemdelete {
-  font-size:1rem;
-  padding: 6px;
-  font-weight: 900;
-  letter-spacing: 3px;
-  color:#401368;
+  color: #401368;
 }
 
-.commentMenuitemdelete:hover, .commentMenuitemedit:hover{
+.commentMenuitemdelete {
+  font-size: 1rem;
+  padding: 6px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: #401368;
+}
+
+.commentMenuitemdelete:hover,
+.commentMenuitemedit:hover {
   color: black;
 }
+
 .postCommentCardLikeButton {
   position: absolute;
   transform: translate(350px, -140px);
 }
 
-.postCommentCardavatarcommentcontent-likes{
+.postCommentCardavatarcommentcontent-likes {
   display: flex;
   align-items: center;
 }
 
-.postCommentCard-cancelar{
+.postCommentCard-cancelar {
   background-color: #240046;
-  color:#FF6D00;
-  padding: .6rem;
+  color: #ff6d00;
+  padding: 0.6rem;
   border-radius: 50px;
   border: none;
   cursor: pointer;
 }
 
-.postCommentCard-cancelar:hover{
-  background-color: #FF6D00;
-  color:#240046;
-  padding: .6rem;
+.postCommentCard-cancelar:hover {
+  background-color: #ff6d00;
+  color: #240046;
+  padding: 0.6rem;
   border-radius: 50px;
   border: none;
   cursor: pointer;
 }
 
-.postCommentCard-aplicar{
-  background-color: #FF6D00;
-  color:#240046;
+.postCommentCard-aplicar {
+  background-color: #ff6d00;
+  color: #240046;
   margin-right: 10px;
   margin-left: 10px;
-  padding: .6rem;
+  padding: 0.6rem;
   border-radius: 50px;
   border: none;
 }
 
-.postCommentCard-aplicar:hover{
+.postCommentCard-aplicar:hover {
   background-color: #240046;
-  color:#FF6D00;
+  color: #ff6d00;
   margin-right: 10px;
-  padding: .6rem;
+  padding: 0.6rem;
   border-radius: 50px;
   border: none;
 }
