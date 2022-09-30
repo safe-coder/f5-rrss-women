@@ -21,7 +21,6 @@ const Alert = () =>{
             handleShow={close} />}
             {alert.success && <Toast msg={{title:"Success", body:alert.success}} bgColor="#a7ed6e"
             handleShow={close} />}
-            
         </div>
     )
 }

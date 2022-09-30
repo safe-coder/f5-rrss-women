@@ -10,8 +10,8 @@ const Toast = ({ msg, handleShow, bgColor }) => {
         borderRadius: "5px",
         backgroundColor: `${bgColor}`,
         color: "rgb(71, 60, 107)",
-        top: "5px",
-        right: "5px",
+        top: "85px",
+        left: "5px",
         zIndex: "50",
         maxWidth: "230px",
       }}

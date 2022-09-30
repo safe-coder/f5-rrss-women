@@ -36,7 +36,7 @@ const commentCtrl = {
   
       
     
-      return res.json({ msg:'update succesfully'})
+      return res.json({ msg:'Editado correctamente'})
     } catch (err) {
       return res.status(500).json({ msg: err.message })
     }
@@ -47,7 +47,7 @@ const commentCtrl = {
         
         const comment = await Comment.find({_id: req.params.id, likes: req.user._id})
        
-        if(comment.length > 0) return res.status(400).json({msg:"you have already like this comment"})
+        if(comment.length > 0) return res.status(400).json({msg:"Ya has dado like a este comentario"})
     
         await Comment.findOneAndUpdate({_id:req.params.id},{
             $push: {likes: req.user._id}
@@ -101,7 +101,7 @@ deleteComment: async (req,res) =>{
       })
 
       res.json({
-          msg: "comment delete"
+          msg: "Comentario eliminado"
       })
   } catch (err) {
       return res.status(500).json({msg: err.message})

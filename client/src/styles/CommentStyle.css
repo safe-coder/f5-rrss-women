@@ -130,10 +130,36 @@
 .postCommentCard-cancelar{
   background-color: #240046;
   color:#FF6D00;
+  padding: .6rem;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+}
+
+.postCommentCard-cancelar:hover{
+  background-color: #FF6D00;
+  color:#240046;
+  padding: .6rem;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
 }
 
 .postCommentCard-aplicar{
   background-color: #FF6D00;
   color:#240046;
   margin-right: 10px;
+  margin-left: 10px;
+  padding: .6rem;
+  border-radius: 50px;
+  border: none;
+}
+
+.postCommentCard-aplicar:hover{
+  background-color: #240046;
+  color:#FF6D00;
+  margin-right: 10px;
+  padding: .6rem;
+  border-radius: 50px;
+  border: none;
 }
