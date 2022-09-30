@@ -76,6 +76,11 @@ export const Header = () => {
 
   return (
     <div className="header">
+      <Link to="/" className="linkhome">
+          <IconButton>
+            <HomeIcon fontSize="large" className={`${isActive("/")}`} style={{color:"#FF9E00"}}/>
+          </IconButton>
+        </Link>
       <div className="header-right">
       <Link to="/">
         <img src={LogoSC} width="250rem" alt="" style={{paddingLeft: "1.3rem"}}/>
@@ -88,9 +93,13 @@ export const Header = () => {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
-        <span className="header-centersearchclose" onClick={handleClose} style={{opacity: users.length > 0 ? '1' : '0'}}><CancelIcon fontSize="large" style={{color: "#240046", cursor: "pointer"}}/></span>
+        <div className="header-centericons">
+        <span className="header-centersearchclose" onClick={handleClose} style={{opacity: users.length > 0 ? '1' : '0'}}>
+          <CancelIcon fontSize="large" style={{color: "#240046", cursor: "pointer"}}/>
+          </span>
         {/* <button type="submit" style={{display:'none'}}>Search</button> */}
         <SearchIcon style={{color: "#240046", opacity: users.length > 0 ? '0' : '1'}} fontSize="large"/>
+</div>
         <div className="header-searchusers">
         {load && <img src={LoadIcon} alt="" style={{width:'48px', height:"48px"}}/>}
       {
@@ -102,12 +111,6 @@ export const Header = () => {
       }
       </div>
       </form>
-      
-      <Link to="/" className="linkhome">
-          <IconButton>
-            <HomeIcon className={`${isActive("/")}`} style={{color:"#FF9E00"}}/>
-          </IconButton>
-        </Link>
 
       <div className="header-left">
         <Link to={`profile/${auth.user._id}`}>

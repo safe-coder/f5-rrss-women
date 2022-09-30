@@ -14,7 +14,8 @@
 .header-center{
     background-color: #FF9E00;
     border-radius: 50px;
-    flex: 0.4;
+    /* flex: 0.4; */
+    width: 35rem;
     min-width: 25rem;
     height: 3rem;
     /* position:relative; */
@@ -52,7 +53,14 @@
     
     border-radius: 5px;
 }
-.header-center .MuiSvgIcon-root{
+
+.header-centericons{
+    position: absolute;
+    top:30%;
+    right:35%;
+}
+
+/* .header-center .MuiSvgIcon-root{
     margin-right:.5rem;
     position: absolute;
     top:10%;
@@ -62,17 +70,18 @@
 .header-centersearchclose{
     position:absolute;
     top:10%;
-    right:0%;
+    right:50%;
     cursor: pointer;
     font-size: 1.5rem;
-}
+} */
 
 .header-searchusers{
     margin-top: 5px;
     position: absolute;
     background: #240046;
     border-radius: 50px;
-    width:100%;
+    width: 35%;
+    min-width: 30rem;
 }
 
 /* .header-centersearchclose{
@@ -117,12 +126,18 @@
 
     .header-center{
         height: 2.6rem;
-        margin-left: 1rem;
-        min-width: 19rem;
+        margin-left: .5rem;
+        margin-right: 1rem;
+        min-width: 16rem;
     }
     .header-center input{
         width: 10rem;
         height: .5rem;
+    }
+
+    .header-searchusers{
+        width: 50%;
+        min-width: 17rem;
     }
 
     .header-center .MuiSvgIcon-root{
@@ -133,4 +148,13 @@
         margin-left: .1rem;
     }
 
+    .linkhome{
+        display:contents;
+    }
+
+    .header-centericons{
+        position: absolute;
+        top:23%;
+        right:44%;
+    }
 }

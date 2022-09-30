@@ -3,7 +3,7 @@
     min-height: 300px;
     margin-bottom: 1.5rem;
     border: 2px solid #240046;
-    width: 100%;
+    width: 97%;
     box-shadow: #240046 5px 5px;
     border-radius: 20px;
 }
@@ -36,7 +36,6 @@
     text-align: center;
     font-size:16px;
     border-bottom: 1px solid #873CC7;
-
 }
 .profileabout-contentbottom{
     display: flex;
@@ -50,6 +49,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 2rem;
     padding:0.5rem 0;
 }
 
