@@ -41,7 +41,7 @@ function App() {
 useEffect(()=>{
   if (auth.token) {
     dispatch(getPosts(auth.token))
-  dispatch(getPost(auth.token))
+  // dispatch(getPost(auth.token))
  // dispatch(getNotify(auth))
   }
 },[auth.token,  dispatch])
@@ -64,7 +64,7 @@ useEffect(()=>{
             {/* <Route  path="/explore/*" element={<PrivateRoute><Explore/></PrivateRoute>} />
             <Route path="/notification/*" element={<PrivateRoute><Notification /></PrivateRoute>} /> */}
          
-           <Route path="/post/:id" element={<PrivateRoute><Post /></PrivateRoute>} />
+           {/* <Route path="/post/:id" element={<PrivateRoute><Post /></PrivateRoute>} /> */}
           
             <Route  path="/profile/:id/" element={<PrivateRoute><Profile/></PrivateRoute>} />
          
