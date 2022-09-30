@@ -107,7 +107,7 @@ if(err) { dispatch({type:"ALERT", payload:{error: err}}) }
        
     } else {
       
-        // dispatch(createpost({ content, images, auth,  socket }))
+        dispatch(createpost({ content, images, auth,  socket }))
 
        setContent('')
         setImages([])
