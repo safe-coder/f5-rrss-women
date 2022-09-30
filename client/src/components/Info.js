@@ -61,12 +61,7 @@ const Info = ({ userData, auth, profile, id }) => {
                   </h6>
                   <h6 className="profileinfo-statdesc">SEGUIDORAS</h6>
                 </div>
-                <div className="profileinfo-stat">
-                  <h6 className="profileinfo-statnumber">
-                    {user.following.length}
-                  </h6>
-                  <h6 className="profileinfo-statdesc">SIGUIENDO</h6>
-                </div>
+              
               </div>
               <div className="profileinfo-bottomcenter">
                 <h3 className="profileinfo-fullname">{user.fullname}</h3>
@@ -75,9 +70,9 @@ const Info = ({ userData, auth, profile, id }) => {
               <div className="profileinfo-bottomright">
                 <div className="profileinfo-stat">
                   <h6 className="profileinfo-statnumber">
-                    {user.friends.length}
+                    {user.following.length}
                   </h6>
-                  <h6 className="profileinfo-statdesc">POST</h6>
+                  <h6 className="profileinfo-statdesc">SIGUIENDO</h6>
                 </div>
               </div>
               

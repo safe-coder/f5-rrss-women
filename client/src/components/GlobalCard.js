@@ -48,13 +48,10 @@ const GlobalCard = ({ user },{ posts }) => {
                 <h6>{user.friends.length}</h6>
                 <p>Seguidoras</p>
               </div>
+              
               <div className="globalcard-contentbottomstat">
                 <h6>{user.following.length}</h6>
                 <p>Siguiendo</p>
-              </div>
-              <div className="globalcard-contentbottomstat">
-                <h6>0</h6>
-                <p>Post</p>
               </div>
             </div>
 
