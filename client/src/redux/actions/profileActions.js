@@ -1,7 +1,6 @@
 
 import {getDataApi, patchDataApi} from '../../utils/fetchDataApi'
 import { ALERT_TYPES } from '../actions/alertActions';
-import {createNotify, removeNotify} from "./notifyActions"
 import { DeleteData} from "./alertActions"
 import { imageupload } from "../../utils/imageupload";
 import axios from "axios";
@@ -86,7 +85,6 @@ export const addfriends = ({users, user, auth, socket}) => async (dispatch) =>{
                 
     
             }
-            dispatch(createNotify({msg, auth, socket}))
         } catch (err) {
             dispatch({
                 type:'ALERT',
@@ -139,7 +137,6 @@ export const addfriends = ({users, user, auth, socket}) => async (dispatch) =>{
                 
     
             }
-            dispatch(removeNotify({msg, auth, socket}))
         } catch (err) {
             dispatch({
                 type:'ALERT',

@@ -1,7 +1,6 @@
 import {patchDataApi, postDataApi , deleteDataApi} from "../../utils/fetchDataApi"
 import {POST_TYPES} from "./postActions"
 import {EditData, DeleteData} from "./alertActions"
-import {createNotify, removeNotify} from "./notifyActions"
 
 export const createComment = ({pos, newComment, auth, socket}) => async (dispatch) =>{
  
@@ -28,7 +27,6 @@ export const createComment = ({pos, newComment, auth, socket}) => async (dispatc
             image:pos.images[0].secure_url,
 
         }
-        dispatch(createNotify({msg, auth, socket}))
 
     } catch (err) {
         dispatch({
@@ -124,7 +122,6 @@ export const deleteComment = ({comment, pos, auth}) => async (dispatch) =>{
                 
     
             }
-            dispatch(removeNotify({msg, auth}))
         })
 
        // socket.emit('deleteComment', newPost)

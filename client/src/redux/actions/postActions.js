@@ -1,6 +1,5 @@
 import {imageupload} from "../../utils/imageupload";
 import {getDataApi, postDataApi , patchDataApi, deleteDataApi} from "../../utils/fetchDataApi";
-import {createNotify, removeNotify} from "./notifyActions"
 
 
 export const POST_TYPES= {
@@ -41,13 +40,12 @@ export const createpost = ({content, images, auth, socket}) => async(dispatch) =
             image:media[0].secure_url,
 
         }
-        dispatch(createNotify({msg, auth}))
 
     } catch (err) {
         dispatch({
             type:'ALERT',
             payload:{
-                error: "Do not"
+                // error: "Do not"
             }
         })
         
@@ -136,7 +134,6 @@ export const likepost = ({pos, auth,socket}) => async (dispatch) =>{
             image:pos.images[0].secure_url,
 
         }
-        dispatch(createNotify({msg, auth, socket}))
 
     } catch (err) {
         dispatch({
@@ -164,13 +161,12 @@ export const unlikepost = ({pos, auth , socket}) => async (dispatch) =>{
           
 
         }
-        dispatch(removeNotify({msg, auth, socket}))
 
      } catch (err) {
          dispatch({
             type:'ALERT',
             payload:{
-             error: err.response.data.msg
+            //  error: err.response.data.msg
             }
     })
     }
@@ -243,7 +239,6 @@ export const deletePost = ({pos, auth,socket}) => async (dispatch) =>{
             url: `/post/${pos._id}`,
            }
 
-        dispatch(removeNotify({msg, auth, socket}))
 
     } catch (err) {
         dispatch({

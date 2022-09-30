@@ -19,7 +19,7 @@ import PrivateRoute from './utils/PrivateRoute';
 import Profile from './pages/Profile';
 import { getPost } from './redux/actions/postActions.js';
 import {getPosts} from './redux/actions/postallActions'
-import { getNotify } from './redux/actions/notifyActions.js';
+
 
 
 function App() {
@@ -39,7 +39,7 @@ useEffect(()=>{
   if (auth.token) {
     dispatch(getPosts(auth.token))
   dispatch(getPost(auth.token))
-  dispatch(getNotify(auth))
+ 
   }
 },[auth.token, auth,  dispatch])
 
