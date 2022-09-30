@@ -94,7 +94,7 @@
 
 .header-leftAvatar{
     display: flex;
-    align-items: center;
+   
 }
 
 
@@ -105,6 +105,12 @@
 
 .header-left{
     display: flex;
+}
+.header-right img{
+   
+    width: 40%;
+    height: 20%;;
+  
 }
 
 @media only screen and (max-width: 768px) {

@@ -6,7 +6,6 @@ import {getDataApi, postDataApi , patchDataApi, deleteDataApi} from "../../utils
 export const POST_TYPES= {
     CREATE_POST : "CREATE_POST",
     GET_POSTS: "GET_POSTS",
-    GET_ALL: "GET_ALL",
     UPDATE_POST : "UPDATE_POST",
     LOADING_POSTS :"LOADING_POSTS",
     GET_POST:"GET_POST",

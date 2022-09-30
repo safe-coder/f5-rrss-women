@@ -1,4 +1,5 @@
-import { getDataApi } from "../../utils/fetchDataApi";
+import {imageupload} from "../../utils/imageupload"
+import { getDataApi, postDataApi } from "../../utils/fetchDataApi";
 import {POST_TYPES} from "./postActions"
 
 
@@ -7,6 +8,7 @@ export const POSTALL_TYPES= {
   GET_ALL: "GET_ALL",
   
 }
+
 
 
 export const getPosts = (token) => async (dispatch) => {
