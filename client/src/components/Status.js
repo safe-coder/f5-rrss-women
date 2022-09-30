@@ -101,21 +101,33 @@ if(err) { dispatch({type:"ALERT", payload:{error: err}}) }
     //     payload: {error : "add your image"} 
     // })
 
-    if(status.edit){
-        dispatch(updatepost({content, images, auth, status,socket}))
+        if (status.edit) {
+            dispatch(updatepost({content, images, auth, status,socket}))
         dispatch({type: ALERT_TYPES.STATUS , payload: {edit : false}})
+       
     } else {
-      dispatch(createpost({ content, images, auth, socket }))
-      setContent('')
-        setImages([])
-      if (tracks) tracks.stop()
       
-    }
+        // dispatch(createpost({ content, images, auth,  socket }))
+
+       setContent('')
+        setImages([])
+     if (tracks) tracks.stop()
+      }
     setContent('')
     setImages([])
     if(tracks) tracks.stop()
 
     }
+    // const handleEdit = (ed) =>{
+        
+    //     dispatch({type: ALERT_TYPES.STATUS , payload:{...pos, edit:true}})
+    //     setshowdrop(false)
+    // }
+    
+
+
+
+
     const handleDiscard = (e) =>{
         e.preventDefault();
         setContent('')

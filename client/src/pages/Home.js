@@ -3,7 +3,7 @@ import HomeLeft from "../components/HomeLeft";
 //import HomeMid from "../components/HomeMid";
 import Banner from "../components/Banner";
 import { Grid } from "@mui/material";
-import Status from "../components/Status";
+//import Status from "../components/Status";
 import PostAll from "../components/PostAll";
 import PostMid from "../components/PostMid";
 
