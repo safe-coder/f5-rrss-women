@@ -39,7 +39,7 @@ const userSchema = mongoose.Schema({
     },
     avatar:{
         type:String,
-        default:'https://i.postimg.cc/h48xQ8B0/ava.png'
+        default:'https://i.ibb.co/HXmTg6n/user-avatar.png'
     },
     banner:{
         type:String,

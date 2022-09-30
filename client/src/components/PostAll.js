@@ -25,10 +25,10 @@ const PostAll = () => {
     >
       {postAll &&
         postAll.post.length > 0 &&
-        postAll.post.map((pos) => (
+        postAll.post.map((pos, index) => (
           <div
             className="postCards"
-            key={pos._id}
+            key={index}
             // style={{
             //   backgroundColor: "#EEDAFF",
             //   padding: "1rem",

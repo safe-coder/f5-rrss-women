@@ -66,7 +66,6 @@
     top:10%;
     right:0%;
 }
-
 .header-centersearchclose{
     position:absolute;
     top:10%;
@@ -92,7 +91,6 @@
     margin-right: 1rem;
     
 }
-
 .header-searchusers{
     margin-top: 20vh;
     position: absolute;
@@ -155,6 +153,6 @@
     .header-centericons{
         position: absolute;
         top:23%;
-        right:44%;
+        right:45%;
     }
 }

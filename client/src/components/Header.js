@@ -121,23 +121,6 @@ export const Header = () => {
         </Link>
 
 <div className="header-leftIcons">
-        {/* <Link to="/message">
-          <IconButton>
-            <MessageIcon className={`${isActive("/message")}`}  style={{color:"#FF9E00"}}/>
-          </IconButton>
-        </Link>
-        <Link to="/notification">
-          <IconButton>
-            <NotificationsIcon className={`${isActive("/notification")}`}  style={{color:"#FF9E00"}}/>
-          </IconButton>
-        </Link>
-
-        <Link to="/explore">
-          <IconButton>
-            <ExploreIcon className={`${isActive("/explore")}`} style={{color:"#FF9E00"}} />
-          </IconButton>
-        </Link> */}
-
         <IconButton onClick={() => dispatch(logout())}  style={{color:"#FF9E00"}} >
           <ExitToAppIcon />
         </IconButton>
