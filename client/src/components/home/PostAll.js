@@ -1,16 +1,19 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import InputPostComment from "./InputPostComment";
-import  "../styles/Posts.css";
-import PostCardBody from "./PostCardBody";
-import PostCardFooter from "./PostCardFooter";
-import PostCardHeader from "./PostCardHeader";
-import PostComments from "./PostComments";
+import InputPostComment from "../posts/InputPostComment";
+import  "../../styles/Posts.css";
+import PostCardBody from "../posts/PostCardBody";
+import PostCardFooter from "../posts/PostCardFooter";
+import PostCardHeader from "../posts/PostCardHeader";
+import PostComments from "../posts/PostComments";
 
-const Posts = () => {
-  const { homePost } = useSelector((state) => state);
-// console.log(homePost);
+
+const PostAll = () => {
+  const { postAll } = useSelector((state) => state);
+// console.log(postAll);
   return (
+    <>
+    {/* <Status/> */}
     <div
       className="posts"
       // style={{
@@ -20,9 +23,9 @@ const Posts = () => {
       //   gap: "1rem",
       // }}
     >
-      {homePost &&
-        homePost.post.length > 0 &&
-        homePost.post.map((pos, index) => (
+      {postAll &&
+        postAll.post.length > 0 &&
+        postAll.post.map((pos, index) => (
           <div
             className="postCards"
             key={index}
@@ -44,8 +47,9 @@ const Posts = () => {
             </div>
           </div>
         ))}
-    </div>
+      </div>
+      </>
   );
 };
 
-export default Posts;
+export default PostAll;

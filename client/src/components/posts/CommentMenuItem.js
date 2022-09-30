@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import {useDispatch} from "react-redux"
-import {deleteComment} from "../redux/actions/commentActions"
+import {deleteComment} from "../../redux/actions/commentActions"
 
 
 const CommentMenuItem = ({ comment, pos, auth, setonEdit }) => {

@@ -59,6 +59,7 @@ export default function UserList() {
       headers: { Authorization: auth.token },
     });
     setOpen(false);
+    window.location.reload(false);
   };
 
   const newData = data.filter((user) => {

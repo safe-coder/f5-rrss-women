@@ -1,6 +1,5 @@
 import React from "react"
-import Posts from "./Posts"
-import Status from "./Status";
+import Status from "../Status";
 import {useSelector} from "react-redux"
 import PostAll from "./PostAll";
 

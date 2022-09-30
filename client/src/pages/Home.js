@@ -1,11 +1,11 @@
 import React from "react";
-import HomeLeft from "../components/HomeLeft";
+import HomeLeft from "../components/home/HomeLeft";
 //import HomeMid from "../components/HomeMid";
-import Banner from "../components/Banner";
+import Banner from "../components/home/Banner";
 import { Grid } from "@mui/material";
 //import Status from "../components/Status";
-import PostAll from "../components/PostAll";
-import PostMid from "../components/PostMid";
+import PostAll from "../components/home/PostAll";
+import PostMid from "../components/home/PostMid";
 import "../styles/Home.css"
 
 const Home = () => {

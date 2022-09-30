@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "../styles/GlobalCard.css";
+import "../../styles/GlobalCard.css";
 import CircleIcon from '@mui/icons-material/Circle';
 import { useSelector } from "react-redux";
-import GlobalFriendBtn from "./GlobalFriendBtn";
+import GlobalFriendBtn from "../profile/GlobalFriendBtn";
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import { Link } from "react-router-dom";

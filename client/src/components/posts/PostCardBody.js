@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import "../styles/PostCard.css"
+import "../../styles/PostCard.css"
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
 

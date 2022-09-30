@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import {Link , useNavigate} from "react-router-dom"
-import "../styles/PostCard.css"
+import {Link } from "react-router-dom"
+import "../../styles/PostCard.css"
 import moment from 'moment'
 import 'moment/locale/es';
 import {useDispatch, useSelector} from"react-redux"
-import {ALERT_TYPES} from "../redux/actions/alertActions"
-import { deletePost } from '../redux/actions/postActions';
-import {BASE_URL} from "../utils/config"
+import {ALERT_TYPES} from "../../redux/actions/alertActions"
+import { deletePost } from '../../redux/actions/postActions';
+import {BASE_URL} from "../../utils/config"
 import ArrowDropDownCircleIcon from '@mui/icons-material/ArrowDropDownCircle';
 
 const PostCardHeader = ({pos}) =>{
@@ -22,7 +22,7 @@ const PostCardHeader = ({pos}) =>{
     }
     
     const handleDeletePost = () => {
-        // pendiente de eliminar socket
+        
         dispatch(deletePost({pos, auth, socket}))
         setshowdrop(false)
        // navigate('/')
@@ -39,7 +39,7 @@ const PostCardHeader = ({pos}) =>{
                 <img className="postcardheadertopavatar"src={pos.user?.avatar} alt={pos.user.fullname}/>
             
             <div className="postcardheaderinfo">
-                <h6>@{pos.user?.fullname} <span style={{color:'#FF9E00', fontSize:'14px',fontWeight:'600'}}> ha posteado </span>{pos.images?.length} {pos.images?.length > 1 ? " imagenes" : "imagen"} </h6>
+                <h6>@{pos.user?.username} <span style={{color:'#FF9E00', fontSize:'14px',fontWeight:'600'}}> ha posteado </span>{pos.images?.length} {pos.images?.length > 1 ? " imagenes" : "imagen"} </h6>
                 <h4> {moment(pos.createdAt).fromNow()}</h4>
             </div>
             </div>

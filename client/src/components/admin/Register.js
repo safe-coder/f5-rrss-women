@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import "../styles/Register.css";
+import "../../styles/Register.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
-import {register} from '../redux/actions/authActions';
+import {register} from '../../redux/actions/authActions';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
@@ -35,6 +35,7 @@ const Register = () => {
     //   navigate('/admin');
     // }
     dispatch(register(userData))
+    window.location.reload(false);
   }
   return (
     <div className="register">

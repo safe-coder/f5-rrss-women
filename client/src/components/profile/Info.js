@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import "../styles/ProfileInfo.css";
+import "../../styles/ProfileInfo.css";
 import SettingsIcon from '@mui/icons-material/Settings';
 import EditProfile from "./EditProfile";
 import GlobalFriendBtn from "./GlobalFriendBtn";

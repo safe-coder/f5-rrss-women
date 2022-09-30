@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import blob from "../images/blob.svg"
+import blob from "../../images/blob.svg"
 
 const Banner = () => {
   const { auth } = useSelector((state) => state);

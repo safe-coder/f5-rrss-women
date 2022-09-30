@@ -1,5 +1,5 @@
 import React from 'react' ;
-import  GlobalCard  from './GlobalCard';
+import  GlobalCard  from '../home/GlobalCard';
 import { Grid } from '@mui/material';
 
 const FriendsCard = ({user}) =>{

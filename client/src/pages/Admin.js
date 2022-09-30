@@ -1,6 +1,6 @@
 import React from "react";
-import Register from "../components/Register";
-import UserList from "../components/UserList";
+import Register from "../components/admin/Register";
+import UserList from "../components/admin/UserList";
 import {useSelector} from "react-redux"
 import { Grid } from "@mui/material";
 

@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+
 import {useSelector, useDispatch} from 'react-redux';
 import CommentIcon from '@mui/icons-material/Comment';
-import SaveAltIcon from '@mui/icons-material/SaveAlt';
-import {Link} from "react-router-dom"
-import "../styles/PostCard.css"
-import {likepost, unlikepost} from '../redux/actions/postActions.js';
+import "../../styles/PostCard.css"
+import {likepost, unlikepost} from '../../redux/actions/postActions.js';
 import LikePost from './LikePost';
 
 

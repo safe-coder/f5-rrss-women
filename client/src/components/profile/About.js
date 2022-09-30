@@ -1,6 +1,6 @@
 
 import React from "react";
-import "../styles/ProfileAbout.css"
+import "../../styles/ProfileAbout.css"
 import CircleIcon from '@mui/icons-material/Circle';
 import { RadioGroup } from "@mui/material";
 import moment from "moment";

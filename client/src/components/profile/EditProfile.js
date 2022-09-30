@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { updateProfile } from "../redux/actions/profileActions.js";
-import "../styles/EditProfile.css";
-import { checkimage } from "../utils/imageupload.js";
+import { updateProfile } from "../../redux/actions/profileActions.js";
+import "../../styles/EditProfile.css";
+import { checkimage } from "../../utils/imageupload.js";
 import CloseIcon from "@mui/icons-material/Close";
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';

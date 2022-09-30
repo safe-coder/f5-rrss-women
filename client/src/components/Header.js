@@ -13,7 +13,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../redux/actions/authActions";
 import { Link, useNavigate } from "react-router-dom";
 import { getDataApi } from "../utils/fetchDataApi";
-import UserCard from "../components/UserCard";
+import UserCard from "./profile/UserCard";
 import LoadIcon from "../images/loading.gif";
 import LogoSC from "../images/LOGOSC.png"
 

@@ -2,12 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import moment from "moment";
 import 'moment/locale/es';
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { useSelector, useDispatch } from "react-redux";
 import CommentMenuItem from "./CommentMenuItem";
 import LikePost from "./LikePost";
-import "../styles/CommentStyle.css"
-import { updateComment, likecomment, unlikecomment } from '../redux/actions/commentActions.js'
+import "../../styles/CommentStyle.css"
+import { updateComment, likecomment, unlikecomment } from '../../redux/actions/commentActions.js'
 
 
 const PostCommentCard = ({ comment, pos }) => {
@@ -49,7 +48,7 @@ const PostCommentCard = ({ comment, pos }) => {
       if (comment.likes.find(like => like._id === auth.user._id)) {
         setIsLike(true)
       }
-    }, [comment.content, comment.likes]);
+    }, [comment.content, comment.likes,auth.user._id]);
 
     return (
       <div className="postCommentCard">
