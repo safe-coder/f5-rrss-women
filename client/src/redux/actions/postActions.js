@@ -1,6 +1,6 @@
 import {imageupload} from "../../utils/imageupload";
 import {getDataApi, postDataApi , patchDataApi, deleteDataApi} from "../../utils/fetchDataApi";
-//import {createNotify, removeNotify} from "./notifyActions"
+import {createNotify, removeNotify} from "./notifyActions"
 
 
 export const POST_TYPES= {
@@ -14,7 +14,7 @@ export const POST_TYPES= {
 }
 
 
-export const createpost = ({content, images, auth}) => async(dispatch) => {
+export const createpost = ({content, images, auth, socket}) => async(dispatch) => {
     
     
     let media= [];
@@ -32,16 +32,16 @@ export const createpost = ({content, images, auth}) => async(dispatch) => {
         
        
         //notify
-        // const msg = {
-        //     id: res.data.newPost._id,
-        //     text:'added a new Post',
-        //     url: `/post/${res.data.newPost._id}`,
-        //     recipients: res.data.newPost.user.friends,
-        //     content,
-        //     image:media[0].secure_url,
+        const msg = {
+            id: res.data.newPost._id,
+            text:'added a new Post',
+            url: `/post/${res.data.newPost._id}`,
+            recipients: res.data.newPost.user.friends,
+            content,
+            image:media[0].secure_url,
 
-        // }
-        // dispatch(createNotify({msg, auth}))
+        }
+        dispatch(createNotify({msg, auth}))
 
     } catch (err) {
         dispatch({
@@ -122,21 +122,21 @@ export const likepost = ({pos, auth,socket}) => async (dispatch) =>{
    
     dispatch({type:POST_TYPES.UPDATE_POST, payload: newPost})
 
-    
+    // socket.emit('likePost', newPost )
     try {
-        await patchDataApi(`post/${pos._id}/like`,null, auth.token)
-        socket.emit('likePost', newPost )
+        const res = await patchDataApi(`post/${pos._id}/like`,null, auth.token)
 
-        // const msg = {
-        //     id: auth.user._id,
-        //     text:'like the Post',
-        //     url: `/post/${pos._id}`,
-        //     recipients: [pos.user._id],
-        //     content: pos.content,
-        //     image:pos.images[0].secure_url,
 
-        // }
-        // dispatch(createNotify({msg, auth, socket}))
+        const msg = {
+            id: auth.user._id,
+            text:'like the Post',
+            url: `/post/${pos._id}`,
+            recipients: [pos.user._id],
+            content: pos.content,
+            image:pos.images[0].secure_url,
+
+        }
+        dispatch(createNotify({msg, auth, socket}))
 
     } catch (err) {
         dispatch({
@@ -152,20 +152,19 @@ export const unlikepost = ({pos, auth , socket}) => async (dispatch) =>{
     const newPost = {...pos, likes: pos.likes.filter(like => like._id !== auth.user._id)}
   
  dispatch({type:POST_TYPES.UPDATE_POST, payload: newPost})
- 
+//  socket.emit('unlikePost', newPost )
      try {
-         await patchDataApi(`post/${pos._id}/unlike`,null, auth.token)
-         socket.emit('unlikePost', newPost )
+         const res = await patchDataApi(`post/${pos._id}/unlike`,null, auth.token)
          
-        //  const msg = {
-        //     id: auth.user._id,
-        //     text:'unlike the  Post',
-        //     url: `/post/${pos._id}`,
-        //     recipients: [pos.user._id],
+         const msg = {
+            id: auth.user._id,
+            text:'unlike the  Post',
+            url: `/post/${pos._id}`,
+            recipients: [pos.user._id],
           
 
-        // }
-        // dispatch(removeNotify({msg, auth, socket}))
+        }
+        dispatch(removeNotify({msg, auth, socket}))
 
      } catch (err) {
          dispatch({
@@ -177,74 +176,74 @@ export const unlikepost = ({pos, auth , socket}) => async (dispatch) =>{
     }
 }
 
-// export  const getPostsingle = ({detailPost, auth, id}) => async (dispatch) =>{
+export  const getPostsingle = ({detailPost, auth, id}) => async (dispatch) =>{
    
-//  if(detailPost.every(item => item._id !== id)){
-//      try {
-//          const res= await getDataApi(`post/${id}`,auth.token)
-//          console.log(res)
-//          dispatch({type: POST_TYPES.GET_POST, payload:res.data.post})
-//      } catch (err) {
-//         dispatch({
-//             type:'ALERT',
-//             payload:{
-//              error: err.response.data.msg
-//             }
-//     })
-//      }
-//  }
-// } 
+ if(detailPost.every(item => item._id !== id)){
+     try {
+         const res= await getDataApi(`post/${id}`,auth.token)
+         console.log(res)
+         dispatch({type: POST_TYPES.GET_POST, payload:res.data.post})
+     } catch (err) {
+        dispatch({
+            type:'ALERT',
+            payload:{
+             error: err.response.data.msg
+            }
+    })
+     }
+ }
+} 
 
-// export const savedPost = ({pos,auth}) => async (dispatch) => {
+export const savedPost = ({pos,auth}) => async (dispatch) => {
    
-//     const newUser={...auth.user, saved:[...auth.user.saved, pos._id]}
+    const newUser={...auth.user, saved:[...auth.user.saved, pos._id]}
  
-//     dispatch({type:'AUTH', payload:{...auth, user: newUser}})
-//     try {
-//         const res= await patchDataApi(`save/${pos._id}`,null, auth.token)
-//         console.log(res)
-//     } catch (err) {
-//         dispatch({
-//             type:'ALERT',
-//             payload:{
-//              error: err.response.data.msg
-//             }
-//     })
-//     }
-// }
-// export const unsavedPost = ({pos,auth}) => async (dispatch) => {
+    dispatch({type:'AUTH', payload:{...auth, user: newUser}})
+    try {
+        const res= await patchDataApi(`save/${pos._id}`,null, auth.token)
+        console.log(res)
+    } catch (err) {
+        dispatch({
+            type:'ALERT',
+            payload:{
+             error: err.response.data.msg
+            }
+    })
+    }
+}
+export const unsavedPost = ({pos,auth}) => async (dispatch) => {
    
-//     const newUser={...auth.user, saved:auth.user.saved.filter(id=> id !== pos._id)}
-//  console.log(newUser)
-//      dispatch({type:'AUTH', payload:{...auth, user: newUser}})
-//     try {
-//         const res= await patchDataApi(`unsave/${pos._id}`,null, auth.token)
-//         console.log(res)
-//     } catch (err) {
-//         dispatch({
-//             type:'ALERT',
-//             payload:{
-//              error: err.response.data.msg
-//             }
-//     })
-//     }
-// }
+    const newUser={...auth.user, saved:auth.user.saved.filter(id=> id !== pos._id)}
+ console.log(newUser)
+     dispatch({type:'AUTH', payload:{...auth, user: newUser}})
+    try {
+        const res= await patchDataApi(`unsave/${pos._id}`,null, auth.token)
+        console.log(res)
+    } catch (err) {
+        dispatch({
+            type:'ALERT',
+            payload:{
+             error: err.response.data.msg
+            }
+    })
+    }
+}
 
 export const deletePost = ({pos, auth,socket}) => async (dispatch) =>{
     
     dispatch({type:POST_TYPES.DELETE_POST, payload: pos})
     try {
 
-         await deleteDataApi(`post/${pos._id}`, auth.token)
+        const res = await deleteDataApi(`post/${pos._id}`, auth.token)
          //notify
-        //  const msg = {
-        //     id: pos._id,
-        //     text:'added a new Post',
-        //     recipients: res.data.newPost.user.friends,
-        //     url: `/post/${pos._id}`,
-        //    }
+         const msg = {
+            id: pos._id,
+            text:'added a new Post',
+            recipients: res.data.newPost.user.friends,
+            url: `/post/${pos._id}`,
+           }
 
-        // dispatch(removeNotify({msg, auth, socket}))
+        dispatch(removeNotify({msg, auth, socket}))
 
     } catch (err) {
         dispatch({

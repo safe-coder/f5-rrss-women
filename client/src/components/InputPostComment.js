@@ -4,7 +4,7 @@ import '../styles/CommentStyle.css';
 import { createComment } from '../redux/actions/commentActions.js';
 
 const InputPostComment = ({children, pos, comment, onReply, setOnReply}) =>{
-  const{auth, socket} = useSelector(state =>state);
+  const{auth} = useSelector(state =>state);
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
@@ -23,7 +23,7 @@ const InputPostComment = ({children, pos, comment, onReply, setOnReply}) =>{
       }
      
 
-      dispatch(createComment({pos, newComment, auth, socket}))
+   dispatch(createComment({pos, newComment, auth}))
       if(onReply) return setOnReply(false)
       SetContent('')
   }

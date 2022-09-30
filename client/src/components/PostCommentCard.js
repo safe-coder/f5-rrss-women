@@ -54,7 +54,7 @@ const PostCommentCard = ({ comment, pos }) => {
     return (
       <div className="postCommentCard">
         <div className="postCommentCarduser">
-          <Link to={`/profile/${comment.user?._id}`}>
+          <Link to={`profile/${comment.user._id}`}>
             <div className="postCommentCarduserinfo">
               <img
                 className="postCommentCardavatar"

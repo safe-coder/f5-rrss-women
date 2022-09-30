@@ -3,14 +3,12 @@
     min-height: 300px;
     margin-bottom: 1.5rem;
     border: 2px solid #240046;
-    width: 100%;
+    width: 19rem;
     box-shadow: #240046 5px 5px;
     border-radius: 20px;
 }
 
 .profileabout-container{
-    display: grid;
-    place-items: center;
     display: flex;
     flex-direction: column;
     padding: 0.5rem;
@@ -43,14 +41,14 @@
     flex-direction: column;
     justify-content:flex-end;
     padding:1rem;
-    /* background-color: #EEDAFF; */
+    background-color: #EEDAFF;
 }
 
 .profileabout-contentbottominfo{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding:0.5rem 0;
+    padding:0.3rem 0;
 }
 
 .profileabout-contentbottominfo-head{
@@ -72,4 +70,3 @@ font-weight: 400;
    .closebtn:active {
      opacity: 0;
    }
-

@@ -12,7 +12,7 @@ import LikePost from './LikePost';
 const PostCardFooter = ({pos}) =>{
     const [isLike, setIsLike] = useState(false)
     const[load, setLoad] = useState(false)
-    const { auth, socket } = useSelector(state => state)
+    const { auth } = useSelector(state => state)
     
     const dispatch = useDispatch()
 
@@ -26,7 +26,7 @@ const PostCardFooter = ({pos}) =>{
         if (load) return;
         setIsLike(true)
         setLoad(true)
-        dispatch(likepost({ pos, auth, socket }))
+        dispatch(likepost({ pos, auth }))
         setLoad(false)
     }
 
@@ -34,7 +34,7 @@ const PostCardFooter = ({pos}) =>{
         if (load) return;
         setIsLike(false)
         setLoad(true)
-        dispatch(unlikepost({ pos, auth, socket }))
+        dispatch(unlikepost({ pos, auth }))
         setLoad(false)
     }
     return (

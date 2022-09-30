@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import "../styles/Status.css";
 import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
 import PhotoIcon from "@mui/icons-material/Photo";
@@ -9,11 +9,11 @@ import {createpost , updatepost} from "../redux/actions/postActions";
 import {ALERT_TYPES} from '../redux/actions/alertActions';
 
 const Status = () => {
-  const { auth, status,socket } = useSelector((state) => state);
+  const { auth, status } = useSelector((state) => state);
   const [content, setContent] = useState("");
   const [images, setImages] = useState([]);
-  //const [stream, setStream] = useState(false)
-  //const [tracks, setTracks] = useState("")
+  const [stream, setStream] = useState(false)
+  const [tracks, setTracks] = useState("")
   const dispatch = useDispatch();
 // const refVideo = useRef();
 //   const refCanvas = useRef();
@@ -84,10 +84,10 @@ const Status = () => {
 //     console.log(images)
 // }
 
-// const handleStreamStop = () =>{
-//     tracks.stop();
-//     setStream(false)
-// }
+const handleStreamStop = () =>{
+    tracks.stop();
+    setStream(false)
+}
 
 const handleSubmit = (e) =>{
   e.preventDefault();
@@ -98,27 +98,26 @@ const handleSubmit = (e) =>{
   //     payload: { error: "add your image" }
   //   })
   
-  if (status.edit) {
-      // pendiente de eliminar socket
-      dispatch(updatepost({ content, images, auth, status, socket }))
+    if (status.edit) {
+      dispatch(updatepost({ content, images, auth, status }))
       dispatch({type: ALERT_TYPES.STATUS , payload: {edit : false}})
     } else {
-      dispatch(createpost({content, images, auth, socket}))
+      dispatch(createpost({content, images, auth}))
       setContent('')
       setImages([])
-      //if(tracks) tracks.stop()
+      if(tracks) tracks.stop()
 }
 
 setContent('')
 setImages([])
-//if(tracks) tracks.stop()
+if(tracks) tracks.stop()
   }
 
   const handleDiscard = (e) =>{
     e.preventDefault();
     setContent('')
     setImages([])
-    //if(tracks) tracks.stop()
+    if(tracks) tracks.stop()
     dispatch({type: ALERT_TYPES.STATUS , payload: {edit : false}})
   }
 
@@ -159,21 +158,23 @@ setImages([])
             ))}
         </div>
 {
-    // stream && <div className="status-stream">
-    //     {/* <video autoPlay muted ref={refVideo} style={{height: "250px", width: "100%", border: "2px solid gray", padding: "3px", borderRadius: "4px"}}/> */}
-    //     <span className="status-middlestreamstop" onClick={handleStreamStop}>x</span>
-    //     {/* <canvas ref={refCanvas} style={{display: "none"}}/> */}
-    // </div>
+    stream && <div className="status-stream">
+        {/* <video autoPlay muted ref={refVideo} style={{height: "250px", width: "100%", border: "2px solid gray", padding: "3px", borderRadius: "4px"}}/> */}
+        <span className="status-middlestreamstop" onClick={handleStreamStop}>x</span>
+        {/* <canvas ref={refCanvas} style={{display: "none"}}/> */}
+    </div>
 }
 
         <div className="status-footer">
             <div className="status-footerright">
-            {/* <PhotoIcon/> */}
-               
+            {
+                stream ? <PhotoIcon/>
+                :
+                <>
             {/* <PhotoCameraIcon onClick={handleStream}/> */}
             <PhotoIcon onClick={handleuploadinput} style={{color: "#240046", cursor: "pointer"}}/>
-            
-            
+            </>
+            }
             <span>
               <input
                 style={{ display: "none" }}

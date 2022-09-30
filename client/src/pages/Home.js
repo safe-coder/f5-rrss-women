@@ -6,7 +6,6 @@ import { Grid } from "@mui/material";
 import Status from "../components/Status";
 import PostAll from "../components/PostAll";
 import PostMid from "../components/PostMid";
-import "../styles/Home.css"
 
 const Home = () => {
   return (
@@ -19,24 +18,20 @@ const Home = () => {
             justifyContent:"space-around",
             alignItems:"flex-start",
             className:"profilebody"}}>
-        {/* <Grid item sx={12} md={3} className="homemain-contentleft" style={{paddingLeft: "5%"}}> */}
-        <div className="homemain-contentleft">
+        <Grid item sx={12} md={3} className="homemain-contentleft" style={{paddingLeft: "5%"}}>
           <HomeLeft />
-          </div>
-        {/* </Grid> */}
-
-        {/* <Grid item sx={12} md={6} 
+        </Grid>
+        <Grid item sx={12} md={6} 
           className="homemain-contentmid"
           style={{width: "100%", maxWidth: "32.5rem"}}
-        > */}
-        <div className="homemain-contentmid">
+        >
           <PostMid/>
-</div>
-        {/* </Grid> */}
-        {/* <Grid item md={3}  className="homemain-contentright">
-                </Grid> */}
-                <div className="homemain-contentright">
-                </div>
+          {/* <Status/> */}
+          {/* <PostAll /> */}
+        </Grid>
+        <Grid item md={3}  className="homemain-contentright">
+              
+                </Grid>
       </Grid>
     </div>
   );

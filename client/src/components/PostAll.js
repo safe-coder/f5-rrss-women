@@ -10,7 +10,7 @@ import Status from "./Status";
 
 const PostAll = () => {
   const { postAll } = useSelector((state) => state);
-// console.log(postAll);
+console.log(postAll);
   return (
     <>
     {/* <Status/> */}

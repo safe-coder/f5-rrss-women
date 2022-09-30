@@ -2,8 +2,8 @@
     background-color: #EEDAFF;
     border: 2px solid #240046;
     border-radius: 20px;
-    margin-bottom: 1.7rem;
-    /* margin-top: 1rem; */
+    margin-bottom: 1rem;
+    margin-top: 1rem;
     box-shadow: #240046 5px 5px;
 }
 
@@ -14,9 +14,9 @@
 }
 
 .editstatus{
-    /* position: fixed; */
-    /* top:10rem;
-    left:42.5rem; */
+    position: fixed;
+    top:10rem;
+    left:42.5rem;
     background-color:#ffb949 ;
     border: 2px solid #240046;
     z-index:5;
@@ -32,8 +32,31 @@
     margin:5px;
 }
 .status-middleimages{
+    
     max-width:90px;
+    
+    
+}
+.status-middlestreamstop{
+    position:absolute;
+    top:-4%;
+    left:2%;
+    opacity:0;
+    color:crimson;
+    
+    font-size: 20px;
+    padding:1px;
+   font-weight: bolder;
+   vertical-align: middle;
+   transform: translateY(-5px);
+   cursor: pointer;
+}
+.status-stream{
+    position: relative;
 
+}
+.status-stream:hover span{
+    opacity:1;
 }
 img.status-middleimages,
 video.status-middleimages{

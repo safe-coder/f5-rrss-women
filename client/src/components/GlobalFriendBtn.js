@@ -6,7 +6,7 @@ import PersonRemoveIcon from '@mui/icons-material/PersonRemove';
 
 const GlobalFriendBtn = ({classbtn, user}) => {
 
-    const {auth, profile, socket} = useSelector(state => state);
+    const {auth, profile} = useSelector(state => state);
     const dispatch = useDispatch();
 
     const [friend,setFriend] = useState(false)
@@ -23,7 +23,7 @@ useEffect(()=>{
         if(load) return;
         setFriend(true)
         setLoad(true)
-        dispatch(addfriends({users:profile.users, user, auth, socket}))
+        dispatch(addfriends({users:profile.users, user, auth}))
         setLoad(false)
         
     }

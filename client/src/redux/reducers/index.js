@@ -5,8 +5,7 @@ import profile from "./profileReducer";
 import homePost from "./postReducer";
 import status from "./statusReducer";
 import usersList from "./adminReducer";
-import postAll from "./postallReducer";
-import socket from "./socketReducer";
+import postAll from "./postallReducer"
 
 export default combineReducers({
   auth,
@@ -15,6 +14,5 @@ export default combineReducers({
   homePost,
   status,
   usersList,
-  postAll,
-  socket
+  postAll
 });

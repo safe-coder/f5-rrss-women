@@ -7,10 +7,6 @@ import authRouter from "./router/authRouter.js";
 import userRouter from "./router/userRouter.js";
 import postRouter from "./router/postRouter.js";
 import commentRouter from "./router/commentRoute.js";
-import http from "http";
-import { Server } from "socket.io";
-import socketServer from "./socketServer.js";
-
 
 
 dotenv.config();
@@ -22,26 +18,13 @@ app.use(cors());
 app.use(cookieparser());
 
 //routes
-const httpServer = http. createServer(app);
-const io = new Server(httpServer, {
-  cors: {
-  origin: "*",
-}}
-)
-
-
 
 app.use('/api', authRouter)
 app.use('/api', userRouter)
 app.use('/api', postRouter)
 app.use('/api', commentRouter)
-
 const port = process.env.PORT || 5000;
 const URL = process.env.MONGO_URI;
-
-io.on('connection', socket=>{
- socketServer(socket);
-})
 
 mongoose.connect(
   URL,
@@ -57,6 +40,6 @@ mongoose.connect(
 
 
 
-httpServer.listen(port, () => {
+app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
