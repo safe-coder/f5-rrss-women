@@ -35,7 +35,7 @@ const Register = () => {
     //   navigate('/admin');
     // }
     dispatch(register(userData))
-    window.location.reload(false);
+   // window.location.reload(false);
   }
   return (
     <div className="register">

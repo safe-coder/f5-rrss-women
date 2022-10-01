@@ -15,7 +15,7 @@ const PostCardFooter = ({pos}) =>{
     const dispatch = useDispatch()
 
     useEffect(() => {
-        if (pos.likes.find(like => like._id === auth.user._id)) {
+        if (pos.likes === auth.user._id) {
         setIsLike(true)
     }
 },[pos.likes, auth.user._id])

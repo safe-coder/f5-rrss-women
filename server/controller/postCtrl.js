@@ -17,8 +17,8 @@ createPost: async (req, res) =>{
         return res.status(200).json({
             msg: "Post saved",
             newPost: {
-                // ...newPost._doc,
-                // user: req.user
+                ...newPost._doc,
+                user: req.user
             }
         })
     } catch (err) {

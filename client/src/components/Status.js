@@ -9,7 +9,7 @@ import {createpost , updatepost} from "../redux/actions/postActions";
 import {ALERT_TYPES} from '../redux/actions/alertActions';
 
 const Status = () => {
-  const { auth, status } = useSelector((state) => state);
+  const { auth, status, socket } = useSelector((state) => state);
   const [content, setContent] = useState("");
   const [images, setImages] = useState([]);
   const [stream, setStream] = useState(false)
@@ -99,14 +99,14 @@ const handleSubmit = (e) =>{
   //   })
   
     if (status.edit) {
-      dispatch(updatepost({ content, images, auth, status }))
+      dispatch(updatepost({ content, images, auth, status, socket }))
       dispatch({type: ALERT_TYPES.STATUS , payload: {edit : false}})
     } else {
-      dispatch(createpost({content, images, auth}))
+      dispatch(createpost({content, images, auth, socket}))
       setContent('')
       setImages([])
       if(tracks) tracks.stop()
-      window.location.reload(false);
+      //window.location.reload(false);
 }
 
 setContent('')
