@@ -5,7 +5,7 @@ import { ALERT_TYPES } from '../actions/alertActions';
 import { DeleteData} from "./alertActions"
 import { imageupload } from "../../utils/imageupload";
 import axios from "axios";
-
+ 
 export const PROFILE_TYPES = {
 
     LOADING : 'LOADING',
