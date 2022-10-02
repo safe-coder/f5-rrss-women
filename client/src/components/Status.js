@@ -106,7 +106,7 @@ const handleSubmit = (e) =>{
       setContent('')
       setImages([])
       if(tracks) tracks.stop()
-      window.location.reload(false);
+     // window.location.reload(false);
 }
 
 setContent('')
