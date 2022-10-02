@@ -18,13 +18,15 @@
 
 .editstatus {
   position: fixed;
-  top: 10rem;
-  left: 60.5rem;
+  /* top: 10rem; */
+  left: 37.5%;
+  top: 15rem;
   background-color: #ffb949;
   border: 2px solid #240046;
   z-index: 5;
-  border-radius: 10px;
+  border-radius: 20px;
   padding: 0.5rem 1rem;
+  box-shadow: rgba(45, 4, 79, 0.56) 10px 42px 80px 14px;
 }
 
 /* ------------------- Cargar imágenes ------------------------- */
@@ -182,5 +184,15 @@ video.status-middleimages {
 
   .status-middle small {
     display: none;
+  }
+
+  .editstatus {
+    /* position: fixed; */
+    /* top: 10rem; */
+    /* left: 10%;} */
+    /* left:1px; */
+    width: 93vw;
+    position: fixed; 
+    left: 0;
   }
 }
