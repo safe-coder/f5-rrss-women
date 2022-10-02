@@ -1,24 +1,28 @@
-.editprofile{
+/* Estilo del componente - Edit Profile */
+
+/* ------- Contenedor general --------- */
+
+.editprofile {
   position: fixed;
   height: 100%;
   width: 100%;
   background-color: rgba(36, 0, 70, 0.8);
   top: 0;
   left: 0;
-  z-index:10;
+  z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.editprofile-content{
-  position: absolute;
 
-  background-color: #EEDAFF;
+.editprofile-content {
+  position: absolute;
+  background-color: #eedaff;
   border: 2px solid #240046;
   border-radius: 20px;
   box-shadow: #240046 5px 5px;
-  border-radius:10px;
-  color:#EEDAFF;
+  border-radius: 10px;
+  color: #eedaff;
   text-align: center;
   letter-spacing: 1px;
   font-weight: 500;
@@ -26,127 +30,134 @@
 
   width: 35rem;
   height: 43rem;
- 
 }
-.editprofile-head{
-  padding:0.5rem rem;
+
+.editprofile-head {
+  padding: 0.5rem rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #401368;
   border-radius: 6px 6px 0px 0px;
-  padding: .7rem;
-  color:#FF9E00;
-  font-size:1.4rem;
+  padding: 0.7rem;
+  color: #ff9e00;
+  font-size: 1.4rem;
 }
 
-
-.editprofile-headclose{
+.editprofile-headclose {
   background-color: #240046;
   border: none;
   padding-top: 2px;
   border-radius: 50%;
-  height:30px;
+  height: 30px;
   width: 30px;
   font-weight: 900;
-  color:#FF9E00;
+  color: #ff9e00;
   cursor: pointer;
 }
 
-.editimg-content{
+/* ------- Editar imágenes --------- */
+
+.editimg-content {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
 }
-.editprofile-avatar{
-  width:150px;
-  height:150px;
-  padding:1rem 0;
+.editprofile-avatar {
+  width: 150px;
+  height: 150px;
+  padding: 1rem 0;
   position: relative;
 }
+
 i {
-background-color: #240046b5;
-vertical-align: center;
-border-radius: 100px;
-opacity: 0;
-padding:.5rem;
-position: absolute;
-top: 8%;
-left: 0%;
-width:135px;
-height:135px;
-display: flex;
-justify-content: center;
-align-items: center;
+  background-color: #240046b5;
+  vertical-align: center;
+  border-radius: 100px;
+  opacity: 0;
+  padding: 0.5rem;
+  position: absolute;
+  top: 8%;
+  left: 0%;
+  width: 135px;
+  height: 135px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.editprofile-avatar:hover i{
-  opacity:1;
+.editprofile-avatar:hover i {
+  opacity: 1;
 }
 
 .editprofile-avatar img {
   height: 100%;
-  width:100%;
+  width: 100%;
   border-radius: 50%;
   object-fit: cover;
-  
 }
 
-.editprofile-userdata{
-  padding: .5rem;
-  margin-top: .5rem;
-  width:100%;
-  color:#240046;
+/* ------- Editar información --------- */
+
+.editprofile-userdata {
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  width: 100%;
+  color: #240046;
   font-weight: 600;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.editprofile-userdatafullname, .editprofile-userdataaddress, .editprofile-userdatawebsite
-, .editprofile-userdatastory{
-  padding:.5rem;
+.editprofile-userdatafullname,
+.editprofile-userdataaddress,
+.editprofile-userdatawebsite,
+.editprofile-userdatastory {
+  padding: 0.5rem;
   display: flex;
-  background-color: #FF9E00;
+  background-color: #ff9e00;
   border-radius: 10px;
-  margin:.5rem;
-  color:#240046;
+  margin: 0.5rem;
+  color: #240046;
   width: 20rem;
 }
 
-.editprofile-userdatapara{
+.editprofile-userdatapara {
   font-size: 1rem;
-  color:#EEDAFF;
+  color: #eedaff;
 }
+/* ------- Botones --------- */
 
-.editprofile-userdatabutton{
-  width:10rem;
-  height:2rem;
+.editprofile-userdatabutton {
+  width: 10rem;
+  height: 2rem;
   border: 0;
   background-color: #240046;
-  color: #FF9E00;
+  color: #ff9e00;
   border-radius: 10px;
-  margin-top:.8rem;
+  margin-top: 0.8rem;
   font-weight: 800;
   font-size: 1.2rem;
 }
 
-.editprofile-userdatabutton:hover{
-  background-color: #FF9E00;
+.editprofile-userdatabutton:hover {
+  background-color: #ff9e00;
   color: #240046;
 }
 
-
-input{
+input {
   background-color: transparent;
-  outline:none;
+  outline: none;
   width: 100%;
   border-radius: 5px;
-  border:none;
-  color:#240046;
+  border: none;
+  color: #240046;
 }
 
+/* ------- Responsive --------- */
+
 @media only screen and (max-width: 768px) {
-  .editprofile-conten{
-      width: 90vw;
+  .editprofile-conten {
+    width: 90vw;
   }
 }

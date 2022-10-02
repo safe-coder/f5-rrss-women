@@ -9,20 +9,15 @@ import { getProfileUsers } from "../redux/actions/profileActions";
 import { getPost } from "../redux/actions/postActions";
 import { useEffect, useState } from "react";
 import { IconButton } from "@mui/material";
-//import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import HomeIcon from "@mui/icons-material/Home";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import PeopleIcon from "@mui/icons-material/People";
-import BookmarksIcon from "@mui/icons-material/Bookmarks";
 import Friends from "../components/profile/Friends";
 import Following from "../components/profile/Following";
 import { Grid } from "@mui/material";
-// import SingleUserPosts from "../components/SingleUserPosts";
-// import SavedPost from "../components/SavedPost";
 
 const Profile = () => {
   const [userData, setUserData] = useState([]);
-  //console.log(userData);
   const [homePostData, setHomePostData] = useState([]);
   const { id } = useParams();
   const { auth, profile, homePost } = useSelector((state) => state);
@@ -70,7 +65,6 @@ const Profile = () => {
     const token = auth.token;
     dispatch(getPost({ token, id }));
     const newData = homePost.post;
-    //   console.log(newData)
     setHomePostData(newData);
   }, [id, auth, homePost.post, dispatch]);
 
@@ -91,9 +85,6 @@ const Profile = () => {
           <IconButton onClick={() => handletoggle("showfollowing")}>
             <PersonAddIcon />
           </IconButton>
-          {/* <IconButton onClick={()=>handletoggle('showsaved')}>
-                        <BookmarksIcon/>
-                  </IconButton> */}
         </div>
       </div>
       {showaccount && (
@@ -104,32 +95,14 @@ const Profile = () => {
           alignItems="flex-start"
           className="profilebody"
         >
-          {/* <Grid item sm={1} xs={0} md={0} lg={0.5}>
-          </Grid> */}
-
-          {/* <Grid item sm={10} xs={6} md={5} lg={3.5}className="profilebody-left"> */}
           <div className="profilebody-left">
             <About userData={userData} profile={profile} auth={auth} id={id} />
-            </div>
-          {/* </Grid> */}
-
-          {/* <Grid item sm={1} xs={0} md={0} lg={0.5}>
-          </Grid> */}
-
-          {/* <Grid item sm={12} xs={12} md={5} lg={3}className="profilebody-center"> */}
+          </div>
           <div className="profilebody-center">
             <HomeMid homePost={homePostData} />
-            </div>
-          {/* </Grid> */}
+          </div>
 
-<div className="profilebody-right">
-</div>
-          {/* <Grid item sm={0} xs={0} md={2} lg={3}className="profilebody-right">
-          </Grid>
-
-          <Grid item sm={0} xs={0} md={1} lg={1.5}>
-          </Grid> */}
-
+          <div className="profilebody-right"></div>
         </Grid>
       )}
       {showfriends && (
@@ -150,9 +123,6 @@ const Profile = () => {
           id={id}
         />
       )}
-      {/* {
-    showsaved && <SavedPost auth={auth}  />
-} */}
     </div>
   );
 };
