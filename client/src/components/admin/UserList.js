@@ -76,7 +76,8 @@ export default function UserList() {
   };
 
   const handleClose = () => {
-    setOpen(false);    
+    setOpen(false);
+     window.location.reload(false);    
   };
 
   return (
