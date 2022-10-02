@@ -1,14 +1,26 @@
-import React from 'react'
+import React from "react";
 import "../styles/NotFound.css";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
+import CircleIcon from '@mui/icons-material/Circle';
+import image from "../images/user-avatar.png"
+
 const NotFound = () => {
   return (
-    <div className='notfound'>
-      <h3 className='notfound-text'>Not Found</h3>
-      <p className='notfound-found'>go to home page
-     <Link to="/"className='notfound-link '> Here</Link> </p>
+    <div className="notfound">
+      <div className="notfound-content">
+        <div className="notfound-top">
+          <CircleIcon className="notfound-icon"/>
+          </div>
+          <div className="notfound-body">
+      <h3 className="notfound-text">¡Ups! Esta página no existe</h3>
+      <img className="notfound-img" src={image} alt=""/>
+      <Link to="/">
+        <button className="notfound-link ">Volver a la página principal</button>
+      </Link>
+      </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default NotFound
+export default NotFound;

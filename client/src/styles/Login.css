@@ -1,4 +1,8 @@
-.login{
+/* Estilo de la página - Login */
+
+/* ------------------- Contenedor general ------------------------- */
+
+.login {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -6,14 +10,15 @@
   margin: 20vh auto;
   height: 60vh;
   max-width: 100%;
-
 }
 
-.login-small{
-  padding: .5rem;
+.login-small {
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  text-align: center;
 }
 
-.login-container{
+.login-container {
   background-color: var(--bg-color);
   padding: 3rem;
   border-radius: 10px;
@@ -21,30 +26,29 @@
   width: 20rem;
 }
 
-.login-header{
-  /* font-size: 2rem;
-  text-align: center;
-  color:var(--text-color); */
+/* ------------------- Logo + Títulos ------------------------- */
+
+.login-header {
   width: 20rem;
 }
 
-.login-subheader{
+.login-subheader {
   font-size: 1.4rem;
   text-align: center;
-  color:var(--text-color);
-  text-transform : uppercase;
+  color: var(--text-color);
+  text-transform: uppercase;
 }
 
+/* ------------------- Formulario ------------------------- */
 
-
-.login-dataform{
+.login-dataform {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.data-formemail{
-  padding: .3rem;
+.data-formemail {
+  padding: 0.3rem;
   padding-left: 1rem;
   margin: 1rem 0;
   height: 1.5rem;
@@ -53,12 +57,11 @@
   outline: none;
   border: none;
   border-radius: 30px;
-  background-color: #FF9E00;
-
+  background-color: #ff9e00;
 }
 
-.login-dataformpass{
-  padding: .3rem;
+.login-dataformpass {
+  padding: 0.3rem;
   padding-left: 1rem;
   margin: 1rem 0;
   height: 1.5rem;
@@ -67,35 +70,32 @@
   outline: none;
   border: none;
   border-radius: 30px;
-  background-color: #FF9E00;
-  position:relative;
+  background-color: #ff9e00;
+  position: relative;
   display: flex;
 }
 
-.login-showpass{
-  color:#240046;
-  cursor:pointer;
-  padding-right: .4rem;
+.login-showpass {
+  color: #240046;
+  cursor: pointer;
+  padding-right: 0.4rem;
 }
 
-.login-dataformbtn{
-  padding: .3rem;
+/* ------------------- Botones ------------------------- */
+
+.login-dataformbtn {
+  padding: 0.3rem;
   width: 50%;
   font-weight: 600;
-  border:3px solid var(--border-color);
+  border: 3px solid var(--border-color);
   background-color: transparent;
   border-radius: 30px;
   outline: none;
- margin:1rem auto;
- cursor:pointer;
+  margin: 1rem auto;
+  cursor: pointer;
 }
 
-.login-dataformbtn:hover{
+.login-dataformbtn:hover {
   background-color: #240046;
-  color: #FF9E00;
-}
-
-.login-small{
-  font-size: 0.8rem;
-  text-align: center;
+  color: #ff9e00;
 }

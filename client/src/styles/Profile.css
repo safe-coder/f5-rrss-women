@@ -1,106 +1,88 @@
-.profilebody{
-    width: 100%;
-    padding-bottom: 2rem;
-    padding-top: 1rem;
+/* Estilo de los componentes - Profile / EditProfile */
+
+/* ------------------- Profile ------------------------- */
+
+.profilebody {
+  width: 100%;
+  padding-bottom: 2rem;
+  padding-top: 1rem;
 }
 
-.profileheader{
-    height: fit-content;
-    width:40%;
-    margin: 1rem auto;
-    padding: 0.2rem;
-    background-color: #EEDAFF;
-    margin-top: 2rem;
-    border: 2px solid #240046;
-    border-radius: 20px;
-    box-shadow: #240046 5px 5px;
-}
-.profileheader-items{
-    display: flex;
-    justify-content: space-evenly;
+.profileheader {
+  height: fit-content;
+  width: 40%;
+  margin: 1rem auto;
+  padding: 0.2rem;
+  background-color: #eedaff;
+  margin-top: 2rem;
+  border: 2px solid #240046;
+  border-radius: 20px;
+  box-shadow: #240046 5px 5px;
 }
 
-.profileheader-items .MuiSvgIcon-root{
-    color:#240046;
+.profileheader-items {
+  display: flex;
+  justify-content: space-evenly;
 }
 
-.profilebody-center{
+.profileheader-items .MuiSvgIcon-root {
+  color: #240046;
+}
+
+.profilebody-center {
+  display: grid;
+  place-items: center;
+}
+
+/* ------------------- Responsive ------------------------- */
+
+@media (min-width: 1199.98px) {
+  .profilebody-center {
     display: grid;
-    place-items: center;
-}
-
-/* @media only screen and (max-width: 768px) {
-    .profilebody-left{
-        display: grid;
-        place-items: center;
-    }
-  } */
-
-  /*Escritorio*/
-@media (min-width: 1199.98px)  {
-    /* body{background: red;} */
-    .profilebody-center{
-        display: grid;
-        place-content: center;
-        margin-left: -10rem;
-    }
-    .profilebody-left{
-        margin-left: -10rem;
-    }
-    .profilebody{
+    place-content: center;
+    margin-left: -10rem;
+  }
+  .profilebody-left {
+    margin-left: -10rem;
+  }
+  .profilebody {
     padding-left: 4rem;
-    }
-}
-/*Fin Escritorio*/
-
-/*Tablet*/
-/*Portrait*/
-@media (min-width: 576px) and (max-width: 991.98px) and (orientation:portrait) {
-    /* body{background: orange;} */
-    .profilebody-center{
-        display: grid;
-        place-content: center;
-        margin: 0 auto;
-    }
-    .profilebody-left{
-        display: grid;
-        place-content: center;
-        margin: 0 auto;
-    }
+  }
 }
 
-/*landscape*/
-@media (min-width: 991.98px) and (max-width: 1199.98px)and (orientation:landscape) {
-    /* body{background: blue;} */
-    .profilebody-center{
-        display: grid;
-        place-content: center;
-        margin-left: -5rem;
-    }
-    .profilebody-left{
-        margin-left: -4rem;
-    }
+@media (min-width: 576px) and (max-width: 991.98px) and (orientation: portrait) {
+  .profilebody-center {
+    display: grid;
+    place-content: center;
+    margin: 0 auto;
+  }
+  .profilebody-left {
+    display: grid;
+    place-content: center;
+    margin: 0 auto;
+  }
 }
-/*fin tablet*/
 
-/*movil*/
-/*Portrait*/
-
-/*Default*/
-
-@media (max-width: 575.98px)and (orientation:portrait) {
-    /* body{background: green;} */
- }
-/*landscape*/
-@media (min-width: 576px) and (max-width: 991.98px) and (orientation:landscape) {
-    /* body{background: black;} */
-    .profilebody-center{
-        display: grid;
-        place-content: center;
-        margin-right: 5rem;
-    }
-    .profilebody-left{
-        margin-left: 0rem;
-    }
+@media (min-width: 991.98px) and (max-width: 1199.98px) and (orientation: landscape) {
+  .profilebody-center {
+    display: grid;
+    place-content: center;
+    margin-left: -5rem;
+  }
+  .profilebody-left {
+    margin-left: -4rem;
+  }
 }
-/*fin movil*/
+
+/* ------------------- Responsive movil ------------------------- */
+
+@media (min-width: 576px) and (max-width: 991.98px) and (orientation: landscape) {
+  .profilebody-center {
+    display: grid;
+    place-content: center;
+    margin-right: 5rem;
+  }
+  .profilebody-left {
+    margin-left: 0rem;
+  }
+}

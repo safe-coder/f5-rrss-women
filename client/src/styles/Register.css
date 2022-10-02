@@ -1,71 +1,64 @@
-.register{
+/* Estilo del componente - Register (Admin) */
+
+/* ------------------- Contenedor general ------------------------- */
+
+.register {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   justify-content: center;
   width: 50rem;
-  /* margin-top: 3rem; */
   margin: 0 auto;
-  
-  /* margin: 20vh auto;
-  width: 60wv;
-  height: 60vh;
-  max-width: 100%; */
 }
 
-.register-small{
-  padding: .5rem;
+.register-small {
+  padding: 0.5rem;
 }
 
-.register-container{
+.register-container {
   width: 20rem;
   height: 36.5rem;
-  /* margin-top: 3rem; */
   background-color: var(--bg-color);
-  padding: .1rem 3rem;
+  padding: 0.1rem 3rem;
   border-radius: 10px;
   padding-top: 1rem;
   padding-bottom: 1rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.register-header{
+.register-header {
   font-size: 2rem;
   text-align: center;
-  color:var(--text-color);
+  color: var(--text-color);
 }
 
-.register-subheader{
+.register-subheader {
   font-size: 1.4rem;
   text-align: center;
-  color:var(--text-color);
-  text-transform : uppercase;
- 
+  color: var(--text-color);
+  text-transform: uppercase;
 }
 
+/* ------------------- Formulario ------------------------- */
 
-
-.register-dataform{
-
+.register-dataform {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.data-formemail{
-padding: .3rem;
-margin: .5rem 0;
-border-radius: 3px;
-outline: none;
-height: 1.5rem;
-width: 100%;
-border:2px solid var(--border-color);
-color:var(--text-color);
+.data-formemail {
+  padding: 0.3rem;
+  margin: 0.5rem 0;
+  border-radius: 3px;
+  outline: none;
+  height: 1.5rem;
+  width: 100%;
+  border: 2px solid var(--border-color);
+  color: var(--text-color);
 }
 
-
-.register-dataformpass{
-  padding: .3rem;
+.register-dataformpass {
+  padding: 0.3rem;
   padding-left: 1rem;
   margin: 1rem 0;
   height: 1.5rem;
@@ -74,44 +67,47 @@ color:var(--text-color);
   outline: none;
   border: none;
   border-radius: 30px;
-  background-color: #FF9E00;
-  position:relative;
+  background-color: #ff9e00;
+  position: relative;
 }
 
-.register-dataformbtn{
-  padding: .3rem;
+/* ------------------- Botones ------------------------- */
+
+.register-dataformbtn {
+  padding: 0.3rem;
   width: 50%;
   font-weight: 600;
-  border:3px solid var(--border-color);
+  border: 3px solid var(--border-color);
   background-color: transparent;
   border-radius: 30px;
   outline: none;
- margin:1rem auto;
- cursor:pointer;
+  margin: 1rem auto;
+  cursor: pointer;
 }
 
-.register-dataformbtn:hover{
+.register-dataformbtn:hover {
   background-color: #240046;
-  color:#FF9E00;
+  color: #ff9e00;
 }
 
-.register-dataformselect{
-  padding: .50rem;
-  margin: .5rem 0;
+.register-dataformselect {
+  padding: 0.5rem;
+  margin: 0.5rem 0;
   margin-top: 1.5rem;
   width: 97%;
   border-radius: 30px;
   outline: none;
-  border:2px solid #240046;
+  border: 2px solid #240046;
   background-color: #e0bcff;
   height: 2.5rem;
 }
-.register-showpass{
+
+.register-showpass {
   display: flex;
   align-items: center;
   vertical-align: middle;
-  cursor:pointer;
-  padding: .3rem;
+  cursor: pointer;
+  padding: 0.3rem;
   padding-left: -2.5rem;
   margin: 1rem 0;
   height: 1.5rem;
@@ -119,21 +115,11 @@ color:var(--text-color);
   outline: none;
   border: none;
   border-radius: 30px;
-  color:#240046;
-  background-color: #FF9E00;
+  color: #240046;
+  background-color: #ff9e00;
 }
 
-
-/* .register-showcfpass{
-  padding:2px;
-  border-radius:2px;
-  vertical-align: middle;
-  cursor:pointer;
-  color:#240046;
-} */
-
-
-.login-btn{
-  color:#FF9E00;
+.login-btn {
+  color: #ff9e00;
   font-weight: 600;
 }

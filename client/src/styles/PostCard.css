@@ -1,179 +1,170 @@
-.postcardheadertop{
-    display:flex;  
+/* Estilo de los componentes - PostCardBody / PostCardHeader / PostCardFooter */
+
+/* ------------------- PostCardHeader ------------------------- */
+
+.postcardheadertop {
+  display: flex;
 }
-.postcardheader{
-    display: flex;
-    justify-content: space-between;
+.postcardheader {
+  display: flex;
+  justify-content: space-between;
 }
 
-.postcarddropdown{
-    background-color: #FF9E00;
-    margin-top:.5rem;
-    padding:15px;
-    border-radius:10px;
-    position: absolute;
-    transform: translateX(-50px);
-    min-width:100px;
-    color:#401368;
-    z-index:4;
+.postcarddropdown {
+  background-color: #ff9e00;
+  margin-top: 0.5rem;
+  padding: 15px;
+  border-radius: 10px;
+  position: absolute;
+  transform: translateX(-50px);
+  min-width: 100px;
+  color: #401368;
+  z-index: 4;
 }
-.postcarddropdown h6{
-    padding:5px;
-    cursor: pointer;
-    font-weight: 600;
-    font-size:1rem;
+.postcarddropdown h6 {
+  padding: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
 }
-.postcarddropdown h6:hover{
-    color:black
+.postcarddropdown h6:hover {
+  color: black;
 }
-.postcardheaderdown p{
-    font-size:14px;
-    color:#FF9E00;
-    font-weight: 700;
-    margin-top: 8px;
-    margin-right: 8px;
-    cursor: pointer;
-}
-
-.postcardheadertopavatar{
-    width:40px;
-    height:40px;
-    border: 2px solid #FF9E00;
-    padding:3px;
-    object-fit: cover;
-    border-radius: 50%;
-}
-.postcardheaderinfo{
-    margin-left: 5px;
-    vertical-align: middle;
-    margin-top: .5rem;
-  
-}
-.postcardheaderinfo h4{
-    color: #FF9E00;
-    font-size:.8rem;
-    font-weight:400;
-}
-.postcardheaderinfo h6{
-    font-size:14px;
-    font-weight:700;
-    color: #FF6D00;
-    align-items: flex-start;
+.postcardheaderdown p {
+  font-size: 14px;
+  color: #ff9e00;
+  font-weight: 700;
+  margin-top: 8px;
+  margin-right: 8px;
+  cursor: pointer;
 }
 
-.postcardbodycontent{
-    padding: .5rem 2.5rem; 
-    color:#240046;
-    font-weight: 500;
+.postcardheadertopavatar {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #ff9e00;
+  padding: 3px;
+  object-fit: cover;
+  border-radius: 50%;
 }
-.postcardbodyimage{
-    height: 300px;
-    position:relative;
-    display: flex;
-    justify-content: center;
-    padding-top: 1.5rem;
-    margin-bottom: 1.5rem;
+.postcardheaderinfo {
+  margin-left: 5px;
+  vertical-align: middle;
+  margin-top: 0.5rem;
 }
-.postcardbodyimageprev{
-position: absolute;
-top:40%;
-font-size:2rem;
-left:-1%;
-color:#240046;
-padding:5px;
-cursor: pointer;
-
-
+.postcardheaderinfo h4 {
+  color: #ff9e00;
+  font-size: 0.8rem;
+  font-weight: 400;
 }
-.postcardbodyimagenext{
-    position: absolute;
-    top:40%;
-    font-size:2rem;
-    right:-1%;
-    color:#240046;
-    padding:5px;
-    cursor: pointer;
-    
-}
- .postcardbodyimages {
-    width:100%;
-    height: 300px;
-    position:relative;
-    display: flex;
-    justify-content: center;
-    padding-top: 1.5rem;  
-    
-   
-   
-
-    
-    /* height:100%;
-    object-fit: cover;
-   
-    margin: 6px;
-     */
+.postcardheaderinfo h6 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ff6d00;
+  align-items: flex-start;
 }
 
-/* img{
-    width:80%;
-    height: 300px;
-    border-radius: 10px;
-    position:relative;
-    justify-content: center;
-    border: 2px solid #401368;
-} */
+/* ------------------- PostCardBody ------------------------- */
 
-.postcardbodyimages img{
-    width:100%;
-    max-width: 30rem;
-    height:100%;
-    object-fit: cover;
-    border-radius: 10px;
-    margin: 6px;
-    border: 2px solid #401368;
+.postcardbodycontent {
+  padding: 0.5rem 2.5rem;
+  color: #240046;
+  font-weight: 500;
+}
+.postcardbodyimage {
+  height: 300px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
-.postcardfootertop{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    border-top: 1px solid gray;
-    padding:.5rem 0;
+.postcardbodyimageprev {
+  position: absolute;
+  top: 40%;
+  font-size: 2rem;
+  left: -1%;
+  color: #240046;
+  padding: 5px;
+  cursor: pointer;
 }
 
-.postcardfooterbottom{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding:.1rem 0;
-    background-color:#401368;
-    color:#FF9E00;
-    margin: 0 auto;
-    width: 80%;
-    border-radius: 50px;
-    margin-bottom: .5rem;
-}
-.postcardfooterbottom p{
-    font-size:1rem;
-    padding:.5rem;
-    font-weight:bold;
-}
-.postcardfootertopitems{
-    display: flex;
-}
-.postcardfootertopitems span{
-    padding:0 .5rem;
-    color:#240046;
-    font-weight:bold;
-}
-.postcardfooterbottomitems{
-    display: flex;
-}
-.postcardfooterbottom .MuiSvgIcon-root{
-    margin-top: .5rem;
+.postcardbodyimagenext {
+  position: absolute;
+  top: 40%;
+  font-size: 2rem;
+  right: -1%;
+  color: #240046;
+  padding: 5px;
+  cursor: pointer;
 }
 
-@media (max-width: 575.98px)and (orientation:portrait) {
-.postcardbodyimage{
-    width: 26rem}
+.postcardbodyimages {
+  width: 100%;
+  height: 300px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-top: 1.5rem;
+}
+
+.postcardbodyimages img {
+  width: 100%;
+  max-width: 30rem;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 6px;
+  border: 2px solid #401368;
+}
+
+/* ------------------- PostCardFooter ------------------------- */
+
+.postcardfootertop {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-top: 1px solid gray;
+  padding: 0.5rem 0;
+}
+
+.postcardfooterbottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0.1rem 0;
+  background-color: #401368;
+  color: #ff9e00;
+  margin: 0 auto;
+  width: 80%;
+  border-radius: 50px;
+  margin-bottom: 0.5rem;
+}
+.postcardfooterbottom p {
+  font-size: 1rem;
+  padding: 0.5rem;
+  font-weight: bold;
+}
+.postcardfootertopitems {
+  display: flex;
+}
+.postcardfootertopitems span {
+  padding: 0 0.5rem;
+  color: #240046;
+  font-weight: bold;
+}
+.postcardfooterbottomitems {
+  display: flex;
+}
+.postcardfooterbottom .MuiSvgIcon-root {
+  margin-top: 0.5rem;
+}
+
+/* ------------------- Responsive Body ------------------------- */
+
+@media (max-width: 575.98px) and (orientation: portrait) {
+  .postcardbodyimage {
+    width: 26rem;
+  }
 }

@@ -1,31 +1,73 @@
-.notfound{
+/* Estilo de la pagina - NotFound */
+
+/* ------- Contenedor general --------- */
+
+.notfound {
   display: flex;
-  justify-content: center;
   flex-direction: column;
- text-align:center;
-
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 8%;
 }
 
-.notfound-text{
- color:var(--text-color);
-  transform: translate(40vw, 40vh);
-  font-size: 3rem;
+.notfound-content {
+  background-color: #eedaff;
+  border: 3px solid #240046;
+  border-radius: 25px;
+  height: 33rem;
+}
+
+.notfound-icon {
+  padding-top: 0.6rem;
+  padding-right: 1rem;
+}
+
+/* ------- Contenido --------- */
+
+.notfound-top {
+  background-color: #401368;
+  color: #ff9e00;
+  border-radius: 20px 20px 0px 0px;
+  height: 3rem;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+.notfound-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.notfound-img {
+  width: 35%;
+  border-radius: 120px;
+}
+
+.notfound-text {
+  color: #240046;
+  font-size: 2.5rem;
   font-weight: 500;
-  width: fit-content;
-  border:4px solid var(--border-color);
-  padding: 1rem;
+  padding: 2rem;
 }
 
-.notfound-found{
-  color: var(--text-color);
-  transform: translateY(50vh);
-  font-size: larger;
-  font-weight: 600;
-}
+/* ------- Botón --------- */
 
-.notfound-link{
+.notfound-link {
+  cursor: pointer;
   font-weight: 700;
-  border: 1px solid var(--border-color);
-  padding: .5rem;
-  margin: .25rem;
+  background-color: #ff9e00;
+  color: #240046;
+  border: 2px solid #240046;
+  border-radius: 50px;
+  padding: 1rem;
+  margin: 0.25rem;
+  margin-top: 1.5rem;
+}
+
+.notfound-link:hover {
+  background-color: #240046;
+  color: #ff9e00;
 }

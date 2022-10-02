@@ -1,75 +1,88 @@
-.profileabout{
-    background-color: #EEDAFF;
-    min-height: 300px;
-    margin-bottom: 1.5rem;
-    border: 2px solid #240046;
-    width: 97%;
-    box-shadow: #240046 5px 5px;
-    border-radius: 20px;
+/* Estilo del componente - About */
+
+/* ------------------- Contenedor general ------------------------- */
+
+.profileabout {
+  background-color: #eedaff;
+  min-height: 300px;
+  margin-bottom: 1.5rem;
+  border: 2px solid #240046;
+  width: 97%;
+  box-shadow: #240046 5px 5px;
+  border-radius: 20px;
 }
 
-.profileabout-container{
-    display: grid;
-    place-items: center;
-    display: flex;
-    flex-direction: column;
-    padding: 0.5rem;
-}
-.profileabout-contenttop-head{
-    font-size:1.5rem;
-    font-weight: 700;
-    padding:0.5rem 1rem;
+.profileabout-container {
+  display: grid;
+  place-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
 }
 
-.profileabout-contenttop{
-    padding:0.5rem rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #401368;
-    color: #FF9E00;
-    border-radius: 16px 16px 0px 0px;
-}
-.profileabout-contentcenter-story{
-    padding:.6rem;
-    padding-bottom: 1.2rem;
-    text-align: center;
-    font-size:16px;
-    border-bottom: 1px solid #873CC7;
-}
-.profileabout-contentbottom{
-    display: flex;
-    flex-direction: column;
-    justify-content:flex-end;
-    padding:1rem;
-    /* background-color: #EEDAFF; */
+/* ------------------- Header ------------------------- */
+
+.profileabout-contenttop-head {
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
 }
 
-.profileabout-contentbottominfo{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    padding:0.5rem 0;
+.profileabout-contenttop {
+  padding: 0.5rem rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #401368;
+  color: #ff9e00;
+  border-radius: 16px 16px 0px 0px;
 }
 
-.profileabout-contentbottominfo-head{
-font-size:medium;
-font-weight: 600;
-color:#240046;
+/* ------------------- Center ------------------------- */
+
+.profileabout-contentcenter-story {
+  padding: 0.6rem;
+  padding-bottom: 1.2rem;
+  text-align: center;
+  font-size: 16px;
+  border-bottom: 1px solid #873cc7;
 }
 
-.profileabout-contentbottominfo-body{
-align-self: flex-end;
-font-size: small;
-font-weight: 400;
+/* ------------------- Footer ------------------------- */
+
+.profileabout-contentbottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1rem;
 }
+
+.profileabout-contentbottominfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 0.5rem 0;
+}
+
+.profileabout-contentbottominfo-head {
+  font-size: medium;
+  font-weight: 600;
+  color: #240046;
+}
+
+.profileabout-contentbottominfo-body {
+  align-self: flex-end;
+  font-size: small;
+  font-weight: 400;
+}
+
+/* ------------------- Botones ------------------------- */
 
 .closebtn:not(:active) {
-    opacity: 1;
-   }
-   
-   .closebtn:active {
-     opacity: 0;
-   }
+  opacity: 1;
+}
 
+.closebtn:active {
+  opacity: 0;
+}
