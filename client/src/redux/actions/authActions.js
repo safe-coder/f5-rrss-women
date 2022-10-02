@@ -128,7 +128,7 @@ export const logout = () => async (dispatch) =>{
     try {
         localStorage.removeItem('login');
         await postDataApi('logout');
-       // window.location.href="/"
+        window.location.href="/"
         
     } catch (error) {
         console.log(error)

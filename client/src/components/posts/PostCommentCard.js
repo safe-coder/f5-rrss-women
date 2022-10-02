@@ -9,8 +9,8 @@ import "../../styles/CommentStyle.css"
 import { updateComment, likecomment, unlikecomment } from '../../redux/actions/commentActions.js'
 
 
-const PostCommentCard = ({ comment, pos }) => {
-  const { auth } = useSelector((state) => state);
+const PostCommentCard = ({children, comment, pos }) => {
+  const { auth,socket } = useSelector((state) => state);
   const dispatch = useDispatch()
   const [content, setContent] = useState("");
   const [readMore, setreadMore] = useState(false);
@@ -23,7 +23,7 @@ const PostCommentCard = ({ comment, pos }) => {
     if (load) return
     setIsLike(true);
     setLoad(true)
-    dispatch(likecomment({ comment, pos, auth }))
+    dispatch(likecomment({ comment, pos, auth,socket }))
     setLoad(false)
   };
 
@@ -31,14 +31,14 @@ const PostCommentCard = ({ comment, pos }) => {
     if (load) return
     setIsLike(false);
     setLoad(true)
-    dispatch(unlikecomment({ comment, pos, auth }))
+    dispatch(unlikecomment({ comment, pos, auth ,socket}))
     setLoad(false)
   }
     const handleupdatecomment = () => {
       if (comment.content === content) {
         setonEdit(false)
       } else {
-        dispatch(updateComment({ comment, content, pos, auth }))
+        dispatch(updateComment({ comment, content, pos, auth,socket }))
         setonEdit(false)
       }
     }
@@ -128,6 +128,7 @@ const PostCommentCard = ({ comment, pos }) => {
         </div>
         <div className="postCmmentCardLikeButton">
         </div>
+        {children}
       </div>
     );
   };
