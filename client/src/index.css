@@ -38,3 +38,8 @@ a{
   text-decoration:none;
   color: var(--text-color);
 }
+
+::placeholder {
+  color: #433551;
+  opacity: 1;
+}

@@ -1,47 +1,39 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import blob from "../../images/blob.svg"
+import banner from "../../images/banner.png";
+import { Grid } from "@mui/material";
 
 const Banner = () => {
   const { auth } = useSelector((state) => state);
   return (
-    // <></>
-    <div
+    <Grid container
       style={{
         height: "250px",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         width: "100%",
+        height: "auto",
         margin: "auto",
+        marginTop: "3%",
+        marginBottom: "3%",
         borderRadius: "20px",
         position: "relative",
-        marginBottom: "5rem"
+        display: "flex",
+        justifyContent: "space-evenly",
+        alignItems: "center"
       }}
     >
-      <div
-        style={{
-          backgroundImage: `url(${blob})`,
-          backgroundPosition: 'center',
-          backgroundSize: 'auto',
-          backgroundRepeat: 'no-repeat',
-          // backgroundColor: "#fad0c4",
-          // background:
-          //   "linear-gradient(315deg, rgba(150, 25, 135, 0.288), rgba(241, 167, 241, 0.288))",
-          height: "350px",
-          borderRadius: "20px",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          textAlign: "center"
-        }}
-      >
-        <h3 style={{backgroundColor: "#EEDAFF", marginBottom: "1rem"}}>¡Bienvenida a Fem 5!</h3>
-        <h2><span style={{backgroundColor: "#EEDAFF"}}>La red social para coders</span><br/>
-        <span style={{backgroundColor: "#EEDAFF"}}>de <span style={{color: "#ff6d00"}}>Factoría F5</span></span></h2>
-      </div>
-    </div>
+      <Grid item className="banner-left" style={{textAlign: "center"}}>
+        <h2 style={{backgroundColor: "#EEDAFF", marginBottom: "1rem", fontSize: "4rem"}}>¡Bienvenida a <span style={{color: "#ff6d00"}}>Fem-5</span>!</h2>
+        <h3 style={{fontSize: "2rem"}}><span style={{backgroundColor: "#EEDAFF"}}>La red social para coders</span><br/>
+        <span style={{backgroundColor: "#EEDAFF"}}>de <span style={{color: "#ff6d00"}}>Factoría F5</span></span></h3>
+        </Grid>
+        <Grid item>
+        <img src={banner} alt="" style={{width: "28rem"}}/>
+        </Grid>
+      </Grid>
+    // </div>
   );
-};
+}
 
 export default Banner;

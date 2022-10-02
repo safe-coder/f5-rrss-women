@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import "../../styles/GlobalCard.css";
-import CircleIcon from '@mui/icons-material/Circle';
+import CircleIcon from "@mui/icons-material/Circle";
 import { useSelector } from "react-redux";
 import GlobalFriendBtn from "../profile/GlobalFriendBtn";
-import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
-import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
+import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import { Link } from "react-router-dom";
 import { Grid } from "@mui/material";
 
-const GlobalCard = ({ user },{ posts }) => {
+const GlobalCard = ({ user }, { posts }) => {
   const [showinfo, setshowinfo] = useState(true);
   const [showinfoabout, setshowinfoabout] = useState(false);
   const { auth } = useSelector((state) => state);
@@ -24,10 +24,10 @@ const GlobalCard = ({ user },{ posts }) => {
   };
 
   return (
-    <Grid item className="globalcard" style={{margin: "1rem"}}>
+    <Grid item className="globalcard" style={{ margin: "1rem" }}>
       <div className="globalcard-uitop">
-      <h6>@{user.username}</h6>
-      <CircleIcon fontSize="small" className="closebtn"/>
+        <h6>@{user.username}</h6>
+        <CircleIcon fontSize="small" className="closebtn" />
       </div>
       <div className="globalcard-content">
         <div className="globalcard-contenttop">
@@ -52,10 +52,6 @@ const GlobalCard = ({ user },{ posts }) => {
                 <h6>{user.following.length}</h6>
                 <p>Siguiendo</p>
               </div>
-              {/* <div className="globalcard-contentbottomstat">
-                <h6>0</h6>
-                <p>Post</p>
-              </div> */}
             </div>
 
             {auth.user._id !== user._id && (
@@ -78,8 +74,14 @@ const GlobalCard = ({ user },{ posts }) => {
           </div>
         )}
         <div className="globalcard-contentbottomnavigate">
-          <span onClick={() => toggleshowinfo("showinfo")}> <NavigateBeforeIcon/> </span>
-          <span onClick={() => toggleshowinfo("showinfoabout")}> <NavigateNextIcon/> </span>
+          <span onClick={() => toggleshowinfo("showinfo")}>
+            {" "}
+            <NavigateBeforeIcon />{" "}
+          </span>
+          <span onClick={() => toggleshowinfo("showinfoabout")}>
+            {" "}
+            <NavigateNextIcon />{" "}
+          </span>
         </div>
       </div>
     </Grid>
