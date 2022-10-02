@@ -8,7 +8,7 @@ import bcrypt from "bcrypt";
     try {
       const users = await Users.find({ username: { $regex: req.query.username } }).limit(10).select("fullname username avatar")
 
-      res.json({ users })
+      res.status(200).json({ users })
 
 
     } catch (err) {
@@ -43,7 +43,7 @@ import bcrypt from "bcrypt";
       try {
           const users =  await Users.find()
           
-          res.json({users})
+          res.status(200).json({users})
       } catch (err) {
           return res.status(500).json({msg: err.message})
       }

@@ -36,6 +36,10 @@ app.use('/api', userRouter)
 app.use('/api', postRouter)
 app.use('/api', commentRouter)
 
+app.get('/',(req,res)=>{
+  res.json('hello world');
+})
+
 const port = process.env.PORT || 5000;
 const URL = process.env.MONGO_URI;
 
@@ -60,3 +64,5 @@ mongoose.connect(
 httpServer.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
+
+export default app;
