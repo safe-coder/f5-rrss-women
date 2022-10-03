@@ -97,7 +97,7 @@ const PostCommentCard = ({ comment, pos }) => {
                 resize: "none",
                 border: "2px solid #401368",
                 borderRadius: "10px",
-                padding: ".5rem"
+                padding: ".5rem",
               }}
             />
           ) : (

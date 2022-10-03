@@ -29,23 +29,13 @@ const authCtrl = {
         username: newUsername,
         email,
         password: passwordHash,
-        role
+        role,
       });
-
-      // const access_token = createAccessToken({ id: newUser._id });
-      // const refresh_token = createRefreshToken({ id: newUser._id });
-
-      // res.cookie("refreshtoken", refresh_token, {
-      //   httpOnly: true,
-      //   path: "/api/refresh_token",
-      //   maxAge: 24 * 30 * 60 * 60 * 1000,
-      // });
 
       await newUser.save();
 
       res.json({
         msg: "registerd sucess",
-        // access_token,
         user: {
           ...newUser._doc,
           password: "",
@@ -76,7 +66,7 @@ const authCtrl = {
       res.cookie("refreshtoken", refresh_token, {
         httpOnly: true,
         path: "/api/refresh_token",
-        maxAge: 24 * 30 * 60 * 60 * 1000, //30days
+        maxAge: 24 * 30 * 60 * 60 * 1000, //30dias
       });
 
       res.json({

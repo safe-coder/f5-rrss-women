@@ -1,30 +1,13 @@
 import React, { useEffect, useState } from "react";
 
 import "../../styles/ProfileInfo.css";
-import SettingsIcon from '@mui/icons-material/Settings';
+import SettingsIcon from "@mui/icons-material/Settings";
 import EditProfile from "./EditProfile";
 import GlobalFriendBtn from "./GlobalFriendBtn";
 import PanelAdminBtn from "./PanelAdminBtn";
 
 const Info = ({ userData, auth, profile, id }) => {
-  // const [userData, setUserData] = useState([]);
-  // const { id } = useParams();
-  // const { auth, profile } = useSelector((state) => state);
-  // const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   if (auth && auth.user && id === auth.user._id){
-  //       setUserData([auth.user])
-  //   }else{
-  //     dispatch(getProfileUsers({users:profile.users, id, auth}))
-  //     const newData = profile.users.filter(user=>user._id === id)
-  //     setUserData(newData)
-  //   }
-  // }, [id, auth.user, auth, profile.users, dispatch]);
-
-
-  const [onEdit, setOnEdit]= useState(false)
-
+  const [onEdit, setOnEdit] = useState(false);
 
   return (
     <div className="profileinfo">
@@ -40,18 +23,26 @@ const Info = ({ userData, auth, profile, id }) => {
                 src={user.avatar}
                 alt=""
               />
-              {user._id && auth && user._id === auth.user._id ?
-                <button className="profileinfo-centerbutton" onClick={() => setOnEdit(true)}><SettingsIcon fontSize="large"/></button>
-                :<GlobalFriendBtn classbtn="profileinfo-centerbutton" user={user}/>
-                }
+              {user._id && auth && user._id === auth.user._id ? (
+                <button
+                  className="profileinfo-centerbutton"
+                  onClick={() => setOnEdit(true)}
+                >
+                  <SettingsIcon fontSize="large" />
+                </button>
+              ) : (
+                <GlobalFriendBtn
+                  classbtn="profileinfo-centerbutton"
+                  user={user}
+                />
+              )}
 
-            {user._id && auth && user.role === 'admin' && user._id === auth.user._id ?
-            <PanelAdminBtn /> : null
-
-    
-                }
-                
-               
+              {user._id &&
+              auth &&
+              user.role === "admin" &&
+              user._id === auth.user._id ? (
+                <PanelAdminBtn />
+              ) : null}
             </div>
             <div className="profileinfo-bottom">
               <div className="profileinfo-bottomleft">
@@ -74,11 +65,8 @@ const Info = ({ userData, auth, profile, id }) => {
                   <h6 className="profileinfo-statdesc">SIGUIENDO</h6>
                 </div>
               </div>
-              
             </div>
-            {
-              onEdit && <EditProfile user={ user} setOnEdit={setOnEdit} />
-            }
+            {onEdit && <EditProfile user={user} setOnEdit={setOnEdit} />}
           </div>
         ))}
     </div>
