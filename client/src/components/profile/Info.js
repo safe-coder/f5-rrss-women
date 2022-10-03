@@ -45,7 +45,7 @@ const Info = ({ userData, auth, profile, id }) => {
                 :<GlobalFriendBtn classbtn="profileinfo-centerbutton" user={user}/>
                 }
 
-            {user._id && auth && user.role === 'admin' ?
+            {user._id && auth && user.role === 'admin' && user._id === auth.user._id ?
             <PanelAdminBtn /> : null
 
     
