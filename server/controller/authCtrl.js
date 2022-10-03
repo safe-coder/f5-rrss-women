@@ -11,16 +11,16 @@ const authCtrl = {
 
       const user_name = await Users.findOne({ username: newUsername });
       if (user_name)
-        return res.status(400).json({ msg: "this username already exists" });
+        return res.status(400).json({ msg: "Este usuario ya existe" });
 
       const Email = await Users.findOne({ email: email });
       if (Email)
-        return res.status(400).json({ msg: "this email already exists" });
+        return res.status(400).json({ msg: "Este email ya existe" });
 
       if (password.length < 6)
         return res
           .status(400)
-          .json({ msg: "password must be atleast 6 characters long" });
+          .json({ msg: "La contraseña debe tener 6 carácteres mínimo" });
 
       const passwordHash = await bcrypt.hash(password, 13);
 
@@ -35,7 +35,7 @@ const authCtrl = {
       await newUser.save();
 
       res.json({
-        msg: "registerd sucess",
+        msg: "Registro completado",
         user: {
           ...newUser._doc,
           password: "",
@@ -54,11 +54,11 @@ const authCtrl = {
         "-password"
       );
 
-      if (!user) return res.status(400).json({ msg: "User does not exists" });
+      if (!user) return res.status(400).json({ msg: "Esta usuaria no existe" });
 
       const isMatch = await bcrypt.compare(password, user.password);
       if (!isMatch)
-        return res.status(400).json({ msg: "User Passowrd is incorrect" });
+        return res.status(400).json({ msg: "Contraseña incorrecta" });
 
       const access_token = createAccessToken({ id: user._id });
       const refresh_token = createRefreshToken({ id: user._id });
@@ -70,7 +70,7 @@ const authCtrl = {
       });
 
       res.json({
-        msg: "login sucess",
+        msg: "Login completado",
         access_token,
         user: {
           ...user._doc,
@@ -93,20 +93,20 @@ const authCtrl = {
     try {
       const rf_token = req.cookies.refreshtoken;
 
-      if (!rf_token) return res.status(400).json({ msg: "please login now" });
+      if (!rf_token) return res.status(400).json({ msg: "Inicio de sesión necesario" });
 
       jwt.verify(
         rf_token,
         process.env.REFRESHTOKENSECRET,
         async (err, result) => {
-          if (err) return res.status(400).json({ msg: "Please login now" });
+          if (err) return res.status(400).json({ msg: "Inicio de sesión necesario" });
 
           const user = await Users.findById(result.id)
             .select("-password")
             .populate("friends following");
 
           if (!user)
-            return res.status(400).json({ msg: "user does not exist" });
+            return res.status(400).json({ msg: "Esta usuaria no existe" });
 
           const access_token = createAccessToken({ id: result.id });
 

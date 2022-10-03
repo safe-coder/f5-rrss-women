@@ -10,6 +10,7 @@
   width: 97%;
   box-shadow: #240046 5px 5px;
   border-radius: 20px;
+  max-width: 20rem;
 }
 
 .profileabout-container {
