@@ -3,30 +3,28 @@ import PostCommentDisplay from "./PostCommentDisplay";
 
 const PostComments = ({ pos }) => {
   const [comments, setComments] = useState([]);
-  const [showComments, setShowcomments] = useState([]);
-  const [replyComments, setReplyComments] = useState([]);
-  const [next, setNext] = useState(2);
+ 
+ 
 
   useEffect(() => {
-    const ncm = pos.commentss.filter((cm) => !cm.reply);
+    const ncm = pos.commentss
     setComments(ncm);
-    setShowcomments(ncm.slice(ncm.length - next));
-  }, [pos.commentss, next]);
+   
+  }, [pos.commentss]);
 
   return (
     <div>
-      {showComments &&
-        showComments.map((comment) => (
+      {comments &&
+        comments.map((comment) => (
           <PostCommentDisplay
             comment={comment}
             pos={pos}
             key={comment._id}
-            newReplay={replyComments.filter(
-              (item) => item.reply === comment._id
-            )}
+           
+           
           />
         ))}
-      {comments.length - next > 0 ? (
+      {/* {comments.length - next > 0 ? (
         <div
           style={{
             textAlign: "center",
@@ -66,7 +64,7 @@ const PostComments = ({ pos }) => {
             Ocultar
           </div>
         )
-      )}
+      )} */}
     </div>
   );
 };

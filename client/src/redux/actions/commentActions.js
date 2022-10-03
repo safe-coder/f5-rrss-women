@@ -112,10 +112,11 @@ export const deleteComment = ({comment, pos, auth,socket}) => async (dispatch) =
         commentss: pos.commentss.filter(cm=> !deleteArr.find(da => cm._id === da._id))
     }
     dispatch({type: POST_TYPES.UPDATE_POST , payload: newPost})
-
+    
     try {
         deleteArr.forEach(item=>{
             deleteDataApi(`comment/${item._id}`, auth.token)
+            socket.emit('deleteComment', newPost)
            // socket.emit('createComment', newPost)
             // const msg = {
             //     id: item._id,
@@ -128,7 +129,7 @@ export const deleteComment = ({comment, pos, auth,socket}) => async (dispatch) =
             // dispatch(removeNotify({msg, auth}))
         })
 
-        socket.emit('deleteComment', newPost)
+       
     } catch (err) {
         dispatch({
             type:'ALERT',
