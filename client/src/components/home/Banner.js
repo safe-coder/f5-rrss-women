@@ -13,7 +13,6 @@ const Banner = () => {
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         width: "100%",
-        height: "auto",
         margin: "auto",
         marginTop: "3%",
         marginBottom: "3%",
