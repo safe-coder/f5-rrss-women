@@ -1,0 +1,18 @@
+// import request from 'supertest';
+// import app from '../../server.js';
+
+// // router.post('/comment',auth, commentCtrl.createComment)
+// //  router.patch('/comment/:id', auth, commentCtrl.updateComment)
+// //  router.patch('/comment/:id/like',auth, commentCtrl.likeComment)
+// // router.patch('/comment/:id/unlike',auth, commentCtrl.unlikeComment)
+// // router.delete('/comment/:id', auth, commentCtrl.deleteComment)
+
+// describe('/api/users', ()=>
+// test('should return status 200 & content-type "application/json"',async ()=>{
+//     const response = await request(app)
+//     .get('/api/users')
+//     .set({ Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMzk0ZDhjNzU3ZTIxOTllYTgyZTk1YSIsImlhdCI6MTY2NDc4OTU1NCwiZXhwIjoxNjY0ODc1OTU0fQ.c8k5KcPaMbxC0sQfQ3O691INHP7mWVpe1ErHzmN0kWo' })
+//     expect(response.status).toBe(200);
+//     expect(response.headers['content-type']).toContain('application/json')
+// }))
+

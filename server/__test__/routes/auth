@@ -1,0 +1,24 @@
+
+import request from 'supertest';
+import app from '../../server.js';
+
+// router.post('/register',authCtrl.register);
+
+// router.post('/login',authCtrl.login);
+
+// router.post('/logout',authCtrl.logout);
+
+// router.post('/refresh_token',authCtrl.generateAccessToken);
+
+describe('api//login', ()=>
+test('should return status 200 & content-type "application/json"',async ()=>{
+
+const response = await request(app)
+    .post('/api/login')
+    .send({ 
+        email: "developer2@mail.com",
+        password: "444444"  })
+    expect(response.status).toBe(200);
+    expect(response.headers['content-type']).toContain('application/json')
+}))
+
