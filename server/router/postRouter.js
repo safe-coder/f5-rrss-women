@@ -19,9 +19,6 @@ router.route('/post/:id')
 
 router.patch('/post/:id/like',auth, postCtrl.likePost)
 router.patch('/post/:id/unlike',auth, postCtrl.unlikePost)
-// router.get('/userposts/:id',auth,postCtrl.getUserPosts)
-// router.patch('/save/:id',auth,postCtrl.savePost)
-// router.patch('/unsave/:id',auth,postCtrl.unsavePost)
-// router.get('/savedpost',auth,postCtrl.getsavedPost)
+
 
 export default router;
