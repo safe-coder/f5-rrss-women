@@ -24,13 +24,13 @@ const PostCardBody = ({ pos }) => {
       style={{ margin: "1rem 0", padding: "1rem 0" }}
     >
       <div className="postcardbodycontent">
-        {pos && pos.content?.length < 60
+        {pos && pos.content?.length < 200
           ? pos.content
           : readMore
           ? pos.content + "..."
-          : pos.content?.slice(0, 60) + "..... "}
+          : pos.content?.slice(0, 200) + "..... "}
         <span>
-          {pos.content?.length > 60 && (
+          {pos.content?.length > 200 && (
             <span
               style={{ color: "#240046", cursor: "pointer" }}
               onClick={() => setreadMore(!readMore)}

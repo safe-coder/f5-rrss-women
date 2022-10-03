@@ -97,25 +97,25 @@ const PostCommentCard = ({ comment, pos }) => {
                 resize: "none",
                 border: "2px solid #401368",
                 borderRadius: "10px",
-                padding: ".5rem"
+                padding: ".5rem",
               }}
             />
           ) : (
             <>
               <span>
-                {content.length < 100
+                {content.length < 200
                   ? content
                   : readMore
                   ? content + ".."
-                  : content.slice(0, 100) + ".."}
+                  : content.slice(0, 200) + ".."}
               </span>
               <span>
-                {content?.length > 100 && (
+                {content?.length > 200 && (
                   <span
                     style={{ color: "black", cursor: "pointer" }}
                     onClick={() => setreadMore(!readMore)}
                   >
-                    {readMore ? "Hide " : "Show "}
+                    {readMore ? "Ocultar" : "Leer más"}
                   </span>
                 )}
               </span>
