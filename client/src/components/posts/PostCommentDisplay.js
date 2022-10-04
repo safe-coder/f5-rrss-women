@@ -1,13 +1,12 @@
-import React from 'react'
-import PostCommentCard from './PostCommentCard'
+import React from "react";
+import PostCommentCard from "./PostCommentCard";
 
 const PostCommentDisplay = ({ comment, pos }) => {
-
   return (
     <div>
-    <PostCommentCard comment={comment} pos={pos}></PostCommentCard>
+      <PostCommentCard comment={comment} pos={pos}></PostCommentCard>
     </div>
-  )
-}
+  );
+};
 
-export default PostCommentDisplay
+export default PostCommentDisplay;

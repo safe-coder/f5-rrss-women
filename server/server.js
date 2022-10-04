@@ -11,8 +11,6 @@ import http from "http";
 import { Server } from "socket.io";
 import socketServer from "./socketServer.js";
 
-
-
 dotenv.config();
 
 const app = express();
@@ -21,31 +19,29 @@ app.use(express.json());
 app.use(cors());
 app.use(cookieparser());
 
-//routes
-const httpServer = http. createServer(app);
+//Rutas
+const httpServer = http.createServer(app);
 const io = new Server(httpServer, {
   cors: {
-  origin: "*",
-}}
-)
+    origin: "*",
+  },
+});
 
+app.use("/api", authRouter);
+app.use("/api", userRouter);
+app.use("/api", postRouter);
+app.use("/api", commentRouter);
 
-
-app.use('/api', authRouter)
-app.use('/api', userRouter)
-app.use('/api', postRouter)
-app.use('/api', commentRouter)
-
-app.get('/',(req,res)=>{
-  res.json('hello world');
-})
+app.get("/", (req, res) => {
+  res.json("hello world");
+});
 
 const port = process.env.PORT || 5000;
 const URL = process.env.MONGO_URI;
 
-io.on('connection', socket=>{
- socketServer(socket);
-})
+io.on("connection", (socket) => {
+  socketServer(socket);
+});
 
 mongoose.connect(
   URL,
@@ -58,8 +54,6 @@ mongoose.connect(
     console.log("db is connected");
   }
 );
-
-
 
 httpServer.listen(port, () => {
   console.log(`Listening on port ${port}`);

@@ -3,7 +3,6 @@ import "./index.js";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Admin from "./pages/Admin";
 import Login from "./pages/Login";
-
 import NotFound from "./pages/NotFound";
 import Alert from "./components/Alert";
 import Header from "./components/Header";
@@ -11,14 +10,9 @@ import { useSelector, useDispatch } from "react-redux";
 import Home from "./pages/Home";
 import { useEffect } from "react";
 import { refreshToken } from "./redux/actions/authActions";
-//import Messages from './pages/Messages';
-
-//import Notification from './pages/Notification';
 import PrivateRoute from "./utils/PrivateRoute";
 import Profile from "./pages/Profile";
-
 import { getPosts } from "./redux/actions/postallActions";
-//import { getNotify } from './redux/actions/notifyActions.js';
 import io from "socket.io-client";
 import { ALERT_TYPES } from "./redux/actions/alertActions";
 import SocketioClient from "./SocketioClient";
@@ -26,7 +20,6 @@ import SocketioClient from "./SocketioClient";
 function App() {
   const { auth } = useSelector((state) => state);
   const dispatch = useDispatch();
-  //const login = localStorage.getItem('login');
 
   useEffect(() => {
     dispatch(refreshToken());
@@ -38,8 +31,6 @@ function App() {
   useEffect(() => {
     if (auth.token) {
       dispatch(getPosts(auth.token));
-      // dispatch(getPost(auth.token))
-      // dispatch(getNotify(auth))
     }
   }, [auth.token, dispatch]);
 
